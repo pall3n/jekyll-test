@@ -8,6 +8,13 @@ ID = "6eb4f47d-1e47-4047-b2e9-b4c6a875d9c6"
   # base    = "project/"
   # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
   # This is the directory that you are publishing from (relative to root of your repo)
-  publish = "dist/gatwick/"
+  publish = "dist/base/"
   # This will be your default build command
-  command = "grunt build-gatwick"
+  command = "grunt build-base"
+
+
+  # create redirects
+[[redirects]]
+  from = "/old-path"
+  to = "/"
+  status = 301
