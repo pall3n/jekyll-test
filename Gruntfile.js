@@ -343,7 +343,7 @@ module.exports = function(grunt) {
 		* Run `grunt build-dev` on the command line
 		* Then compress all JS/CSS files
 	*/
-	grunt.registerTask('build-dev', [
+	grunt.registerTask('build-base', [
 		'clean:dist',
 		'copy',
 		'sass',
