@@ -337,4 +337,52 @@ module.exports = function(grunt) {
 		'includeSource'
 	]);
 
+
+	/**
+		* Build task
+		* Run `grunt build-dev` on the command line
+		* Then compress all JS/CSS files
+	*/
+	grunt.registerTask('build-dev', [
+		'clean:dist',
+		'copy',
+		'sass',
+		'autoprefixer',
+		'concat',
+        'jekyll:base',
+		'includeSource'
+	]);
+
+
+	/**
+		* Build task
+		* Run `grunt build-dev` on the command line
+		* Then compress all JS/CSS files
+	*/
+	grunt.registerTask('build-heathrow', [
+		'clean:dist',
+		'copy',
+		'sass',
+		'autoprefixer',
+		'concat',
+        'jekyll:heathrow',
+		'includeSource'
+	]);
+
+
+	/**
+		* Build task
+		* Run `grunt build-dev` on the command line
+		* Then compress all JS/CSS files
+	*/
+	grunt.registerTask('build-gatwick', [
+		'clean:dist',
+		'copy',
+		'sass',
+		'autoprefixer',
+		'concat',
+        'jekyll:gatwick',
+		'includeSource'
+	]);
+
 };
