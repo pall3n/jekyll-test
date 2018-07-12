@@ -321,6 +321,9 @@ module.exports = function(grunt) {
 		'watch'
 	]);
 
+    // adds target var which can be parsed in during grunt build otherwise defualts to base
+    // example grunt build --target=heathrow
+    var target = grunt.option('target') || 'base';
 
 	/**
 		* Build task
@@ -333,55 +336,7 @@ module.exports = function(grunt) {
 		'sass',
 		'autoprefixer',
 		'concat',
-        'jekyll',
-		'includeSource'
-	]);
-
-
-	/**
-		* Build task
-		* Run `grunt build-dev` on the command line
-		* Then compress all JS/CSS files
-	*/
-	grunt.registerTask('build-base', [
-		'clean:dist',
-		'copy',
-		'sass',
-		'autoprefixer',
-		'concat',
-        'jekyll:base',
-		'includeSource'
-	]);
-
-
-	/**
-		* Build task
-		* Run `grunt build-dev` on the command line
-		* Then compress all JS/CSS files
-	*/
-	grunt.registerTask('build-heathrow', [
-		'clean:dist',
-		'copy',
-		'sass',
-		'autoprefixer',
-		'concat',
-        'jekyll:heathrow',
-		'includeSource'
-	]);
-
-
-	/**
-		* Build task
-		* Run `grunt build-dev` on the command line
-		* Then compress all JS/CSS files
-	*/
-	grunt.registerTask('build-gatwick', [
-		'clean:dist',
-		'copy',
-		'sass',
-		'autoprefixer',
-		'concat',
-        'jekyll:gatwick',
+        'jekyll:' + target,
 		'includeSource'
 	]);
 

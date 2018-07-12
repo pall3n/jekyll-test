@@ -10,7 +10,7 @@ ID = "6eb4f47d-1e47-4047-b2e9-b4c6a875d9c6"
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "dist/base/"
   # This will be your default build command
-  command = "grunt build-base"
+  command = "grunt build"
 
 
   # create redirects
