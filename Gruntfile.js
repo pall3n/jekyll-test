@@ -122,19 +122,19 @@ module.exports = function(grunt) {
             },
             base: {
                 options: {
-                    dest: 'dist/base',
+                    dest: 'dist',
                     config: 'config/_config.yml'
                 }
             },
             heathrow: {
                 options: {
-                    dest: 'dist/heathrow',
+                    dest: 'dist',
                     config: 'config/_config.heathrow.yml'
                 }
             },
             gatwick: {
                 options: {
-                    dest: 'dist/gatwick',
+                    dest: 'dist',
                     config: 'config/_config.gatwick.yml'
                 }
             }
@@ -187,7 +187,22 @@ module.exports = function(grunt) {
 				cwd: '<%= project.src %>/img',
 				src: '**/*',
 				dest: '<%= project.distImgDir %>'
-			}
+			},
+            base: {},
+            gatwick: {
+                expand: true,
+				cwd: '<%= project.src %>/site/gatwick/netlify',
+				src: '**/*',
+				dest: '<%= project.dist %>',
+                flatten: true
+            },
+            heathrow: {
+                expand: true,
+				cwd: '<%= project.src %>/site/heathow/netlify',
+				src: '**/*',
+				dest: '<%= project.dist %>',
+                flatten: true
+            }
 		},
 
 
@@ -321,6 +336,9 @@ module.exports = function(grunt) {
 		'watch'
 	]);
 
+    // adds target var which can be parsed in during grunt build otherwise defualts to base
+    // example grunt build --target=heathrow
+    var target = grunt.option('target') || 'base';
 
 	/**
 		* Build task
@@ -329,11 +347,12 @@ module.exports = function(grunt) {
 	*/
 	grunt.registerTask('build', [
 		'clean:dist',
-		'copy',
+		'copy:images',
+		'copy:' + target,
 		'sass',
 		'autoprefixer',
 		'concat',
-        'jekyll',
+        'jekyll:' + target,
 		'includeSource'
 	]);
 
