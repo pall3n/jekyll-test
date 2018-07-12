@@ -5,6 +5,6 @@
 layout: default
 ---
 
-{{ site.title }}
+Site name is {{ site.title }}
 
-Something {{ site.data.testeroo }}
+Something {{ site.data.testeroo.id }}

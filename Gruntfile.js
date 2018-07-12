@@ -279,7 +279,7 @@ module.exports = function(grunt) {
 				tasks: ['sass:dist', 'autoprefixer:dist']
 			},
             jekyll: {
-                files: ['<%= project.src %>/**/*.md', '<%= project.src %>/**/*.html'],
+                files: ['<%= project.src %>/**/*.md', '<%= project.src %>/**/*.html', 'config/**/*.yml'],
                 tasks: ['jekyll:base']
             },
 			concat: {
