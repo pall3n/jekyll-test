@@ -126,12 +126,6 @@ module.exports = function(grunt) {
                     config: 'config/_config.yml'
                 }
             },
-            heathrow: {
-                options: {
-                    dest: 'dist',
-                    config: 'config/_config.heathrow.yml'
-                }
-            },
             gatwick: {
                 options: {
                     dest: 'dist',
