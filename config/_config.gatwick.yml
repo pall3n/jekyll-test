@@ -32,8 +32,8 @@ plugins:
     - jekyll-seo-tag
 
 jekyll_get:
-  data: testeroo
-  json: 'https://jsonplaceholder.typicode.com/posts/3'
+    data: users
+    json: 'http://jsonplaceholder.typicode.com/users/3'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
