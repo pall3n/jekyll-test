@@ -5,6 +5,8 @@
 layout: default
 ---
 
+# Homepage
+
 Site name is {{ site.title }}
 
 Remote test data website =  {{ site.data.users.website }}
