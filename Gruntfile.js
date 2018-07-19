@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 			srcImgDir: '<%= project.src %>/img',
 			distImgDir: '<%= project.distAssets %>/img',
 
-			scssDir: '<%= project.src %>/css',
+			scssDir: '<%= project.src %>/assets/scss',
 			scssFile: 'styles.scss',
 			scss: '<%= project.scssDir %>/<%= project.scssFile %>',
 
@@ -111,34 +111,34 @@ module.exports = function(grunt) {
 		// },
 
 
-        /**
-            * Straightforward grunt.js Jekyll plugin.
-            * https://www.npmjs.org/package/grunt-jekyll
-        */
-        jekyll: {
+    /**
+        * Straightforward grunt.js Jekyll plugin.
+        * https://www.npmjs.org/package/grunt-jekyll
+    */
+    jekyll: {
+        options: {
+            bundleExec: true,
+            src : '<%= project.src %>'
+        },
+        base: {
             options: {
-                bundleExec: true,
-                src : '<%= project.src %>'
-            },
-            base: {
-                options: {
-                    dest: 'dist',
-                    config: 'config/_config.yml'
-                }
-            },
-            heathrow: {
-                options: {
-                    dest: 'dist',
-                    config: 'config/_config.heathrow.yml'
-                }
-            },
-            gatwick: {
-                options: {
-                    dest: 'dist',
-                    config: 'config/_config.gatwick.yml'
-                }
+                dest: 'dist',
+                config: 'config/_config.yml'
             }
         },
+        heathrow: {
+            options: {
+                dest: 'dist',
+                config: 'config/_config.heathrow.yml'
+            }
+        },
+        gatwick: {
+            options: {
+                dest: 'dist',
+                config: 'config/_config.gatwick.yml'
+            }
+        }
+    },
 
 
 		/**
@@ -188,7 +188,9 @@ module.exports = function(grunt) {
 				src: '**/*',
 				dest: '<%= project.distImgDir %>'
 			},
+
             base: {},
+
             gatwick: {
                 expand: true,
 				cwd: '<%= project.src %>/site/gatwick/netlify',
@@ -213,13 +215,21 @@ module.exports = function(grunt) {
 			* Compiles all Sass/SCSS files and appends project banner
 		*/
 		sass: {
+            dev: {
+                options: {
+					style: 'expanded'
+				},
+				files: {
+					'<%= project.cssMin %>': '<%= project.scss %>',
+				}
+            },
 			dist: {
 				options: {
 					style: 'expanded'
 				},
 				files: {
 					'<%= project.css %>': '<%= project.scss %>',
-                    '<%= project.css %>': '<%= project.scssDir %>/base/<%= project.scssFile %>',
+                    // '<%= project.css %>': '<%= project.scssDir %>/base/<%= project.scssFile %>',
 				}
 			}
 		},
@@ -291,11 +301,11 @@ module.exports = function(grunt) {
 		watch: {
 			sass: {
 				files: '<%= project.scssDir %>/**/*.scss',
-				tasks: ['sass:dist', 'autoprefixer:dist']
+				tasks: ['sass:dev']
 			},
             jekyll: {
                 files: ['<%= project.src %>/**/*.md', '<%= project.src %>/**/*.html', 'config/**/*.yml'],
-                tasks: ['jekyll:base']
+                tasks: ['jekyll:base', 'sass:dev']
             },
 			concat: {
 				files: '<%= project.src %>/js/**/*.js',
@@ -349,7 +359,7 @@ module.exports = function(grunt) {
 		'clean:dist',
 		'copy:images',
 		'copy:' + target,
-		'sass',
+		'sass:dist',
 		'autoprefixer',
 		'concat',
         'jekyll:' + target,
