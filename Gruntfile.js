@@ -340,12 +340,12 @@ module.exports = function(grunt) {
 	*/
 	grunt.registerTask('build', [
 		'clean:dist',
+        'jekyll:' + target,
 		'copy:images',
 		'copy:' + target,
 		'sass:dist',
 		'autoprefixer',
 		'concat',
-        'jekyll:' + target,
 		'includeSource'
 	]);
 
