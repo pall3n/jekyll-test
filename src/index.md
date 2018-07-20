@@ -7,6 +7,6 @@ layout: home
 
 # Homepage
 
-Site name is {{ site.title }}
+Site name is {{ site.title }} {{ site.site }}
 
 Remote test data website =  {{ site.data.users.website }}

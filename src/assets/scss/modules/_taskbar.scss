@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// LIST BASE
+// TASKBAR MODULE
 // --------------------------------------------------------------------------
 //
-// Base list styling utilities.
+// Creates a task bar at the bottom of the screen
 //
 
 /**
@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------
 
 
+
 // --------------------------------------------------------------------------
 // FUNCTIONS
 // --------------------------------------------------------------------------
@@ -26,29 +27,19 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin list-reset() {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-@mixin list-inline() {
-	li {
-		display: inline-block;
-	}
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.list-reset {
-    @include list-reset();
-}
+.m-Taskbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: $BSU;
+    padding-bottom: $BSU;
 
-.list-inline {
-    @include list-reset();
-    @include list-inline();
+    background-color: $Colour-bgDark;
 }

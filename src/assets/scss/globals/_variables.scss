@@ -11,13 +11,13 @@
 $Colour-black: #000 !default;
 $Colour-white: #fff !default;
 
-$Colour-base: #444 !default;
+$Colour-base: #333 !default;
 $Colour-baseType: $Colour-base !default;
 $Colour-baseType--contrast: $Colour-white;
 
 $Colour-text: #9aa2a7 !default;
 
-$Colour-primary: #1eb5ad !default;
+$Colour-primary: #27b3dc !default;
 $Colour-primary--darken: #1eb5ad !default;
 
 $Colour-secondary: #549CEF !default;
@@ -28,6 +28,7 @@ $Colour-accent: #982256 !default;
 $Colour-border: rgba($Colour-base, .14) !default;
 
 $Colour-bg: #ececea !default;
+$Colour-bgDark: #333 !default;
 
 $Colour-inactive: #999 !default;
 $Colour-error: #EA4E35 !default;
@@ -63,7 +64,7 @@ $FontFamily-mono: Consolas, "Andale Mono WT", "Andale Mono", Courier, monospace 
 //
 
 $FontWeight-bold: 700 !default;
-// $FontWeight-semi: 500 !default;
+$FontWeight-medium: 500 !default;
 $FontWeight-normal: 400 !default;
 
 
@@ -130,6 +131,7 @@ $c-typeHeading-marginFirstChild: false;
 // --------------------------------------------------------------------------
 
 $Base-spacing-unit: 6px !default;
+$BSU: $Base-spacing-unit;
 
 
 // --------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// LIST BASE
+// TASKBAR COMPONENT
 // --------------------------------------------------------------------------
 //
-// Base list styling utilities.
+// Creates a task bar at the bottom of the screen
 //
 
 /**
@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------
 
 
+
 // --------------------------------------------------------------------------
 // FUNCTIONS
 // --------------------------------------------------------------------------
@@ -26,29 +27,25 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin list-reset() {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-@mixin list-inline() {
-	li {
-		display: inline-block;
-	}
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.list-reset {
+.IconNav {
     @include list-reset();
+    // @include list-inline();
+
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
-.list-inline {
-    @include list-reset();
-    @include list-inline();
+.IconNav-itemLink {
+    @include type(12px, 1, $FontWeight-bold);
+    display: block;
+    
+    text-decoration: none;
+    color: $Colour-white;
 }
