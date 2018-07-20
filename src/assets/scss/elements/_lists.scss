@@ -1,0 +1,72 @@
+// --------------------------------------------------------------------------
+// LIST ELEMENTS
+// --------------------------------------------------------------------------
+
+/**
+ * Intro text
+ *
+ *
+ * DEPENDENCIES
+ * -
+ *
+ *
+ * USED WITH
+ * -
+ *
+ */
+
+ // Styleguide 21.1.0.
+
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$c-list-ulStyle: circle !default;
+$c-list-olStyle: false !default;
+
+$c-list-paddingLeft: 2rem !default;
+$c-list-marginTop: false !default;
+$c-list-marginBottom: false !default;
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+
+ul {
+	@include conditional( $c-list-ulStyle ) { list-style: $c-list-ulStyle; }
+}
+
+
+ol {
+	@include conditional( $c-list-olStyle ) { list-style: $c-list-olStyle; }
+}
+
+
+ol,
+ul {
+	@include conditional( $c-list-marginTop ) { margin-top: $c-list-marginTop; }
+	@include conditional( $c-list-marginBottom ) { margin-bottom: $c-list-marginBottom; }
+	@include conditional( $c-list-paddingLeft ) { padding-left: $c-list-paddingLeft; }
+}

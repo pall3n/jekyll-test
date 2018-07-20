@@ -1,23 +1,30 @@
-// BASE ELEMENTS
+// BUTTON ELEMENTS
 //
 // Some styling for base html elements.
-// Elements include html, element and a conditional * catch all box-sizing.
+// Elements include html, element and a * catch all box-sizing.
 //
-// DEPENDENCIES
+// DEPENDENCIES </br>
 // - none
+//
+// EXTENDS </br>
+// - none
+//
+// VARIABLES </br>
+// -
+//
+// .button--primary				- Primary button modifier used to catch the users eye
+// :hover :focus				- For consistancy the :hover and :focus styling is the same for the default an button mods
+//
+// Markup:
+// <button href="#" class="{$modifiers}">Hello</button>
+//
+// Styleguide 17.0.0.
+
+
 
 // --------------------------------------------------------------------------
 // VARIABLES
 // --------------------------------------------------------------------------
-
-$html-fontSize: 100% !default;
-
-$body-fontSize: $FontSize-base !default;
-$body-lineHeight: $LineHeight-base !default;
-$body-fontWeight: normal !default;
-$body-fontFamily: $FontFamily-copy !default;
-$body-fontColour: $Colour-base !default;
-$body-backgroundColour: $Colour-white !default;
 
 
 
@@ -43,23 +50,6 @@ $body-backgroundColour: $Colour-white !default;
 // STYLING
 // --------------------------------------------------------------------------
 
-* {
-	box-sizing: $Layout-boxSizing;
-}
-
-html {
-	font-size: percentage(strip-unit($body-fontSize) / 16);
-}
-
-body {
-	background-color: $body-backgroundColour;
-
-	font-size: convert-to-em($body-fontSize, $body-fontSize);
-	line-height: $body-lineHeight;
-	font-weight: $body-fontWeight;
-	font-family: $body-fontFamily;
-	color: $body-fontColour;
-
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-}
+// button {
+// 	@extend %button;
+// }

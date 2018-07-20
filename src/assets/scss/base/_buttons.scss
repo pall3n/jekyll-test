@@ -1,0 +1,61 @@
+// --------------------------------------------------------------------------
+// BUTTON BASE
+// --------------------------------------------------------------------------
+//
+// The .button class can be used to style markup to look like a button.
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin button() {
+	@include font-size($FontSize-c1);
+	line-height: 24px;
+	display: inline-block;
+	padding: ($Base-spacing-unit * 2) ($Base-spacing-unit * 5);
+	
+	text-decoration: none;
+	text-shadow: none;
+	border: 1px solid $Colour-border;
+	border-radius: ($Base-spacing-unit * 5);
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.button {
+	@include button();
+}
+
+.button--primary {
+	background-color: $Colour-primary;
+	border-color: $Colour-primary;
+	color: $Colour-white;
+}
+
+.button--accent {
+	background-color: $Colour-accent;
+	border-color: $Colour-accent;
+	color: $Colour-white;
+}

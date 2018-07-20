@@ -1,0 +1,118 @@
+// --------------------------------------------------------------------------
+// TYPE HEADING BASE
+// --------------------------------------------------------------------------
+//
+// Typography base classes which can be used and extended to bring reusable type styling.
+// typeHeading styles that is used to add constant styling to typeHeadings.
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin type($font-size: $Font-size-b, $line-height: false, $font-weight: false) {
+	@include font-size($font-size);
+
+	@if ($line-height != false) {
+		line-height: $line-height;
+	}
+	
+	@if ($font-weight != false) {
+		font-weight: $font-weight;
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+//
+// Large regular style font styling
+//
+
+.typeDisplay,
+.display {
+	@include type($FontSize-d1, $LineHeight-d1);
+}
+
+.display-2 {
+	@include type($FontSize-d2, $LineHeight-d2);
+}
+
+
+
+//
+// Heading text styling
+//
+
+.typeHeading,
+.heading {
+	@include type($FontSize-h1, $LineHeight-h1, $FontWeight-bold);
+}
+
+
+
+//
+// Copy text styling
+//
+
+.typeCopy,
+.copy {
+	@include type($FontSize-c2);
+}
+
+.typeCopy-l,
+.copy-l {
+	@include type($FontSize-c1);
+}
+
+.typeCopy-s,
+.copy-s {
+	@include type($FontSize-c3);
+}
+
+
+
+//
+// Text colour alternatives
+//
+
+.type--base {
+	color: $Colour-baseType;
+}
+
+.type--text {
+	color: $Colour-text;
+}
+
+.type--baseContrast {
+	color: $Colour-baseType--contrast;
+}
+
+.type--primary {
+	color: $Colour-primary;
+}
+
+.type--accent {
+	color: $Colour-accent;
+}

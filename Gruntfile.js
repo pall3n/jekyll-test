@@ -87,58 +87,41 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					middleware: function (connect) {
-						return [lrSnippet, mountFolder(connect, 'dist/base')];
+						return [lrSnippet, mountFolder(connect, 'dist')];
 					}
 				}
 			}
 		},
 
 
-		/**
-			* Includes html snippets
-			* https://www.npmjs.org/package/grunt-bake
-		*/
-		// bake: {
-		// 	build: {
-		// 		options: {
-		// 			content: "<%= project.src %>/data/data.json"
-		// 		},
-        //
-		// 		files: {
-		// 			"<%= project.dist %>/index.html": "<%= project.src %>/templates/index.html",
-		// 		}
-		// 	}
-		// },
-
-
-    /**
-        * Straightforward grunt.js Jekyll plugin.
-        * https://www.npmjs.org/package/grunt-jekyll
-    */
-    jekyll: {
-        options: {
-            bundleExec: true,
-            src : '<%= project.src %>'
-        },
-        base: {
+        /**
+            * Straightforward grunt.js Jekyll plugin.
+            * https://www.npmjs.org/package/grunt-jekyll
+        */
+        jekyll: {
             options: {
-                dest: 'dist',
-                config: 'config/_config.yml'
+                bundleExec: true,
+                src : '<%= project.src %>'
+            },
+            base: {
+                options: {
+                    dest: 'dist',
+                    config: 'config/_config.yml'
+                }
+            },
+            heathrow: {
+                options: {
+                    dest: 'dist',
+                    config: 'config/_config.heathrow.yml'
+                }
+            },
+            gatwick: {
+                options: {
+                    dest: 'dist',
+                    config: 'config/_config.gatwick.yml'
+                }
             }
         },
-        heathrow: {
-            options: {
-                dest: 'dist',
-                config: 'config/_config.heathrow.yml'
-            }
-        },
-        gatwick: {
-            options: {
-                dest: 'dist',
-                config: 'config/_config.gatwick.yml'
-            }
-        }
-    },
 
 
 		/**
