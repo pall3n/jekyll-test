@@ -1,0 +1,65 @@
+// BASE ELEMENTS
+//
+// Some styling for base html elements.
+// Elements include html, element and a conditional * catch all box-sizing.
+//
+// DEPENDENCIES
+// - none
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$html-fontSize: 100% !default;
+
+$body-fontSize: $FontSize-base !default;
+$body-lineHeight: $LineHeight-base !default;
+$body-fontWeight: normal !default;
+$body-fontFamily: $FF-copy !default;
+$body-fontColour: $Colour-base !default;
+$body-backgroundColour: $Colour-offWhite !default;
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// EXTENDABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+* {
+	box-sizing: $Layout-boxSizing;
+}
+
+html {
+	font-size: percentage(strip-unit($body-fontSize) / 16);
+}
+
+body {
+	background-color: $body-backgroundColour;
+
+	font-size: convert-to-em($body-fontSize, $body-fontSize);
+	line-height: $body-lineHeight;
+	font-weight: $body-fontWeight;
+	font-family: $body-fontFamily;
+	color: $body-fontColour;
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}

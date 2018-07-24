@@ -1,0 +1,95 @@
+// --------------------------------------------------------------------------
+// PANEL BASE
+// --------------------------------------------------------------------------
+//
+// Panels are content wrappers
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$Panel-gutter: $BSU * 3 !default;
+$Panel-gutter--tab: $BSU * 4 !default;
+$Panel-gutter--lap: $BSU * 8 !default;
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+@mixin panel($gutter: $Panel-gutter, $gutter--tab: $Panel-gutter--tab, $gutter--lap: $Panel-gutter--lap) {
+	padding-top: $gutter;
+	padding-bottom: $gutter;
+
+	@include media('>=tab') {
+		padding-top: $gutter--tab;
+		padding-bottom: $gutter--tab;
+	}
+
+	@include media('>=lap') {
+		padding-top: $gutter--lap;
+		padding-bottom: $gutter--lap;
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.panel {
+	@include panel();
+}
+
+.panel-i {
+	padding: $Panel-gutter;
+
+	@include media('>=tab') {
+		padding: $Panel-gutter--tab;
+	}
+
+	@include media('>=lap') {
+		padding: halve($Panel-gutter--lap);
+	}
+}
+
+.panel-p {
+	padding: double($Panel-gutter);
+
+	@include media('>=tab') {
+		padding: ($Panel-gutter--tab * 2.5) double($Panel-gutter--tab);
+	}
+}
+
+.panel-i\- {
+	padding: halve($Base-spacing-unit);
+
+	@include media('>=tab') {
+		padding: $Panel-gutter--tab;
+	}
+
+	@include media('>=lap') {
+		padding: halve($Panel-gutter--lap);
+	}
+}
+
+.panel\- {
+	@include panel(halve($Panel-gutter), halve($Panel-gutter--tab), halve($Panel-gutter--lap));
+}
+
+.panel\+ {
+	@include panel(double($Panel-gutter), double($Panel-gutter--tab), double($Panel-gutter--lap));
+}

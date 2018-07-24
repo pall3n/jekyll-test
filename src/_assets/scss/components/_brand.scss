@@ -1,0 +1,80 @@
+// --------------------------------------------------------------------------
+// BRAND COMPONENT
+// --------------------------------------------------------------------------
+//
+// Displays brand logo and site specific name
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$Brand-icon: url('https://s3.amazonaws.com/theme-media/img/brand/heathrowparking-icon.png');
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Brand {
+    display: inline-block;
+    height: 46px;
+    padding-left: 50px;
+    line-height: 1;
+
+    text-decoration: none;
+    color: $Colour-white;
+
+    background-image: $Brand-icon;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+
+    @include media('>=tab') {
+        display: flex;
+        align-items: center;
+        height: 92px;
+        padding-left: 69px;
+        background-size: auto 62px;
+    }
+}
+
+.Brand-airport {
+    @include type(16px, 1, $FF-heavy);
+    letter-spacing: -0.4px;
+
+    @include media('<tab') {
+        padding-top: 8px;
+    }
+
+    @include media('>=tab') {
+        @include font-size(27px);
+    }
+}
+
+.Brand-site {
+    @include type(12px, 1, $FF-medium);
+    display: block;
+
+    @include media('>=tab') {
+        @include font-size(19px);
+    }
+}

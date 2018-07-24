@@ -46,4 +46,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - site/
-  - scss
+  - scss/

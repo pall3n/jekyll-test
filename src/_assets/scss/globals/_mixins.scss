@@ -1,0 +1,32 @@
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin font-size($font-size: $FontSize-base) {
+	font-size: $font-size + 0px;
+	font-size: convert-to-rem($font-size);
+}
+
+@mixin conditional($variable, $state: true) {
+	@if $state == false {
+		@if $variable == false {
+			@content;
+		}
+	} @else {
+		@if $variable != false {
+			@content;
+		}
+	}
+}
+
+@mixin type($font-size: $Font-size-b, $line-height: false, $font-family: false) {
+	@include font-size($font-size);
+
+	@if ($line-height != false) {
+		line-height: $line-height;
+	}
+
+	@if ($font-family != false) {
+		font-family: $font-weight;
+	}
+}

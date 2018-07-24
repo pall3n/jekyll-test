@@ -1,0 +1,88 @@
+// --------------------------------------------------------------------------
+// MEDIA COMPONENT
+// --------------------------------------------------------------------------
+//
+// Media element for positioning media next to content
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin mediaElement() {
+	overflow: hidden;
+	_overflow: visible;
+	zoom: 1;
+}
+
+@mixin mediaElement-image($side: left) {
+	float: $side;
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+.Media,
+.Media-body {
+	@include mediaElement();
+}
+
+.Media-image,
+.Media-imageAlt {
+	img {
+		display: block;
+	}
+}
+
+.Media-image,
+.Media-imageMiddle {
+	margin-right: halve($Layout-gutter);
+
+	@include media('>=tab') {
+		margin-right: $Layout-gutter;
+	}
+}
+
+.Media-image {
+	@include mediaElement-image();
+}
+
+.Media-imageAlt,
+.Media-imageAltMiddle {
+	margin-left: halve($Layout-gutter);
+
+	@include media('>=tab') {
+		margin-left: $Layout-gutter;
+	}
+}
+
+.Media-imageAlt {
+	float: right;
+}
+
+
+.Media-bodyMiddle,
+.Media-imageMiddle {
+	display: inline-block;
+	vertical-align: middle;
+}

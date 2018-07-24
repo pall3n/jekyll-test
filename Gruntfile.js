@@ -38,12 +38,13 @@ module.exports = function(grunt) {
 			src: 'src',
 			dist: 'dist',
 
-			distAssets: '<%= project.dist %>/assets',
+			srcAssets: '<%= project.src %>/_assets',
+            distAssets: '<%= project.dist %>/assets',
 
-			srcImgDir: '<%= project.src %>/img',
-			distImgDir: '<%= project.distAssets %>/img',
+			srcImgDir: '<%= project.srcAssets %>/image',
+			distImgDir: '<%= project.distAssets %>/image',
 
-			scssDir: '<%= project.src %>/assets/scss',
+			scssDir: '<%= project.srcAssets %>/scss',
 			scssFile: 'styles.scss',
 			scss: '<%= project.scssDir %>/<%= project.scssFile %>',
 
@@ -105,19 +106,19 @@ module.exports = function(grunt) {
             },
             base: {
                 options: {
-                    dest: 'dist',
+                    dest: 'dist/site',
                     config: 'config/_config.yml'
                 }
             },
             heathrow: {
                 options: {
-                    dest: 'dist',
+                    dest: 'dist/site',
                     config: 'config/_config.heathrow.yml'
                 }
             },
             gatwick: {
                 options: {
-                    dest: 'dist',
+                    dest: 'dist/site',
                     config: 'config/_config.gatwick.yml'
                 }
             }
@@ -167,10 +168,17 @@ module.exports = function(grunt) {
 		copy: {
 			images: {
 				expand: true,
-				cwd: '<%= project.src %>/img',
+				cwd: '<%= project.srcImgDir %>',
 				src: '**/*',
 				dest: '<%= project.distImgDir %>'
 			},
+
+            fonts: {
+                expand: true,
+                cwd: '<%= project.scssDir %>/fonts',
+                src: '**/*',
+                dest: '<%= project.cssDir %>/fonts'
+            },
 
             base: {},
 
@@ -288,7 +296,7 @@ module.exports = function(grunt) {
 			},
             jekyll: {
                 files: ['<%= project.src %>/**/*.md', '<%= project.src %>/**/*.html', 'config/**/*.yml'],
-                tasks: ['jekyll:base', 'sass:dev']
+                tasks: ['jekyll:base']
             },
 			concat: {
 				files: '<%= project.src %>/js/**/*.js',
@@ -301,8 +309,8 @@ module.exports = function(grunt) {
 				files: [
 					'<%= project.dist %>/**/*.html',
 					'<%= project.cssDir %>/**/*.css',
-					'<%= project.dist %>/js/**/*.js',
-					'<%= project.dist %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
+					'<%= project.distAssets %>/js/**/*.js',
+					'<%= project.distAssets %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
 				]
 			}
 		}
@@ -342,6 +350,7 @@ module.exports = function(grunt) {
 		'clean:dist',
         'jekyll:' + target,
 		'copy:images',
+        'copy:fonts',
 		'copy:' + target,
 		'sass:dist',
 		'autoprefixer',

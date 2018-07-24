@@ -1,0 +1,171 @@
+// --------------------------------------------------------------------------
+// FOOTER MODULE
+// --------------------------------------------------------------------------
+//
+// Module for footer styling
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin grid() {
+	max-width: $Layout-maxWidth;
+	margin-left: auto;
+	margin-right: auto;
+	letter-spacing: -0.31em;
+	box-sizing: border-box;
+    text-rendering: optimizespeed;
+
+    @include media('>=tab') {
+    	padding-left: $Layout-gutter * 2;
+		padding-right: $Layout-gutter * 2;
+    }
+
+	// @include media('>=lap') {
+	// 	padding-left: $Layout-gutter--lap * 2;
+	// 	padding-right: $Layout-gutter--lap * 2;
+	// }
+
+	.Grid {
+		margin-left: -($Layout-gutter);
+		margin-right: -($Layout-gutter);
+
+		@include media('>=tab') {
+	    	margin-left: -($Layout-gutter * 3);
+			margin-right: -($Layout-gutter * 3);
+	    }
+
+		// @include media('>=lap') {
+		// 	margin-left: -($Layout-gutter--lap + ($Layout-gutter--lap * 2));
+		// 	margin-right: -($Layout-gutter--lap + ($Layout-gutter--lap * 2));
+		// }
+	}
+}
+
+@mixin grid-column() {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	padding-left: $Layout-gutter;
+	padding-right: $Layout-gutter;
+	vertical-align: top;
+
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+
+	@include media('<tab') {
+		padding-top: ($Layout-gutter);
+		padding-bottom: ($Layout-gutter);
+	}
+
+	// @include media('>=lap') {
+	// 	padding-left: $Layout-gutter;
+	// 	padding-right: $Layout-gutter;
+	// }
+}
+
+@mixin grid-row() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $Layout-gutter;
+
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+
+	@include media('>=tab') {
+		padding-top: ($Layout-gutter * 1.5);
+		padding-bottom: ($Layout-gutter * 1.5);
+	}
+
+	// @include media('>=lap') {
+	// 	padding-left: $Layout-gutter;
+	// 	padding-right: $Layout-gutter;
+	// }
+}
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Grid {
+	@include grid();
+
+	.Tabs-body & {
+		padding: 0;
+		margin-left: -($Layout-gutter);
+		margin-right: -($Layout-gutter);
+
+		@include media('>=lap') {
+			margin-left: -($Layout-gutter * 2);
+			margin-right: -($Layout-gutter * 2);
+		}
+	}
+}
+
+.Grid--panels {
+	@include media('>=tab') {
+		display: table;
+	}
+
+	.Grid-column {
+		padding: double($Panel-gutter);
+
+		+ .Grid-column {
+			@include media('<tab') {
+				border-top: 1px solid white;
+			}
+		}
+
+		@include media('>=tab') {
+			display: table-cell;
+			vertical-align: middle;
+
+			// padding: ($Panel-gutter--tab) ($Panel-gutter--tab);
+
+			+ .Grid-column {
+				border-left: 1px solid white;
+			}
+		}
+
+		@include media('>=lap') {
+			padding-left: ($Panel-gutter--tab * 4);
+			padding-right: ($Panel-gutter--tab * 4);
+		}
+	}
+}
+
+.opera:-o-prefocus,
+.Grid {
+    word-spacing: -0.43em;
+}
+
+.Grid-column {
+	@include grid-column();
+}
+
+.Grid-row {
+	@include grid-row();
+}

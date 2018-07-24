@@ -1,0 +1,201 @@
+// --------------------------------------------------------------------------
+// HEADER MODULE
+// --------------------------------------------------------------------------
+//
+// Brings together the brand, nav and basket components to create the header with the correct layout and paint job.
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.m-Header {
+    padding-top: double($BSU);
+    padding-bottom: double($BSU);
+
+    background-color: $Colour-base;
+    border-top: 5px solid $Colour-primary;
+
+    @include media('<tab') {
+        // padding: double($BSU);
+        text-align: center;
+    }
+
+    @include media('>=tab') {
+        // padding-top: 10px;
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+
+.m-Header-nav {
+    @include media('<tab') {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+.m-Header-taskbar {
+    background-color: $Colour-bgDark;
+
+    @include hide('>=tab');
+}
+
+.m-Header-menu {
+    @include media('<tab') {
+        height: 0;
+        transform: translateY(100%);
+        transition: transform .3s ease-in-out;
+
+        background-color: rgba($Colour-bgDark, .96);
+
+        &.is-active {
+            height: auto;
+            padding: triple($BSU);
+
+            transform: translateY(-1px);
+            transition: transform .3s ease-in-out;
+        }
+    }
+}
+
+.m-Header-navbar {
+    @include list-reset();
+
+    @include media('>=tab') {
+        @include list-inline();
+    }
+}
+
+.m-Header-navbar--primary {
+    @include media('>=tab') {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.m-Header-navbar--secondary {
+    @include media('>=tab') {
+        position: absolute;
+        top: 0;
+        right: double($Layout-gutter) - $BSU;
+    }
+}
+
+.m-Header-navbarItemCopy {
+    font-family: $FF-book;
+    @include font-size($FontSize-c3);
+    padding-left: $BSU;
+    padding-right: $BSU;
+
+    color: $Colour-offWhite;
+
+    @include hide('<tab');
+}
+
+.m-Header-navbarItemLink {
+    font-family: $FF-book;
+    padding-left: $BSU;
+    padding-right: $BSU;
+
+    text-decoration: none;
+    color: $Colour-offWhite;
+
+    @include media('<tab') {
+        display: block;
+        padding: $BSU * 1.5;
+    }
+
+    @include media('>=tab') {
+        .m-Header-navbar--primary & {
+            @include font-size($FontSize-base);
+        }
+
+        .m-Header-navbar--secondary & {
+            @include font-size($FontSize-c3);
+        }
+    }
+
+    @include media('>=lap') {
+        padding-left: double($BSU);
+        padding-right: double($BSU);
+    }
+}
+
+.m-Header-basket {
+    position: absolute;
+    bottom: - double($BSU);
+    right: double($Layout-gutter);
+    padding: double($BSU) triple($BSU);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    text-decoration: none;
+    color: $Colour-offWhite;
+    background-color: rgba($Colour-black, .2);
+
+    @include hide('<tab');
+}
+
+.m-Header-basketIcon {
+    display: inline-block;
+    position: relative;
+    margin-right: double($BSU);
+
+    &:before {
+        @include icon-font();
+        font-size: 120%;
+        display: inline-block;
+        vertical-align: -2px;
+        content: $icon-cart;
+    }
+}
+
+.m-Header-basketIconBadge {
+    @include font-size(10px);
+    font-family: $FF-medium;
+    position: absolute;
+    top: - halve($BSU);
+    right: 50%;
+    margin-right: -24px;
+    color: #333;
+    text-indent: 0;
+    text-align: center;
+    width: 16px;
+    line-height: 16px;
+    border-radius: 100%;
+
+    background-color: #face3f;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.6);
+}

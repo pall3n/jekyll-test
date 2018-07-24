@@ -1,0 +1,171 @@
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+// This collection of variables are applicable across a range of style files.
+
+
+// --------------------------------------------------------------------------
+// Colour Variables
+// --------------------------------------------------------------------------
+
+$Colour-black: #000 !default;
+$Colour-white: #fff !default;
+$Colour-offWhite: #F2F2F2;
+
+$Colour-base: #333 !default;
+$Colour-baseType: $Colour-base !default;
+$Colour-baseType--contrast: $Colour-white;
+
+$Colour-text: #666 !default;
+
+$Colour-primary: #27b3dc !default;
+$Colour-primary--darken: #1eb5ad !default;
+
+$Colour-secondary: #549CEF !default;
+$Colour-secondary--darken: #4784CB !default;
+
+$Colour-action: #2ba0c2;
+$Colour-action--dark: #1d6c83;
+
+$Colour-accent: #982256 !default;
+
+$Colour-border: rgba($Colour-base, .14) !default;
+
+$Colour-bg: #ececea !default;
+$Colour-bgDark: #333 !default;
+
+$Colour-inactive: #999 !default;
+$Colour-error: #EA4E35 !default;
+
+
+
+// --------------------------------------------------------------------------
+// Type Variables
+// --------------------------------------------------------------------------
+// TODO: Think of and document a better naming structure for type
+// Display
+// Heading
+// Copy
+
+//
+// Font
+//
+
+@import url(https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
+
+
+//
+// Font Families
+//
+
+$FF-light: 'Avenir LT W01 45 Book';
+$FF-lightItalic: 'AvenirLTW01-45BookObliq';
+$FF-book: 'Avenir LT W01 45 Book';
+$FF-bookItalic: 'AvenirLTW01-45BookObliq';
+$FF-roman: 'Avenir LT W01 65 Medium';
+$FF-romanItalic: 'AvenirLTW01-55Oblique';
+$FF-medium: 'Avenir LT W01 65 Medium';
+$FF-mediumItalic: 'AvenirLTW01-65MediumObl';
+$FF-heavy: 'Avenir LT W01 85 Heavy';
+$FF-heavyItalic: 'AvenirLTW01-85HeavyObli';
+$FF-black: 'Avenir LT W01 95 Black';
+$FF-blackItalic: 'AvenirLTW01-95BlackObli';
+
+$FF-heading: $FF-heavy, "Helvetica Neue", Helvetica, sans-serif !default;
+$FF-copy: $FF-medium, "Helvetica Neue", Helvetica, sans-serif !default;
+
+
+//
+// Font Weights
+//
+
+$FontWeight-bold: 700 !default;
+$FontWeight-medium: 500 !default;
+$FontWeight-normal: 400 !default;
+
+
+//
+// Display Sizing
+//
+
+$FontSize-d1: 200px !default;
+$LineHeight-d1: 1 !default;
+
+$FontSize-d2: 50px !default;
+$LineHeight-d2: 1.15 !default;
+
+$FontSize-d3: 40px !default;
+$LineHeight-d3: 1.4 !default;
+
+$FontSize-d4: 28px !default;
+$LineHeight-d4: 1.5 !default;
+
+
+//
+// Heading Sizing
+//
+
+$FontSize-h1: 32px !default;
+$LineHeight-h1: 1.25 !default;
+
+$FontSize-h2: 24px !default;
+$LineHeight-h2: 1.3 !default;
+
+$FontSize-h3: 18px !default;
+$LineHeight-h3: 1.4 !default;
+
+$FontSize-h4: 16px !default;
+$LineHeight-h4: 1.5 !default;
+
+$FontSize-h5: 14px !default;
+$LineHeight-h5: 1.5 !default;
+
+
+//
+// Copy Sizing
+//
+
+$FontSize-base: 16px !default;
+$LineHeight-base: 1.5 !default;
+
+$FontSize-c1: 18px !default;
+$LineHeight-c1: $LineHeight-base !default;
+
+$FontSize-c2: $FontSize-base !default;
+$FontSize-c3: 14px !default;
+$FontSize-c4: 12px !default;
+
+
+
+$Margin-heading: 0;
+$c-typeHeading-marginFirstChild: false;
+
+
+
+// --------------------------------------------------------------------------
+// Spacing Variables
+// --------------------------------------------------------------------------
+
+$Base-spacing-unit: 6px !default;
+$BSU: $Base-spacing-unit;
+
+
+// --------------------------------------------------------------------------
+// Breakpoint Variables
+// --------------------------------------------------------------------------
+
+$breakpoints: (
+  'mob': 320px,
+  'tab': 768px,
+  'lap': 1024px,
+  'desk': 1400px
+);
+
+
+// --------------------------------------------------------------------------
+// Layout Variables
+// --------------------------------------------------------------------------
+
+$Layout-boxSizing: border-box;
+$Layout-gutter: 16px;
+$Layout-maxWidth: 1040px + (4 * $Layout-gutter);
