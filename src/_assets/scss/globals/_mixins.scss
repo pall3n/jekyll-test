@@ -18,15 +18,3 @@
 		}
 	}
 }
-
-@mixin type($font-size: $Font-size-b, $line-height: false, $font-family: false) {
-	@include font-size($font-size);
-
-	@if ($line-height != false) {
-		line-height: $line-height;
-	}
-
-	@if ($font-family != false) {
-		font-family: $font-weight;
-	}
-}

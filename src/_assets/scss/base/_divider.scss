@@ -49,3 +49,7 @@
 .divider {
 	@include divider();
 }
+
+.dividerContrast {
+    @include divider($Colour-white);
+}

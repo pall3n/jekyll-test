@@ -109,15 +109,19 @@
     @include media('>=tab') {
         position: absolute;
         top: 0;
-        right: double($Layout-gutter) - $BSU;
+        right: $Layout-gutter - $BSU;
+    }
+
+    @include media('>=lap') {
+        right: double($Layout-gutter);
     }
 }
 
 .m-Header-navbarItemCopy {
     font-family: $FF-book;
     @include font-size($FontSize-c3);
-    padding-left: $BSU;
-    padding-right: $BSU;
+    padding-left: double($BSU);
+    padding-right: double($BSU);
 
     color: $Colour-offWhite;
 
@@ -126,8 +130,8 @@
 
 .m-Header-navbarItemLink {
     font-family: $FF-book;
-    padding-left: $BSU;
-    padding-right: $BSU;
+    padding-left: double($BSU);
+    padding-right: double($BSU);
 
     text-decoration: none;
     color: $Colour-offWhite;
@@ -156,7 +160,7 @@
 .m-Header-basket {
     position: absolute;
     bottom: - double($BSU);
-    right: double($Layout-gutter);
+    right: $Layout-gutter;
     padding: double($BSU) triple($BSU);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -165,11 +169,21 @@
     color: $Colour-offWhite;
     background-color: rgba($Colour-black, .2);
 
+    &:hover,
+    &:focus {
+        color: $Colour-white;
+    }
+
     @include hide('<tab');
+
+    @include media('>=lap') {
+        right: double($Layout-gutter);
+    }
 }
 
 .m-Header-basketIcon {
     display: inline-block;
+    vertical-align: -1px;
     position: relative;
     margin-right: double($BSU);
 
@@ -184,18 +198,30 @@
 
 .m-Header-basketIconBadge {
     @include font-size(10px);
-    font-family: $FF-medium;
+    font-family: $FF-heavy;
     position: absolute;
     top: - halve($BSU);
     right: 50%;
-    margin-right: -24px;
+    margin-right: -20px;
     color: #333;
     text-indent: 0;
     text-align: center;
-    width: 16px;
-    line-height: 16px;
+    width: 14px;
+    line-height: 14px;
     border-radius: 100%;
 
     background-color: #face3f;
     box-shadow: 1px 1px 2px rgba(0,0,0,.6);
+}
+
+.m-Header-basketText {
+    font-family: $FF-book;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease-in-out;
+
+    .m-Header-basket:hover &,
+    .m-Header-basket:focus & {
+        border-bottom-color: $Colour-white;
+        transition: border-color .2s ease-in-out;
+    }
 }

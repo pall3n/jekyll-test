@@ -1,0 +1,70 @@
+/*doc
+---
+title: Cutter
+name: cutter
+category: Base
+---
+
+Cutters provide a way of adding a border radius to elements
+
+```html_example
+	<div class="panel">
+		<img src="http://placehold.it/60x60" alt="" class="cutter">
+		<img src="http://placehold.it/60x60" alt="" class="cutter-s">
+		<img src="http://placehold.it/60x60" alt="" class="cutter-m">
+		<img src="http://placehold.it/60x60" alt="" class="cutter-circle">
+	</div>
+```
+*/
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+$Cutter-radius: 2px !default;
+$Cutter-radius--s: 6px !default;
+$Cutter-radius--m: 10px !default;
+$Cutter-radius--circle: 100% !default;
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin cutter($radius: $Cutter-radius) {
+	// display: inline-block;
+	overflow: hidden;
+
+	border-radius: $radius;
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.cutter {
+	@include cutter($Cutter-radius);
+}
+
+
+.cutter-s {
+	@include cutter($Cutter-radius--s);
+}
+
+
+.cutter-m {
+	@include cutter($Cutter-radius--m);
+}
+
+
+.cutter-circle {
+	@include cutter($Cutter-radius--circle);
+}

@@ -34,9 +34,9 @@
 	@if ($line-height != false) {
 		line-height: $line-height;
 	}
-	
+
 	@if ($font-weight != false) {
-		font-weight: $font-weight;
+		font-family: $font-weight;
 	}
 }
 
@@ -91,25 +91,53 @@
 	@include type($FontSize-c3);
 }
 
+.copy-xs {
+	@include font-size($FontSize-c4);
+}
+
+.type-p {
+	@include type($FontSize-c3);
+	color: $Colour-text;
+}
+
+.type-ps {
+	@include type($FontSize-c4);
+	color: $Colour-text;
+}
+
+
+//
+// link-text
+//
+
+.link-text {
+	color: $Colour-text;
+
+	&:hover,
+	&:focus {
+		color: $Colour-primary;
+	}
+}
+
 
 
 //
 // Text colour alternatives
 //
 
-.type--base {
+.type-base {
 	color: $Colour-baseType;
 }
 
-.type--text {
+.type-text {
 	color: $Colour-text;
 }
 
-.type--baseContrast {
+.type-baseContrast {
 	color: $Colour-baseType--contrast;
 }
 
-.type--primary {
+.type-primary {
 	color: $Colour-primary;
 }
 

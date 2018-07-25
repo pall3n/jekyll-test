@@ -41,6 +41,10 @@
 	margin-top: double($Base-spacing-unit);
 }
 
+.mt-3 {
+	margin-top: ($Base-spacing-unit * 3);
+}
+
 .mt-4 {
 	margin-top: ($Base-spacing-unit * 4);
 }

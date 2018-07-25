@@ -1,0 +1,131 @@
+/*doc
+---
+title: Dropdown
+name: dropdown
+category: Component
+---
+
+Signage
+
+```html_example
+	<div class="panel-i">
+		<div class="Dropdown">
+			<a href="#" class="Dropdown-link js-dropdown" data-target="Our_sites_list">
+				heathrowparking.com
+			</a>
+
+			<div class="Dropdown-body" id="Our_sites_list">
+				<ul class="list-reset">
+					<li><a href="http://www.bristolparking.com">bristolparking.com</a></li>
+					<li><a href="http://www.lutonparking.com">lutonparking.com</a></li>
+					<li><a href="http://www.stanstedparking.com">stanstedparking.com</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel-i">
+		<div class="Dropdown">
+			<a href="#" class="Dropdown-link js-dropdown" data-target="Our_sites_list">
+				heathrowparking.com
+			</a>
+
+			<div class="Dropdown-body Dropdown-body--above" id="Our_sites_list">
+				<ul class="list-reset">
+					<li><a href="http://www.bristolparking.com">bristolparking.com</a></li>
+					<li><a href="http://www.lutonparking.com">lutonparking.com</a></li>
+					<li><a href="http://www.stanstedparking.com">stanstedparking.com</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+```
+*/
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+@mixin dropdown-link() {
+	display: inline-block;
+	padding-top: $BSU;
+	padding-bottom: $BSU;
+	text-decoration: none;
+
+	color: $Colour-text;
+
+	&:hover,
+	&:focus {
+		color: $Colour-baseType;
+	}
+}
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Dropdown {
+	position: relative;
+	display: inline-block; //added for footer droopdown
+}
+
+.Dropdown-link {
+	@include dropdown-link();
+
+    &:after {
+        @include icon-font();
+        content: $icon-chevron-up;
+        margin-left: $BSU;
+
+        color: $Colour-action;
+    }
+
+	footer .panel\- & {
+		padding-top: 0;
+	}
+}
+
+.Dropdown-link--primary {
+	color: $Colour-primary;
+}
+
+
+.Dropdown-link--alt {
+	color: $Colour-primary;
+}
+
+
+//
+// Body
+//
+
+.Dropdown-body {
+	@include popover(120%);
+
+	&.is-overlay {
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+		color: $Colour-primary;
+	}
+}
+
+.Dropdown-body--above {
+	@include popover--top(120%);
+}

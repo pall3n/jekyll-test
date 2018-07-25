@@ -47,6 +47,8 @@
 	@include mediaElement();
 }
 
+.Media--s {}
+
 .Media-image,
 .Media-imageAlt {
 	img {
@@ -56,10 +58,18 @@
 
 .Media-image,
 .Media-imageMiddle {
-	margin-right: halve($Layout-gutter);
+	margin-right: $Layout-gutter;
 
 	@include media('>=tab') {
-		margin-right: $Layout-gutter;
+		margin-right: double($Layout-gutter);
+	}
+
+	.Media--s & {
+		margin-right: halve($Layout-gutter);
+
+		@include media('>=tab') {
+			margin-right: $Layout-gutter;
+		}
 	}
 }
 
@@ -69,10 +79,18 @@
 
 .Media-imageAlt,
 .Media-imageAltMiddle {
-	margin-left: halve($Layout-gutter);
+	margin-left: $Layout-gutter;
 
 	@include media('>=tab') {
-		margin-left: $Layout-gutter;
+		margin-left: double($Layout-gutter);
+	}
+
+	.Media--s & {
+		margin-left: halve($Layout-gutter);
+
+		@include media('>=tab') {
+			margin-left: $Layout-gutter;
+		}
 	}
 }
 

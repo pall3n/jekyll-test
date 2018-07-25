@@ -107,6 +107,21 @@ $icon-recommend: "\e909";
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@mixin icon-only($display: inline-block) {
+  @include clearfix();
+
+    position: relative;
+    display: $display;
+    text-indent: -9999px;
+
+    &:before {
+        float: right;
+        text-indent: 0;
+        display: block;
+        line-height: initial;
+    }
+}
+
 @mixin icon-inline() {
 	display: inline-block;
 	vertical-align: -2px;

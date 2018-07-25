@@ -87,9 +87,13 @@ $Panel-gutter--lap: $BSU * 8 !default;
 }
 
 .panel\- {
-	@include panel(halve($Panel-gutter), halve($Panel-gutter--tab), halve($Panel-gutter--lap));
+	@include panel(($Panel-gutter * .25), ($Panel-gutter--tab * .25), ($Panel-gutter--lap * .25));
 }
 
 .panel\+ {
+	@include panel(($Panel-gutter * 1.5), ($Panel-gutter--tab * 1.5), ($Panel-gutter--lap * 1.5));
+}
+
+.panel\+\+ {
 	@include panel(double($Panel-gutter), double($Panel-gutter--tab), double($Panel-gutter--lap));
 }

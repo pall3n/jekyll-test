@@ -25,12 +25,17 @@
 // --------------------------------------------------------------------------
 // MIXINS
 // --------------------------------------------------------------------------
-@mixin container() {
-    max-width: $Layout-maxWidth;
+@mixin container($widthMod: 0) {
+    max-width: $Layout-maxWidth + $widthMod;
     margin-left: auto;
     margin-right: auto;
-    padding-left: double($Layout-gutter);
-    padding-right: double($Layout-gutter);
+    padding-left: $Layout-gutter;
+    padding-right: $Layout-gutter;
+
+    @include media('>=lap') {
+        padding-left: double($Layout-gutter);
+        padding-right: double($Layout-gutter);
+    }
 }
 
 

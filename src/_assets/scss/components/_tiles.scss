@@ -1,0 +1,96 @@
+// --------------------------------------------------------------------------
+// TILES COMPONENT
+// --------------------------------------------------------------------------
+//
+// Component for styling a panel and grid combination
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Tiles {
+    border-top: 2px solid $Colour-white;
+    border-bottom: 2px solid $Colour-white;
+    background-color: $Colour-offWhite;
+}
+
+
+.Tiles-row {
+    max-width: $Layout-maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media('>=tab') {
+        // display: flex;
+        // align-items: stretch;
+        display: table;
+    }
+}
+
+
+.Tiles-column {
+    padding: $Panel-gutter double($Panel-gutter);
+
+    @include media('<tab') {
+        + .Tiles-column {
+            border-top: 2px solid $Colour-white;
+        }
+    }
+
+    @include media('>=tab') {
+        // display: flex;
+        display: table-cell;
+        vertical-align: middle;
+        padding-top: $Panel-gutter--tab * 1.5;
+        padding-bottom: $Panel-gutter--tab * 1.5;
+
+        border-right: 1px solid $Colour-white;
+
+        + .Tiles-column {
+            border-left: 1px solid $Colour-white;
+        }
+
+        &:last-of-type {
+            border-right-color: transparent;
+        }
+    }
+
+    @include media('>=lap') {
+        // padding-left: ($Panel-gutter--tab * 4);
+        // padding-right: ($Panel-gutter--tab * 4);
+        padding-left: double($Panel-gutter--tab);
+		padding-right: double($Panel-gutter--tab);
+    }
+}
+
+
+// .Tiles-body {
+//     @include media('>=tab') {
+//         align-self: center;
+//     }
+// }

@@ -2,14 +2,14 @@
 // NAV COMPONENT
 // --------------------------------------------------------------------------
 //
-// Styling for multiple types of navigation
+// Nav is an modifiable component which can be used for all navigation requirements
+// such as lists, and bars.
 //
 
 /**
  * DEPENDENCIES
  * - none
  */
-
 
 // --------------------------------------------------------------------------
 // VARIABLES
@@ -33,4 +33,93 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-.Nav {}
+.Nav {
+	@include list-reset();
+}
+
+.Nav--s {
+	@include font-size($FontSize-c4);
+}
+
+.Nav--list {
+    + .Nav {
+        margin-top: ($BSU * 3);
+    }
+}
+
+.Nav--inline {
+	@include clearfix();
+
+	.Nav-item {
+		float: left;
+	}
+
+	.Nav-link {
+		padding: halve($Layout-gutter);
+	}
+}
+
+.Nav-item {
+    .Nav--list & {
+		+ .Nav-item {
+			margin-top: $BSU;
+		}
+	}
+
+    .Nav--list.Nav--s & {
+		+ .Nav-item {
+			margin-top: 0;
+		}
+	}
+}
+
+// footer .fire-navigation > li {
+// 	@include type($FontSize-c3);
+//
+// 	+ li {
+// 		margin-top: $BSU;
+// 	}
+// }
+
+.Nav-heading {
+    font-family: $FF-heavy;
+	margin-bottom: $BSU;
+
+	.Nav--list.Nav--s & {
+		margin-bottom: 0;
+	}
+}
+
+.Nav-link {
+    font-family: $FF-copy;
+    line-height: 1.2;
+
+	color: $Colour-text;
+	transition: background-color .3s;
+
+	&:hover,
+	&:focus {
+		color: $Colour-primary;
+	}
+}
+
+.Nav-link--action {
+    font-family: $FF-heavy;
+    color: $Colour-primary;
+
+	&:hover,
+	&:focus {
+		color: $Colour-text;
+	}
+}
+
+// footer .fire-navigation a.more,
+// footer a.more {
+// 	@include type($FontSize-c3);
+// 	color: $Colour-primary;
+//
+// 	&:hover,
+// 	&:focus {
+// 		color: $Colour-text;
+// 	}
+// }

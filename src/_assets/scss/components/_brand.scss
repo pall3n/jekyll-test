@@ -48,6 +48,11 @@ $Brand-icon: url('https://s3.amazonaws.com/theme-media/img/brand/heathrowparking
     background-position: left center;
     background-size: auto 100%;
 
+    &:hover,
+    &:focus {
+        color: $Colour-white;
+    }
+
     @include media('>=tab') {
         display: flex;
         align-items: center;

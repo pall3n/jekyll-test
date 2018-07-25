@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// FOOTER MODULE
+// GRID COMPONENT
 // --------------------------------------------------------------------------
 //
-// Module for footer styling
+// Flexible grid component
 //
 
 /**
@@ -28,17 +28,16 @@
 // --------------------------------------------------------------------------
 
 @mixin grid() {
-	max-width: $Layout-maxWidth;
-	margin-left: auto;
-	margin-right: auto;
-	letter-spacing: -0.31em;
-	box-sizing: border-box;
-    text-rendering: optimizespeed;
+	// max-width: $Layout-maxWidth;
+	// margin-left: auto;
+	// margin-right: auto;
+	// padding-left: $Layout-gutter;
+	// padding-right: $Layout-gutter;
+	@include container(double($Layout-gutter));
 
-    @include media('>=tab') {
-    	padding-left: $Layout-gutter * 2;
-		padding-right: $Layout-gutter * 2;
-    }
+	letter-spacing: -0.31em;
+	// box-sizing: border-box;
+    text-rendering: optimizespeed;
 
 	// @include media('>=lap') {
 	// 	padding-left: $Layout-gutter--lap * 2;
@@ -49,7 +48,7 @@
 		margin-left: -($Layout-gutter);
 		margin-right: -($Layout-gutter);
 
-		@include media('>=tab') {
+		@include media('>=lap') {
 	    	margin-left: -($Layout-gutter * 3);
 			margin-right: -($Layout-gutter * 3);
 	    }
@@ -127,7 +126,9 @@
 
 .Grid--panels {
 	@include media('>=tab') {
-		display: table;
+		// display: table;
+		display: flex;
+		align-items: center;
 	}
 
 	.Grid-column {
@@ -140,8 +141,8 @@
 		}
 
 		@include media('>=tab') {
-			display: table-cell;
-			vertical-align: middle;
+			// display: table-cell;
+			// vertical-align: middle;
 
 			// padding: ($Panel-gutter--tab) ($Panel-gutter--tab);
 

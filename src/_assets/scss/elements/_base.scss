@@ -49,6 +49,14 @@ $body-backgroundColour: $Colour-offWhite !default;
 
 html {
 	font-size: percentage(strip-unit($body-fontSize) / 16);
+
+	// @include media('>=mob', '<tab') {
+	// 	font-size: percentage(strip-unit(14px) / 16);
+	// }
+
+	@include media('>=tab', '<lap') {
+		font-size: percentage(strip-unit(14px) / 16);
+	}
 }
 
 body {

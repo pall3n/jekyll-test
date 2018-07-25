@@ -1,0 +1,168 @@
+/*doc
+---
+title: Alert
+name: alert
+category: Component
+---
+
+Used for displaying alerts in panels.
+
+```html_example
+	<div class="Alert"></div>
+```
+*/
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// EXTENDS
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Alert {
+   position: relative;
+   padding: 12px 30px;
+
+   background-color: $Colour-white;
+
+   body >& {
+      margin-top: -5px;
+   }
+}
+
+.Alert--cookies {
+   padding: 28px 20px;
+   text-align: center;
+
+   @include media('>=tab') {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9998;
+      padding: 24px 30px;
+   }
+}
+
+.Alert--success {
+   background-color: $Colour-success;
+   color: $Colour-white;
+}
+
+.Alert--voucher {
+   background-color: $Colour-action;
+   color: $Colour-white;
+}
+
+.Alert-body {
+   max-width: 500px;
+   margin-left: auto;
+   margin-right: auto;
+
+   .Media-bodyMiddle {
+      max-width: 79%;
+
+      @include media('>=tab') {
+         max-width: 82%;
+      }
+   }
+
+   .Alert--cookies & {
+      max-width: 1040px;
+   }
+}
+
+
+.Alert-icon--circle {
+   @include cutter($Cutter-radius--circle);
+   @include font-size(28px);
+
+   display: inline-block;
+   text-align: center;
+   width: 44px + double($Base-spacing-unit);
+   height: 44px + double($Base-spacing-unit);
+   line-height: 44px + double($Base-spacing-unit);
+
+   border: 1px solid $Colour-white;
+}
+
+.Alert-dismiss {
+   @include icon-only;
+   position: absolute;
+   top: 6px;
+   right: 6px;
+
+   color: $Colour-primary;
+   border-radius: 50%;
+
+   transition: all .3s;
+
+   @include media('>=tab') {
+      top: $Base-spacing-unit * 2;
+      right: 25%;
+   }
+
+   &:hover {
+      background-color: $Colour-primary;
+      color: $Colour-white;
+
+      transition: all .3s;
+   }
+
+   &:before {
+      @include icon-font();
+
+      content: $icon-close;
+      @include font-size(10px);
+
+      text-align: center;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+   }
+
+   .Alert--success &,
+   .Alert--voucher & {
+      color: $Colour-white;
+
+      &:hover,
+      &:focus {
+         background-color: $Colour-white;
+         color: $Colour-primary;
+      }
+   }
+
+   .Alert--cookies & {
+      position: relative;
+      top: auto;
+      right: auto;
+      display: inline-block;
+      vertical-align: -6px;
+      margin-left: 10px;
+
+      @include media('>=tab') {
+         vertical-align: -7px;
+      }
+
+      &:before {
+         @include font-size(14px);
+      }
+   }
+}

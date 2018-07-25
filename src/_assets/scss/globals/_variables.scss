@@ -30,12 +30,15 @@ $Colour-action--dark: #1d6c83;
 $Colour-accent: #982256 !default;
 
 $Colour-border: rgba($Colour-base, .14) !default;
+$Colour-border--contrast: $Colour-white !default;
+$Colour-border--alt: #c3c3c3;
 
 $Colour-bg: #ececea !default;
 $Colour-bgDark: #333 !default;
 
 $Colour-inactive: #999 !default;
 $Colour-error: #EA4E35 !default;
+$Colour-success: #75A837 !default;
 
 
 
