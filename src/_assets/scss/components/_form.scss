@@ -1,0 +1,107 @@
+// --------------------------------------------------------------------------
+// FORM COMPONENT
+// --------------------------------------------------------------------------
+//
+// Form component
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Form {}
+
+.Form-field {
+    @include font-size($FontSize-c3);
+
+    + .Form-field {
+        margin-top: double($BSU);
+    }
+}
+
+.Form-label {
+    font-family: $FF-heavy;
+
+    color: $Colour-text;
+}
+
+.Form-inputWrap {
+    position: relative;
+
+    &:before {
+        @include icon-font();
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: double($BSU);
+
+        color: $Colour-text;
+    }
+
+    .Form-input,
+    &.Form-select select {
+        padding-left: double($BSU) + 14px + ($BSU);
+    }
+}
+
+//
+// Field types
+//
+
+.Form-input {
+    @include input();
+}
+
+.Form-textarea {
+    @include input(4);
+}
+
+.Form-check {}
+
+.Form-select {
+    position: relative;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: double($BSU);
+
+        border-top: 4px solid #666;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        pointer-events: none;
+    }
+
+    select {
+        @include input();
+        padding-right: double($BSU) + 8px + ($BSU);
+
+        -webkit-appearance: none;
+        outline: 0;
+    }
+}

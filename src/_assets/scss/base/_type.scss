@@ -78,7 +78,7 @@
 
 .typeCopy,
 .copy {
-	@include type($FontSize-c2);
+	@include type($FontSize-c3);
 }
 
 .typeCopy-l,
@@ -88,11 +88,7 @@
 
 .typeCopy-s,
 .copy-s {
-	@include type($FontSize-c3);
-}
-
-.copy-xs {
-	@include font-size($FontSize-c4);
+	@include type($FontSize-c4);
 }
 
 .type-p {

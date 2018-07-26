@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// BUTTON BASE
+// SEARCH MODULE
 // --------------------------------------------------------------------------
 //
-// The .button class can be used to style markup to look like a button.
+// Search module
 //
 
 /**
@@ -26,41 +26,31 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin button($padding: ($Base-spacing-unit * 1.5) ($Base-spacing-unit * 4), $font-size: $FontSize-c1, $line-height: 24px) {
-	@include font-size($font-size);
-	line-height: $line-height;
-	font-family: $FF-heavy;
-	display: inline-block;
-	padding: $padding;
-
-	text-decoration: none;
-	text-shadow: none;
-	border: 1px solid $Colour-border;
-	border-radius: 3px;
-}
-
-@mixin button--paint($bg: $Colour-buttonBG, $border: $Colour-buttonBorder, $color: $Colour-white) {
-	background-color: $bg;
-	border-color: $border;
-	color: $color;
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.button {
-	@include button();
-}
+.m-Search {
+    // padding: $Column-gutter;
 
-.button--primary {
-	@include button--paint();
-}
+    // background-color: $Colour-searchBG;
 
-// .button--accent {
-// 	background-color: $Colour-accent;
-// 	border-color: $Colour-accent;
-// 	color: $Colour-white;
-// }
+    .Form-submit {
+        @include button--paint();
+        @include font-size(21px);
+        width: 100%;
+        margin-top: $BSU;
+
+        &:before {
+            @include icon-font();
+            content: $icon-search;
+            font-size: 120%;
+
+            display: inline-block;
+            vertical-align: -3px;
+            margin-right: double($BSU);
+        }
+    }
+}

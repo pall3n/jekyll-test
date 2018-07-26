@@ -31,48 +31,62 @@ A simple body for displaying hidden items such as dropdowns, extra information, 
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin popover($top: 100%, $left: 0) {
+@mixin popover-base($padding: $Base-spacing-unit * 4) {
 	position: absolute;
-    top: $top;
-    left: $left;
-    margin-top: 5px;
 
     display: none;
 	width: 180px;
-	padding: ($Base-spacing-unit * 4);
+	padding: $padding;
 	z-index: 99;
 
 	background-color: $Colour-white;
-	border: 1px solid $Colour-border--alt;
+	border: 1px solid $Colour-borderSolid;
 	border-radius: 6px;
 
 	&:before {
         content: '';
         display: block;
-        transform: rotate(-45deg);
+        // transform: rotate(-45deg);
 
         position: absolute;
-        top: -7px;
-        left: 14px;
+        // top: -7px;
+        // left: 14px;
 
-        width: 11px;
-        height: 11px;
+        width: 9px;
+        height: 9px;
 
         background-color: $Colour-white;
-        border-top: 1px solid $Colour-border--alt;
-        border-right: 1px solid $Colour-border--alt;
+        border-top: 1px solid $Colour-borderSolid;
+        border-right: 1px solid $Colour-borderSolid;
+    }
+}
+
+@mixin popover($padding: $Base-spacing-unit * 4) {
+	@include popover-base($padding);
+    top: 120%;
+	top: calc(100% + 6px);
+    left: -9px;
+    margin-top: 5px;
+
+	&:before {
+        transform: rotate(-45deg);
+
+        top: -5px;
+        left: 12px;
     }
 }
 
 
-@mixin popover--top($bottom: 100%) {
-    top: auto;
-    bottom: $bottom;
+
+@mixin popover-top($padding: $Base-spacing-unit * 4) {
+	@include popover-base($padding);
+    bottom: 120%;
+	bottom: calc(100% + 6px);
+	left: -9px;
 
 	&:before {
-        position: absolute;
-        top: auto;
-        bottom: -7px;
+        bottom: -5px;
+        left: 12px;
 
 		transform: rotate(135deg);
     }

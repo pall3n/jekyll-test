@@ -60,10 +60,13 @@
 @import "components/_brand";
 @import "components/_alert.scss";
 @import "components/_dropdown";
+@import "components/_form";
 @import "components/_grid";
 @import "components/_iconNav";
 @import "components/_media-element";
 @import "components/_nav";
+@import "components/_tabs";
+@import "components/_tooltip";
 @import "components/_tiles";
 
 
@@ -74,3 +77,5 @@
 
 @import "modules/_footer";
 @import "modules/_header";
+@import "modules/_hero";
+@import "modules/_search";

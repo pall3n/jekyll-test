@@ -65,6 +65,7 @@
 
 
 .m-Header-taskbar {
+    z-index: 999;
     background-color: $Colour-bgDark;
 
     @include hide('>=tab');

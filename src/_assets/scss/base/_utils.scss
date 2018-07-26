@@ -56,6 +56,10 @@
 	}
 }
 
+.hide-mob {
+	@include hide('<tab');
+}
+
 .hide-tab {
 	@include hide('>=tab');
 }

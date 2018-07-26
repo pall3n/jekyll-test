@@ -27,9 +27,13 @@ $Colour-secondary--darken: #4784CB !default;
 $Colour-action: #2ba0c2;
 $Colour-action--dark: #1d6c83;
 
+$Colour-buttonBG: #52a1bf;
+$Colour-buttonBorder: #4c94b0;
+
 $Colour-accent: #982256 !default;
 
 $Colour-border: rgba($Colour-base, .14) !default;
+$Colour-borderSolid: #dedede;
 $Colour-border--contrast: $Colour-white !default;
 $Colour-border--alt: #c3c3c3;
 
@@ -39,6 +43,12 @@ $Colour-bgDark: #333 !default;
 $Colour-inactive: #999 !default;
 $Colour-error: #EA4E35 !default;
 $Colour-success: #75A837 !default;
+
+$Colour-heroBgTabs: #b9b9b9;
+$Colour-searchBG: #dfdfdf;
+
+$Colour-inputBG: #f8f8f8;
+$Colour-inputBorder: #b8b8b8;
 
 
 

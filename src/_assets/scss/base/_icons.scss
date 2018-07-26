@@ -63,7 +63,7 @@ $icon-arrow-left: "\f060";
 $icon-arrow-right: "\f061";
 $icon-arrow-up: "\f062";
 $icon-arrow-down: "\f063";
-$icon-plane: "\f072";
+// $icon-plane: "\f072";
 $icon-chevron-up: "\f077";
 $icon-chevron-down: "\f078";
 $icon-automobile: "\f1b9";
@@ -92,7 +92,7 @@ $icon-recommend: "\e909";
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-	// pointer-events: none;
+	pointer-events: none;
 
 	/* Enable Ligatures ================ */
 	-webkit-font-feature-settings: "liga";
@@ -255,9 +255,6 @@ $icon-recommend: "\e909";
 }
 .icon-arrow-down:before {
   content: $icon-arrow-down;
-}
-.icon-plane:before {
-  content: $icon-plane;
 }
 .icon-chevron-up:before {
   content: $icon-chevron-up;

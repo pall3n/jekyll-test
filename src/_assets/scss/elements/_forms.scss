@@ -1,46 +1,13 @@
-// FORM ELEMENTS
+// --------------------------------------------------------------------------
+// FORMS ELEMENTS
+// --------------------------------------------------------------------------
 //
-// Styling for form elements to give a consistant base design across all form elements.
+// Form elements
 //
-// DEPENDENCIES </br>
-// - base/type
-//
-// EXTENDS </br>
-// - none
-//
-// VARIABLES </br>
-// - $input-padding: ($Base-spacing-unit / 2) ($Base-spacing-unit * 1.5); </br>
-// - $input-height: $Base-spacing-unit * 4; </br>
-// - $c-input-outline: none;
-// -
-// - $input-border: 1px solid $Colour-border; </br>
-// - $c-input-borderColour--focus: $Colour-base; </br>
-// - $c-input-borderStyle--focus: false;
-// -
-// - $input-borderRadius: 4px; </br>
-// - $input-backgroundColour: $Colour-white;
-//
-// .object-classes	- class description
-//
-// Markup:
-// <form>
-//	<div class="formfield">
-//		<label for="demoinput">Standard label styling</label>
-//		<input type="text" placeholder="Demo placeholder..."/>
-//	</div>
-//	<div class="formfield">
-//		<label for="demoTextarea">Standard label styling</label>
-//		<textarea placeholder="Demo placeholder..." id="demoTextarea"></textarea>
-//	</div>
-//	<div class="formfield">
-//		<input type="submit">
-//	</div>
-//	</form>
-//
-// Styleguide 18.0.0.
 
-/*
- * TODO: Make button and input styling based on same styles so that when used together they work nicely
+/**
+ * DEPENDENCIES
+ * - none
  */
 
 
@@ -72,58 +39,6 @@ $inputFormPlaceholder-colour: $Colour-inactive !default;
 
 
 // --------------------------------------------------------------------------
-// EXTENDABLES
-// --------------------------------------------------------------------------
-
-/**
- * input Base extend Notes
- * These styles have been set to give a base style which is consistant across
- * input types
- *
- * TODO: See if a hieght is needed to keep consistancy across all input types
- */
-
-%input-base {
-	// @extend %input;
-
-	// height: $input-height;
-	border-color: $inputForm-borderColour;
-	@include conditional( $c-inputForm-backgroundColour ) { background: $c-inputForm-backgroundColour; };
-
-	&:focus {
-		@include conditional( $c-inputForm-borderColour--focus ) { border-color: $c-inputForm-borderColour--focus; }
-		@include conditional( $c-inputForm-backgroundColour--focus ) { background-color: $c-inputForm-backgroundColour--focus; }
-	}
-
-}
-
-
-/**
- * Placeholder extend Notes
- * Sets the placeholder text colour
- */
-
-%input-placeholder {
-	::-webkit-input-placeholder {
-	   color: $inputFormPlaceholder-colour;
-	}
-
-	:-moz-placeholder { /* Firefox 18- */
-	   color: $inputFormPlaceholder-colour;
-	}
-
-	::-moz-placeholder {  /* Firefox 19+ */
-	   color: $inputFormPlaceholder-colour;
-	}
-
-	:-ms-input-placeholder {
-	   color: $inputFormPlaceholder-colour;
-	}
-}
-
-
-
-// --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
@@ -133,9 +48,7 @@ $inputFormPlaceholder-colour: $Colour-inactive !default;
  * Very simple base styles which can be built apon with formfield classes
  */
 
-label {
-	// @extend %typeLabel;
-}
+label {}
 
 
 
@@ -152,12 +65,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 textarea,
-select {
-	// @extend %input-base;
-	// @extend %input-placeholder;
-
-	// @include conditional( $input-padding ) { padding: $input-padding };
-}
+select {}
 
 
 
@@ -167,8 +75,8 @@ select {
  */
 
 input[type="submit"] {
-	// @extend %button;
-	// @extend %button--primary;
+    @include button();
+    @include button--paint();
 }
 
 
@@ -178,9 +86,7 @@ input[type="submit"] {
  *
  */
 
-select {
-	// @extend %input-base;
-}
+select {}
 
 
 
@@ -189,8 +95,4 @@ select {
  *
  */
 
-textarea {
-	// height: $multilineInputForm-multiplier;
-
-	// @extend %input--multiline;
-}
+textarea {}

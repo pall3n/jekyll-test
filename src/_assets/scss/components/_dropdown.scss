@@ -110,7 +110,7 @@ Signage
 //
 
 .Dropdown-body {
-	@include popover(120%);
+	@include popover();
 
 	&.is-overlay {
 		display: block;
@@ -122,6 +122,15 @@ Signage
 	}
 }
 
-.Dropdown-body--above {
-	@include popover--top(120%);
+.Dropdown-bodyAbove {
+	@include popover-top();
+
+	&.is-overlay {
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+		color: $Colour-primary;
+	}
 }
