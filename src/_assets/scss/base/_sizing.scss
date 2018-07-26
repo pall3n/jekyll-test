@@ -71,6 +71,12 @@ $widths-columns: (
 
 @include widths($widths-columns);
 
+.s-30--tab {
+    @include media('>=tab') {
+        width: 30% !important;
+    }
+}
+
 @each $breakpoint in $breakpoints {
 
   // Get the name of the breakpoint.

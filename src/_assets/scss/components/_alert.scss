@@ -51,14 +51,19 @@ Used for displaying alerts in panels.
    padding: 28px 20px;
    text-align: center;
 
-   @include media('>=tab') {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 9998;
-      padding: 24px 30px;
-   }
+    @include media('>=tab') {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9998;
+        padding: 18px 30px;
+    }
+
+    @include media('>=lap') {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
 }
 
 .Alert--success {

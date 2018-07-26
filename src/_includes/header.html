@@ -6,7 +6,7 @@
         <a class="Brand" href="index.html">
            <span class="Brand-copy">
               <div class="Brand-airport">{{ site.airport }}</div>
-              <span class="Brand-site">Parking.com</span>
+              <span class="Brand-site">{{ site.websiteSuffix }}</span>
            </span>
         </a>
 
@@ -45,7 +45,7 @@
                 </ul>
 
                 <ul class="m-Header-navbar m-Header-navbar--secondary">
-                    <li class="m-Header-navbarItemCopy">Reservations <strong>0845 678 678</strong></li>
+                    <li class="m-Header-navbarItemCopy">Reservations <strong>{{ site.telephone }}</strong></li>
                     <li><a href="#" class="m-Header-navbarItemLink">Manage Booking</a></li>
                 </ul>
             </nav>

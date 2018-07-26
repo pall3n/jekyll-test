@@ -32,18 +32,17 @@
 // STYLING
 // --------------------------------------------------------------------------
 .m-Footer {
-    // @include divider($Colour-white);
-
-    // background-color: $Colour-offWhite;
-    // @include media('<tab') {
-
-    // }
-
     .has-cookieNotice & {
-        padding-bottom: 80px;
+        @include media('>=tab') {
+            padding-bottom: 81px;
+        }
+
+        @include media('>=1075px') {
+            padding-bottom: 72px;
+        }
+    }
+
+    .Dropdown-link {
+        padding: 0;
     }
 }
-
-// .m-Footer-panels {
-    // display: flex;
-// }

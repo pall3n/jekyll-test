@@ -50,6 +50,12 @@
 	display: block;
 }
 
+.block-tab {
+	@include media('>=tab', '<lap') {
+		display: block;
+	}
+}
+
 .hide-tab {
 	@include hide('>=tab');
 }

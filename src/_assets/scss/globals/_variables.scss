@@ -172,3 +172,13 @@ $breakpoints: (
 $Layout-boxSizing: border-box;
 $Layout-gutter: 16px;
 $Layout-maxWidth: 1040px + (4 * $Layout-gutter);
+
+
+// --------------------------------------------------------------------------
+// Layout Variables
+// --------------------------------------------------------------------------
+
+$Grid-gutter--tab: $Layout-gutter * .5;
+$Grid-gutter--lap: $Layout-gutter * 2;
+
+$Column-gutter: $Layout-gutter;

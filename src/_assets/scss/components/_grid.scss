@@ -16,7 +16,6 @@
 // --------------------------------------------------------------------------
 
 
-
 // --------------------------------------------------------------------------
 // FUNCTIONS
 // --------------------------------------------------------------------------
@@ -28,29 +27,40 @@
 // --------------------------------------------------------------------------
 
 @mixin grid() {
-	// max-width: $Layout-maxWidth;
-	// margin-left: auto;
-	// margin-right: auto;
-	// padding-left: $Layout-gutter;
-	// padding-right: $Layout-gutter;
-	@include container(double($Layout-gutter));
+	max-width: $Layout-maxWidth + double($Grid-gutter--lap);
+    margin-left: auto;
+    margin-right: auto;
 
 	letter-spacing: -0.31em;
-	// box-sizing: border-box;
     text-rendering: optimizespeed;
 
-	// @include media('>=lap') {
-	// 	padding-left: $Layout-gutter--lap * 2;
-	// 	padding-right: $Layout-gutter--lap * 2;
-	// }
+	@include media('>=tab') {
+        padding-left: $Grid-gutter--tab;
+        padding-right: $Grid-gutter--tab;
+    }
+
+    @include media('>=lap') {
+        padding-left: $Grid-gutter--lap;
+        padding-right: $Grid-gutter--lap;
+    }
 
 	.Grid {
 		margin-left: -($Layout-gutter);
 		margin-right: -($Layout-gutter);
 
+		@include media('<tab') {
+			margin-top: -($Layout-gutter);
+			margin-bottom: -($Layout-gutter);
+		}
+
+		@include media('>=tab') {
+			margin-left: - ($Column-gutter + $Grid-gutter--tab);
+			margin-right: - ($Column-gutter + $Grid-gutter--tab);
+		}
+
 		@include media('>=lap') {
-	    	margin-left: -($Layout-gutter * 3);
-			margin-right: -($Layout-gutter * 3);
+	    	margin-left: -($Column-gutter + $Grid-gutter--lap);
+			margin-right: -($Column-gutter + $Grid-gutter--lap);
 	    }
 
 		// @include media('>=lap') {
@@ -64,8 +74,8 @@
 	display: inline-block;
 	box-sizing: border-box;
 	width: 100%;
-	padding-left: $Layout-gutter;
-	padding-right: $Layout-gutter;
+	padding-left: $Column-gutter;
+	padding-right: $Column-gutter;
 	vertical-align: top;
 
 	letter-spacing: normal;
@@ -73,8 +83,8 @@
 	text-rendering: auto;
 
 	@include media('<tab') {
-		padding-top: ($Layout-gutter);
-		padding-bottom: ($Layout-gutter);
+		padding-top: $Column-gutter;
+		padding-bottom: $Column-gutter;
 	}
 
 	// @include media('>=lap') {
@@ -94,8 +104,8 @@
 	text-rendering: auto;
 
 	@include media('>=tab') {
-		padding-top: ($Layout-gutter * 1.5);
-		padding-bottom: ($Layout-gutter * 1.5);
+		padding-top: ($Layout-gutter);
+		padding-bottom: ($Layout-gutter);
 	}
 
 	// @include media('>=lap') {

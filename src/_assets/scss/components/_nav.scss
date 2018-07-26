@@ -66,20 +66,19 @@
 		}
 	}
 
-    .Nav--list.Nav--s & {
-		+ .Nav-item {
-			margin-top: 0;
-		}
-	}
+	// RM .Nav-item class from markup
+    // .Nav--list.Nav--s & {
+	// 	+ .Nav-item {
+	// 		margin-top: 0;
+	// 	}
+	// }
 }
 
-// footer .fire-navigation > li {
-// 	@include type($FontSize-c3);
-//
-// 	+ li {
-// 		margin-top: $BSU;
-// 	}
-// }
+.Nav-break--tab {
+	@include media('>=tab', '<lap') {
+		margin-top: $BSU;
+	}
+}
 
 .Nav-heading {
     font-family: $FF-heavy;
@@ -112,14 +111,3 @@
 		color: $Colour-text;
 	}
 }
-
-// footer .fire-navigation a.more,
-// footer a.more {
-// 	@include type($FontSize-c3);
-// 	color: $Colour-primary;
-//
-// 	&:hover,
-// 	&:focus {
-// 		color: $Colour-text;
-// 	}
-// }

@@ -16,10 +16,10 @@
 // --------------------------------------------------------------------------
 
 
+
 // --------------------------------------------------------------------------
 // FUNCTIONS
 // --------------------------------------------------------------------------
-
 
 
 // --------------------------------------------------------------------------
@@ -29,12 +29,17 @@
     max-width: $Layout-maxWidth + $widthMod;
     margin-left: auto;
     margin-right: auto;
-    padding-left: $Layout-gutter;
-    padding-right: $Layout-gutter;
+    // padding-left: $Layout-gutter;
+    // padding-right: $Layout-gutter;
+
+    @include media('>=tab') {
+        padding-left: $Column-gutter + $Grid-gutter--tab;
+        padding-right: $Column-gutter + $Grid-gutter--tab;
+    }
 
     @include media('>=lap') {
-        padding-left: double($Layout-gutter);
-        padding-right: double($Layout-gutter);
+        padding-left: $Grid-gutter--lap;
+        padding-right: $Grid-gutter--lap;
     }
 }
 

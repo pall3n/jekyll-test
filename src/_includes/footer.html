@@ -36,15 +36,15 @@
 
     <div class="panel">
         <div class="Grid">
-            <div class="Grid-column s-4/6--tab s-4/6--lap">
+            <div class="Grid-column s-3/4--tab s-2/3--lap">
                 <div class="Grid">
-                    <div class="Grid-column s-1/2 s-1/4--tab s-1/4--lap">
+                    <div class="Grid-column s-1/2 s-30--tab s-1/4--lap">
                         <ul class="Nav Nav--list Nav--s">
-                            <li class="Nav-heading">Heathrowparking.com</li>
-                            <li class="Nav-item">
+                            <li class="Nav-heading">{{ site.website }}</li>
+                            <li>
                                 <a href="faq.html" class="Nav-link">FAQs</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">News</a>
                             </li>
                         </ul>
@@ -53,44 +53,44 @@
                     <div class="Grid-column s-1/2 s-1/4--tab s-1/4--lap">
                         <ul class="Nav Nav--list Nav--s">
                             <li class="Nav-heading">Airport Parking</li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Meet and Greet</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Park and Ride</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Hotel Park and Fly</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Valet Parking</a>
                             </li>
                         </ul>
 
                         <ul class="Nav Nav--list Nav--s">
                             <li class="Nav-heading">Deals</li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Best Deals</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="Grid-column s-1/2 s-1/4--tab s-1/4--lap">
+                    <div class="Grid-column s-1/2 s-1/5--tab s-1/4--lap">
                         <ul class="Nav Nav--list Nav--s">
                             <li class="Nav-heading">Terminals</li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Terminal 1</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Terminal 2</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Terminal 3</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Terminal 4</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="/" class="Nav-link">Terminal 5</a>
                             </li>
                         </ul>
@@ -98,7 +98,7 @@
 
                         <ul class="Nav Nav--list Nav--s">
                             <li class="Nav-heading">Information</li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="shuttle-buses.html" class="Nav-link">Shuttle Buses</a>
                             </li>
                         </ul>
@@ -107,28 +107,28 @@
                     <div class="Grid-column s-1/2 s-1/4--tab s-1/4--lap">
                         <ul class="Nav Nav--list Nav--s">
                             <li class="Nav-heading">Parking Providers</li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">Official (BAA)</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">NCP</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">Purple Parking</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">LHR Meet and Greet</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">Meteor Meet and Greet</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">Click Park</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a href="#" class="Nav-link">Perfect Parking</a>
                             </li>
-                            <li class="Nav-item">
+                            <li>
                                 <a class="Nav-link Nav-link--action" href="provider-list.html">View more</a>
                             </li>
                         </ul>
@@ -136,11 +136,11 @@
                 </div>
             </div>
 
-            <div class="Grid-column s-2/6--tab s-2/6--lap">
+            <div class="Grid-column s-1/4--tab s-1/3--lap">
                 <ul class="Nav Nav--list Nav--s">
                     <li class="Nav-heading">Contact Us</li>
-                    <li class="Nav-item">Reservations 01279 882 333</li>
-                    <li class="Nav-item">Email <a href="" class="Nav-link">support@stanstedparking.com</a></li>
+                    <li>Reservations <a href="tel:01279 882 333" class="Nav-link block-tab">{{ site.telephone }}</a></li>
+                    <li class="Nav-break--tab">Email <a href="mailto:support@stanstedparking.com" class="Nav-link block-tab">{{ site.supportEmail }}</a></li>
                 </ul>
 
                 <img src="../assets/image/badges/cards.png" alt="" class="aspectImg mw-10 mt-3">
