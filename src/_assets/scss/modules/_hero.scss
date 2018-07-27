@@ -38,6 +38,10 @@
     @include media('>=tab') {
         background: #e9f9fe url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_clouds.png') left 70px repeat-x;
 
+        @include media('>=lap') {
+            background-position: left 124px;
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -46,6 +50,10 @@
             bottom: 97px;
             width: 100%;
             background: url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_control_tower_plane.png') center bottom no-repeat;
+
+            @include media('>=lap') {
+                bottom: 108px;
+            }
         }
 
         &:after {
@@ -58,6 +66,10 @@
             background: url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_window.png') right top repeat-x;
             background-size: auto 100%;
             z-index: 0;
+
+            @include media('>=lap') {
+                bottom: 32px;
+            }
         }
     }
 
@@ -66,6 +78,10 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+
+        @include media('>=lap') {
+            max-width: 44rem;
+        }
     }
 
     .displaySub-1 {
@@ -73,6 +89,10 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+
+        @include media('>=lap') {
+            max-width: 38rem;
+        }
     }
 
     .Tabs-body {
@@ -85,32 +105,40 @@
     z-index: 1;
 
     @include media('<tab') {
-        padding-top: triple($BSU);
-
         background-color: $Colour-heroBgTabs;
-    }
-
-    @include media('>=tab') {
-		padding-top: $BSU * 8;
-    }
-
-    @include media('>=lap') {
-        padding-top: $BSU * 8;
-        padding-bottom: $BSU * 8;
     }
 }
 
 .m-Hero-copy {
-//     max-width: 40rem;
-//     margin-left: auto;
-//     margin-right: auto;
-//     text-align: center;
-
     @include media('<tab') {
-        margin-bottom: triple($BSU);
+        padding-top: triple($BSU);
+        padding-bottom: triple($BSU);
     }
 
     @include media('>=tab') {
+        padding-top: $BSU * 8;
         padding-bottom: $BSU * 7;
+    }
+
+    @include media('>=lap') {
+        padding-top: $BSU * 10;
+        padding-bottom: $BSU * 9;
+    }
+}
+
+.m-Hero-sticker {
+    position: absolute;
+    top: triple($BSU);
+    right: 50%;
+    margin-right: -25rem;
+
+    max-width: 5rem;
+    height: auto;
+
+    @include hide();
+
+    @include media('>=lap') {
+        padding-top: $BSU * 3;
+        margin-right: -28rem;
     }
 }

@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// TABS COMPONENT
+// PARTNERS COMPONENT
 // --------------------------------------------------------------------------
 //
-// Tabs component
+// Partners styling
 //
 
 /**
@@ -32,38 +32,38 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-.Tabs-nav {
-    @include list-reset();
-    @include list-inline();
+.Partners {
+    @include panel(($Panel-gutter * 1.5), ($Panel-gutter--tab * 1.5), ($Panel-gutter--lap * 1.5));
 
-    padding-left: $Column-gutter;
-    padding-right: $Column-gutter;
+    background-color: $Colour-offWhite;
+
+    @include hide();
 }
 
-.Tabs-navLink {
-    @include font-size(13px);
-    padding: double($BSU) triple($BSU);
+.Partners-row {
+    @include list-reset();
+    // @include list-inline();
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
-    // opacity: .55;
-    background-color: lighten($Colour-searchBG, 2%);
-    color: lighten($Colour-text, 20%);
-
-    &.is-active {
-        // opacity: 1;
-        background-color: $Colour-searchBG;
-        color: $Colour-text;
+    + .Partners-row {
+        margin-top: $BSU * 4;
     }
 }
 
-.Tabs-body {
-    // @include container();
-    display: none;
+.Partners-item {
+    vertical-align: middle;
+    opacity: .5;
+    transition: opacity .3s ease-in-out;
 
-    padding-top: $Column-gutter;
-    padding-bottom: $Column-gutter;
-    margin-top: -1px;
+    &:hover {
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+    }
 
-    &.is-active {
-        display: block;
+    + .Partners-item {
+        margin-left: ($BSU * 5);
     }
 }

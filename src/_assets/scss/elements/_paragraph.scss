@@ -52,6 +52,10 @@ p {
 	@include type($FontSize-c3);
 	color: $Colour-text;
 
+	* +& {
+		margin-top: $FontSize-c3;
+	}
+
 	h3 +& {
 		margin-top: halve($FontSize-c3);
 	}

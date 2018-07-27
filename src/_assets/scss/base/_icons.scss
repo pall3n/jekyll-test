@@ -145,6 +145,39 @@ $icon-recommend: "\e909";
 	}
 }
 
+.icon--promo {
+	&:before {
+		@include type(38px, 66px);
+		display: block;
+		height: 66px;
+		width: 66px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: triple($BSU);
+		text-align: center;
+
+		border-radius: 50%;
+		background-color: $Colour-parking;
+		color: $Colour-white;
+	}
+
+	&.icon-parking:before {
+		background-color: $Colour-parking;
+	}
+
+	&.icon-hotel-park-fly:before {
+		background-color: $Colour-hotelParking;
+	}
+
+	&.icon-quotes:before {
+		background-color: $Colour-recent;
+	}
+
+	&.icon-thumbs-up:before {
+		background-color: $Colour-popular;
+	}
+}
+
 .icon-hotel-park-fly:before {
 	content: $icon-hotel-park-fly;
 }

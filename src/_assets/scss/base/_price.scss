@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// TABS COMPONENT
+// PRICE BASE
 // --------------------------------------------------------------------------
 //
-// Tabs component
+// Price base style
 //
 
 /**
@@ -32,38 +32,18 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-.Tabs-nav {
-    @include list-reset();
-    @include list-inline();
+.price {
+    @include type(35px, 1.2, $FF-heavy);
+    // color: #333;
 
-    padding-left: $Column-gutter;
-    padding-right: $Column-gutter;
-}
+    sup {
+        @include font-size(19px);
+        vertical-align: super;
 
-.Tabs-navLink {
-    @include font-size(13px);
-    padding: double($BSU) triple($BSU);
-
-    // opacity: .55;
-    background-color: lighten($Colour-searchBG, 2%);
-    color: lighten($Colour-text, 20%);
-
-    &.is-active {
-        // opacity: 1;
-        background-color: $Colour-searchBG;
-        color: $Colour-text;
+        color: #999;
     }
-}
 
-.Tabs-body {
-    // @include container();
-    display: none;
-
-    padding-top: $Column-gutter;
-    padding-bottom: $Column-gutter;
-    margin-top: -1px;
-
-    &.is-active {
-        display: block;
+    sub {
+        @include type(19px, 1.2, $FF-medium);
     }
 }

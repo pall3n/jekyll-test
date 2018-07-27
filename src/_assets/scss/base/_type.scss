@@ -65,7 +65,7 @@
 }
 
 .display-2 {
-	@include type($FontSize-d2, $LineHeight-d2);
+	@include type($FontSize-d2, $LineHeight-d2, $FF-book);
 }
 
 .displaySub-1 {

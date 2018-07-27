@@ -25,12 +25,17 @@
 // --------------------------------------------------------------------------
 // MIXINS
 // --------------------------------------------------------------------------
-@mixin container($widthMod: 0) {
+@mixin contain($widthMod: 0) {
     max-width: $Layout-maxWidth + $widthMod;
     margin-left: auto;
     margin-right: auto;
-    // padding-left: $Layout-gutter;
-    // padding-right: $Layout-gutter;
+
+}
+
+@mixin container($widthMod: 0) {
+    @include contain();
+    padding-left: $Layout-gutter; //should match the grid
+    padding-right: $Layout-gutter; //should match the grid
 
     @include media('>=tab') {
         padding-left: $Column-gutter + $Grid-gutter--tab;
@@ -38,16 +43,19 @@
     }
 
     @include media('>=lap') {
-        padding-left: $Grid-gutter--lap;
-        padding-right: $Grid-gutter--lap;
+        padding-left: $Column-gutter + $Grid-gutter--lap;
+        padding-right: $Column-gutter + $Grid-gutter--lap;
     }
 }
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
+
+.contain {
+    @include contain();
+}
 
 .container {
     @include container();

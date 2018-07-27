@@ -45,16 +45,14 @@
             letter-spacing: -0.31em;
             text-rendering: optimizespeed;
 
-            margin-left: - halve($BSU);
-            margin-right: - halve($BSU);
+            // margin-left: - halve($BSU);
+            // margin-right: - halve($BSU);
         }
     }
 
     .Form-field {
         @include media('>=tab') {
             display: inline-block;
-        	// box-sizing: border-box;
-        	// width: 100%;
         	padding-left: halve($BSU);
         	padding-right: halve($BSU);
         	vertical-align: bottom;
@@ -63,6 +61,11 @@
         	word-spacing: normal;
         	text-rendering: auto;
         }
+    }
+
+    .Form-input {
+        background-color: $Colour-white;
+        border-color: $Colour-borderSolid;
     }
 
     .Form-submit {
@@ -93,6 +96,11 @@
             height: double($BSU) + round(($FontSize-c2 * $LineHeight-base)); // to match base/_input
             padding-left: $BSU;
             padding-right: $BSU;
+        }
+
+        @include media('>=lap') {
+            @include font-size(16px);
+            padding-top: 8px;
         }
     }
 }
