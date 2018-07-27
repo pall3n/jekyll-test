@@ -44,16 +44,24 @@
     @include font-size(13px);
     padding: double($BSU) triple($BSU);
 
-    opacity: .55;
-    background-color: $Colour-searchBG;
-    color: $Colour-text;
+    // opacity: .55;
+    background-color: lighten($Colour-searchBG, 2%);
+    color: lighten($Colour-text, 20%);
 
     &.is-active {
-        opacity: 1;
+        // opacity: 1;
+        background-color: $Colour-searchBG;
+        color: $Colour-text;
     }
 }
 
 .Tabs-body {
+    display: none;
+
     padding: $Column-gutter;
     margin-top: -1px;
+
+    &.is-active {
+        display: block;
+    }
 }

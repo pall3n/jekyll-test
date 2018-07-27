@@ -33,13 +33,84 @@
 // --------------------------------------------------------------------------
 
 .m-Hero {
-    @include media('<tab') {
-        padding-top: 20px;
+    position: relative;
 
-        background-color: $Colour-heroBgTabs;
+    @include media('>=tab') {
+        background: #e9f9fe url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_clouds.png') left 70px repeat-x;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 97px;
+            width: 100%;
+            background: url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_control_tower_plane.png') center bottom no-repeat;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 36px;
+            width: 100%;
+            background: url('https://s3.amazonaws.com/theme-media/img/hero/hp/hero_window.png') right top repeat-x;
+            background-size: auto 100%;
+            z-index: 0;
+        }
+    }
+
+    .display-1 {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .displaySub-1 {
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 
     .Tabs-body {
         background-color: $Colour-searchBG;
+    }
+}
+
+.m-Hero-body {
+    position: relative;
+    z-index: 1;
+
+    @include media('<tab') {
+        padding-top: triple($BSU);
+
+        background-color: $Colour-heroBgTabs;
+    }
+
+    @include media('>=tab') {
+		padding-top: $BSU * 8;
+    }
+
+    @include media('>=lap') {
+        padding-top: $BSU * 8;
+        padding-bottom: $BSU * 8;
+    }
+}
+
+.m-Hero-copy {
+//     max-width: 40rem;
+//     margin-left: auto;
+//     margin-right: auto;
+//     text-align: center;
+
+    @include media('<tab') {
+        margin-bottom: triple($BSU);
+    }
+
+    @include media('>=tab') {
+        padding-bottom: $BSU * 7;
     }
 }

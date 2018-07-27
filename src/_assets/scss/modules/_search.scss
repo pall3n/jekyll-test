@@ -36,12 +36,39 @@
     // padding: $Column-gutter;
 
     // background-color: $Colour-searchBG;
+    .Tabs-nav {
+        text-align: center;
+    }
+
+    .FormStack--mob {
+        @include media('>=tab') {
+            letter-spacing: -0.31em;
+            text-rendering: optimizespeed;
+
+            margin-left: - halve($BSU);
+            margin-right: - halve($BSU);
+        }
+    }
+
+    .Form-field {
+        @include media('>=tab') {
+            display: inline-block;
+        	// box-sizing: border-box;
+        	// width: 100%;
+        	padding-left: halve($BSU);
+        	padding-right: halve($BSU);
+        	vertical-align: bottom;
+
+        	letter-spacing: normal;
+        	word-spacing: normal;
+        	text-rendering: auto;
+        }
+    }
 
     .Form-submit {
         @include button--paint();
         @include font-size(21px);
         width: 100%;
-        margin-top: $BSU;
 
         &:before {
             @include icon-font();
@@ -51,6 +78,53 @@
             display: inline-block;
             vertical-align: -3px;
             margin-right: double($BSU);
+
+            @include media('>=tab') {
+                margin-right: $BSU;
+            }
         }
+
+        @include media('<tab') {
+            margin-top: $BSU;
+        }
+
+        @include media('>=tab') {
+            @include type(18px, 1);
+            height: double($BSU) + round(($FontSize-c2 * $LineHeight-base)); // to match base/_input
+            padding-left: $BSU;
+            padding-right: $BSU;
+        }
+    }
+}
+
+.m-Search-fieldAirport {}
+
+.m-Search-fieldDropOff {
+    @include media('>=tab') {
+        width: 26.5%;
+    }
+}
+
+.m-Search-fieldDropOffTime {
+    @include media('>=tab') {
+        width: 16%;
+    }
+}
+
+.m-Search-fieldPickUp {
+    @include media('>=tab') {
+        width: 26.5%;
+    }
+}
+
+.m-Search-fieldPickUpTime {
+    @include media('>=tab') {
+        width: 16%;
+    }
+}
+
+.m-Search-submit {
+    @include media('>=tab') {
+        width: 15%;
     }
 }

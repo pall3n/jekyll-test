@@ -33,6 +33,8 @@
 // --------------------------------------------------------------------------
 
 .m-Header {
+    position: relative;
+    z-index: 999;
     padding-top: $BSU * 1.5;
     padding-bottom: $BSU * 1.5;
 

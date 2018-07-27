@@ -51,12 +51,35 @@
 //
 
 .typeDisplay,
-.display {
-	@include type($FontSize-d1, $LineHeight-d1);
+.display-1 {
+	@include type($FontSize-d1 - 16px, $LineHeight-d1);
+	color: $Colour-base;
+
+	@include media('>=tab') {
+		@include font-size($FontSize-d1 - 6px);
+	}
+
+	@include media('>=lap') {
+		@include font-size($FontSize-d1);
+	}
 }
 
 .display-2 {
 	@include type($FontSize-d2, $LineHeight-d2);
+}
+
+.displaySub-1 {
+	@include type($FontSize-ds1 - 8px, 1.3, $FF-book);
+
+	color: $Colour-base;
+
+	@include media('>=tab') {
+		@include font-size($FontSize-ds1 - 4px);
+	}
+
+	@include media('>=lap') {
+		@include type($FontSize-ds1, $LineHeight-ds1);
+	}
 }
 
 

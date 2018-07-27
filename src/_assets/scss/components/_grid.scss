@@ -72,7 +72,7 @@
 
 @mixin grid-column() {
 	display: inline-block;
-	box-sizing: border-box;
+	// box-sizing: border-box;
 	width: 100%;
 	padding-left: $Column-gutter;
 	padding-right: $Column-gutter;

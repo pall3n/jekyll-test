@@ -94,7 +94,7 @@
 }
 
 .feefoDisplay {
-    @include type($FontSize-d3, $LineHeight-d3, $FF-medium);
+    @include type($FontSize-d1, $LineHeight-d1, $FF-medium);
     display: inline-block;
     vertical-align: middle;
 

@@ -46,6 +46,7 @@ $Colour-success: #75A837 !default;
 
 $Colour-heroBgTabs: #b9b9b9;
 $Colour-searchBG: #dfdfdf;
+$Colour-searchBG: $Colour-offWhite;
 
 $Colour-inputBG: #f8f8f8;
 $Colour-inputBorder: #b8b8b8;
@@ -101,17 +102,20 @@ $FontWeight-normal: 400 !default;
 // Display Sizing
 //
 
-$FontSize-d1: 200px !default;
-$LineHeight-d1: 1 !default;
+$FontSize-d1: 40px !default;
+$LineHeight-d1: 1.15 !default;
 
-$FontSize-d2: 50px !default;
+$FontSize-d2: 23px !default;
 $LineHeight-d2: 1.15 !default;
 
-$FontSize-d3: 40px !default;
-$LineHeight-d3: 1.4 !default;
+// $FontSize-d3: 40px !default;
+// $LineHeight-d3: 1.4 !default;
+//
+// $FontSize-d4: 28px !default;
+// $LineHeight-d4: 1.5 !default;
 
-$FontSize-d4: 28px !default;
-$LineHeight-d4: 1.5 !default;
+$FontSize-ds1: 23px !default;
+$LineHeight-ds1: 1.15 !default;
 
 
 //

@@ -28,7 +28,7 @@
 
 @mixin hide($break: '<tab') {
 	@include media($break) {
-		display: none;
+		display: none!important;
 	}
 }
 
@@ -54,6 +54,10 @@
 	@include media('>=tab', '<lap') {
 		display: block;
 	}
+}
+
+.hide {
+	display: none!important;
 }
 
 .hide-mob {
