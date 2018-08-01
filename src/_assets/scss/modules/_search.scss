@@ -27,7 +27,6 @@
 // --------------------------------------------------------------------------
 
 
-
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
@@ -38,6 +37,13 @@
     // background-color: $Colour-searchBG;
     .Tabs-nav {
         text-align: center;
+        padding-left: $Column-gutter;
+        padding-right: $Column-gutter;
+    }
+
+    .Tabs-body {
+        padding-top: $Column-gutter;
+        padding-bottom: $Column-gutter;
     }
 
     .FormStack--mob {
@@ -100,7 +106,7 @@
 
         @include media('>=lap') {
             @include font-size(16px);
-            padding-top: 8px;
+            // padding-top: 8px;
         }
     }
 }

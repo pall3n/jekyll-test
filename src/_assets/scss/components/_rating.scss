@@ -1,0 +1,82 @@
+// --------------------------------------------------------------------------
+// RATING COMPONENT
+// --------------------------------------------------------------------------
+//
+// Rating styling
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Rating {}
+
+.Rating-card {
+    display: inline-block;
+    padding: $BSU ($BSU * 3);
+    border: 1px solid $Colour-border;
+    border-radius: 3px;
+
+    @include media('<tab') {
+        display: block;
+        text-align: center;
+    }
+
+    @include media('>=tab') {
+        padding-left: $BSU * 4;
+        padding-right: $BSU * 4;
+    }
+
+    .icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.Rating-content {
+    display: inline-block;
+    vertical-align: middle;
+    // min-height: $FontSize-i1;
+    margin-left: double($BSU);
+}
+
+.Rating-score {
+    @include font-size($FontSize-c2);
+    font-family: $FF-heavy;
+    display: inline-block;
+    vertical-align: middle;
+
+    color: $Colour-gold;
+}
+
+.Rating-copy {
+    @include font-size($FontSize-c4);
+    font-family: $FF-book;
+    display: inline-block;
+    vertical-align: middle;
+
+    color: $Colour-text;
+}

@@ -36,12 +36,15 @@
     @include list-reset();
     @include list-inline();
 
-    padding-left: $Column-gutter;
-    padding-right: $Column-gutter;
+    .Tabs--results & {
+        border-bottom: 1px solid $Colour-inputBorder;
+    }
 }
 
 .Tabs-navLink {
     @include font-size(13px);
+
+    display: block;
     padding: double($BSU) triple($BSU);
 
     // opacity: .55;
@@ -52,6 +55,26 @@
         // opacity: 1;
         background-color: $Colour-searchBG;
         color: $Colour-text;
+
+        .Tabs--results & {
+            color: $Colour-baseType;
+            border-color: $Colour-baseType $Colour-baseType $Colour-offWhite $Colour-baseType;
+        }
+    }
+
+    .Tabs--results & {
+        @include type($FontSize-base, 1.2, $FF-book);
+        margin-bottom: -1px;
+
+        background-color: transparent;
+        border: 1px solid $Colour-inputBorder;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        &:hover,
+        &:focus {
+            color: $Colour-baseType;
+        }
     }
 }
 
@@ -59,8 +82,8 @@
     // @include container();
     display: none;
 
-    padding-top: $Column-gutter;
-    padding-bottom: $Column-gutter;
+    // padding-top: $Column-gutter;
+    // padding-bottom: $Column-gutter;
     margin-top: -1px;
 
     &.is-active {

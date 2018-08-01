@@ -135,13 +135,24 @@ $icon-recommend: "\e909";
 // --------------------------------------------------------------------------
 
 
-.icon:before  {
-	@include icon-font();
+.icon,
+.iconInline {
+	&:before  {
+		@include icon-font();
+	}
 }
 
-.icon--inline {
+.icon:before {
+	display: block;
+}
+
+.iconInline {
 	&:before {
 		@include icon-inline();
+	}
+
+	&.icon-calendar:before {
+		vertical-align: -1px;
 	}
 }
 

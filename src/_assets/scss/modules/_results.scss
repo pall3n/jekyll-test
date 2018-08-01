@@ -1,0 +1,237 @@
+// --------------------------------------------------------------------------
+// RESULTS MODULE
+// --------------------------------------------------------------------------
+//
+// Results module
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.m-Results {
+    @include media('<tab') {
+        background-color: $Colour-white;
+    }
+
+    @include media('>=tab') {
+        padding-top: $Panel-gutter--tab;
+		padding-bottom: $Panel-gutter--tab;
+
+        // background-color: $Colour-offWhite;
+	}
+
+	@include media('>=lap') {
+        max-width: $Layout-maxWidth;
+        margin-left: auto;
+        margin-right: auto;
+
+    	letter-spacing: -0.31em;
+        text-rendering: optimizespeed;
+
+        padding: $Grid-gutter--lap;
+	}
+
+    .Tabs-nav {
+        @include media('<tab') {
+            display: flex;
+            text-align: center;
+            align-items: stretch;
+        }
+
+        @include media('>=tab') {
+            border-bottom: 1px solid $Colour-inputBorder;
+        }
+    }
+
+    .Tabs-navItem {
+        @include media('<tab') {
+            width: 100%;
+        }
+    }
+
+    .Tabs-navLink {
+        @include media('<tab') {
+            @include type($FontSize-c4, 1.4);
+            padding-left: double($BSU);
+            padding-right: double($BSU);
+        }
+
+        @include media('>=tab') {
+            @include type($FontSize-base, 1.2, $FF-book);
+            margin-bottom: -1px;
+
+            background-color: transparent;
+            border: 1px solid $Colour-inputBorder;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+
+            &:hover,
+            &:focus {
+                color: $Colour-baseType;
+            }
+
+            &.is-active {
+                color: $Colour-baseType;
+                border-color: $Colour-baseType $Colour-baseType $Colour-offWhite $Colour-baseType;
+            }
+        }
+    }
+
+    .Tabs-body {}
+
+    .Rating {
+        @include media('>=tab') {
+            text-align: center;
+        }
+    }
+
+}
+
+.m-Results-filters {
+    @include hide();
+
+    @include media('>=lap') {
+        display: inline-block;
+        width: percentage(1/4);
+    	padding-left: $Column-gutter;
+    	padding-right: $Column-gutter;
+    	vertical-align: top;
+
+    	letter-spacing: normal;
+    	word-spacing: normal;
+    	text-rendering: auto;
+    }
+}
+
+.m-Results-body {
+    @include media('>=lap') {
+        display: inline-block;
+        width: percentage(3/4);
+    	padding-left: $Column-gutter;
+    	padding-right: $Column-gutter;
+    	vertical-align: top;
+
+    	letter-spacing: normal;
+    	word-spacing: normal;
+    	text-rendering: auto;
+    }
+
+    .Tabs-nav {
+        @include media('<tab') {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+
+.m-Results-sortGroup {
+    position: relative;
+    overflow: auto;
+
+    @include media('<tab') {
+        padding-top: double($BSU);
+        padding-bottom: double($BSU);
+
+        border-bottom: 1px solid $Colour-border;
+    }
+
+    @include media('>=tab') {
+        padding-top: $Column-gutter;
+        padding-bottom: 32px;
+        margin-bottom: ($Column-gutter);
+    }
+}
+
+
+.m-Results-sortCount {
+    @include media('<tab') {
+        float: left;
+        padding-left: $Column-gutter;
+    }
+
+    @include media('>=tab') {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
+.m-Results-sortViews {
+    @include media('<tab') {
+        float: right;
+        padding-right: $Column-gutter;
+    }
+
+    @include media('>=tab') {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+.m-Results-sortOptions {
+    @include media('<tab') {
+        position: relative;
+        clear: left;
+        padding-top: double($BSU);
+        // padding-left: $Column-gutter;
+
+        .typeTitle-xs {
+            position: absolute;
+            left: 0;
+            top: double($BSU);
+            padding-left: $Column-gutter;
+            line-height: 26px;
+
+            background-color: rgba($Colour-white, .95);
+        }
+
+        .list-inlineScroll {
+            padding-left: 44px + $Column-gutter + double($BSU);
+            padding-right: $Column-gutter;
+        }
+    }
+
+    @include media('>=tab') {
+        float: left;
+
+        .list-inlineScroll {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.m-Results-sortLocations {
+    @include hide();
+
+    @include media('>=tab') {
+        float: right;
+    }
+}

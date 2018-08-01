@@ -26,7 +26,7 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin button($padding: ($Base-spacing-unit * 1.5) ($Base-spacing-unit * 4), $font-size: $FontSize-c1, $line-height: 24px) {
+@mixin button($padding: ($Base-spacing-unit * 1) ($Base-spacing-unit * 4), $font-size: 15px, $line-height: 24px) {
 	@include font-size($font-size);
 	line-height: $line-height;
 	font-family: $FF-heavy;
@@ -37,12 +37,26 @@
 	text-shadow: none;
 	border: 1px solid $Colour-border;
 	border-radius: 3px;
+	transition: all .3s;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+		transition: all .3s;
+	}
 }
 
 @mixin button--paint($bg: $Colour-buttonBG, $border: $Colour-buttonBorder, $color: $Colour-white) {
 	background-color: $bg;
 	border-color: $border;
 	color: $color;
+	transition: all .3s;
+
+	&:hover,
+	&:focus {
+		background-color: $border;
+		color: $color;
+	}
 }
 
 
@@ -64,3 +78,7 @@
 // 	border-color: $Colour-accent;
 // 	color: $Colour-white;
 // }
+
+.button--proceed {
+	@include button--paint($Colour-success, $Colour-success--darken);
+}

@@ -12,7 +12,7 @@
 
 $html-fontSize: 100% !default;
 
-$body-fontSize: $FontSize-base !default;
+$body-fontSize: $FontSize-c3 !default;
 $body-lineHeight: $LineHeight-base !default;
 $body-fontWeight: normal !default;
 $body-fontFamily: $FF-copy !default;
@@ -48,21 +48,21 @@ $body-backgroundColour: $Colour-white !default;
 }
 
 html {
-	font-size: percentage(strip-unit($body-fontSize) / 16);
+	font-size: percentage(strip-unit($body-fontSize) / 14);
 
 	// @include media('>=mob', '<tab') {
 	// 	font-size: percentage(strip-unit(14px) / 16);
 	// }
 
 	@include media('>=tab', '<lap') {
-		font-size: percentage(strip-unit(14px) / 16);
+		font-size: percentage(strip-unit(14px) / 14);
 	}
 }
 
 body {
 	background-color: $body-backgroundColour;
 
-	font-size: convert-to-em($body-fontSize, $body-fontSize);
+	font-size: convert-to-em($body-fontSize, 16px);
 	line-height: $body-lineHeight;
 	font-weight: $body-fontWeight;
 	font-family: $body-fontFamily;

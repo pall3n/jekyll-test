@@ -27,7 +27,7 @@
 // --------------------------------------------------------------------------
 
 @mixin grid() {
-	max-width: $Layout-maxWidth + double($Grid-gutter--lap);
+	max-width: $Layout-maxWidth;
     margin-left: auto;
     margin-right: auto;
 

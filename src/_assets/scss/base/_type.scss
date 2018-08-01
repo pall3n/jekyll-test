@@ -139,6 +139,26 @@
 }
 
 
+//
+// Title
+//
+
+.typeTitle-xs {
+	@include type($FontSize-c4, 1.2, $FF-heavy);
+	color: $Colour-baseType;
+	// text-transform: uppercase;
+}
+
+
+//
+// icons
+//
+
+.icon-xl {
+	@include font-size($FontSize-i1);
+}
+
+
 
 //
 // Text colour alternatives

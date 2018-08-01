@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// LIST BASE
+// PILL BASE
 // --------------------------------------------------------------------------
 //
-// Base list styling utilities.
+// Pills for all
 //
 
 /**
@@ -21,78 +21,29 @@
 // --------------------------------------------------------------------------
 
 
-
 // --------------------------------------------------------------------------
 // MIXINS
 // --------------------------------------------------------------------------
+@mixin pill($font-size: $FontSize-c4, $colour: $Colour-text, $bg-colour: $Colour-white, $border-colour: $Colour-border) {
+    @include type($font-size, 1, $FF-heavy);
+    padding: $BSU double($BSU);
 
-@mixin list-reset() {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+    color: $colour;
+    background-color: $bg-colour;
+    border: 1px solid $border-colour;
+    border-radius: double($BSU);
 }
-
-@mixin list-inline() {
-	li {
-		display: inline-block;
-	}
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.list-reset {
-    @include list-reset();
+.pill {
+    @include pill();
 }
 
-.list-inline {
-    @include list-reset();
-    @include list-inline();
-}
-
-.list-inlineScroll {
-    @include list-reset();
-    @include list-inline();
-
-	white-space: nowrap;
-	overflow-x: scroll;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-}
-
-.list-tick {
-	font-family: $FF-book;
-	list-style: none;
-	margin-top: $FontSize-c3;
-	padding-left: 0;
-
-	+ * {
-		margin-top: $FontSize-c3; //testing
-	}
-
-	li {
-		position: relative;
-		padding-left: $BSU * 4;
-
-		&:before {
-			@include icon-font();
-			content: $icon-tick;
-			font-size: 120%;
-
-			position: absolute;
-			top: 2px;
-			left: 0;
-
-			color: $Colour-success;
-		}
-
-		+ li {
-			margin-top: halve($BSU);
-		}
-	}
+.pill--primary {
+    background-color: $Colour-primary;
+    color: $Colour-white;
 }

@@ -1,0 +1,228 @@
+// --------------------------------------------------------------------------
+// RESULT CARD COMPONENT
+// --------------------------------------------------------------------------
+//
+// Result card styling
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.ResultCard {
+    padding: $Column-gutter;
+    margin-top: halve($Column-gutter);
+
+    background-color: $Colour-white;
+
+    @include media('>=tab') {
+        padding: $Column-gutter * 1.25;
+
+        border: 1px solid $Colour-border;
+        border-radius: 3px;
+    }
+
+    &.is-approvedVetted {
+        background-image: url(https://s3.amazonaws.com/theme-media/img/backgrounds/approved_vetted.png);
+        background-position: right 100px;
+        background-repeat: no-repeat;
+        background-size: auto 50px;
+
+        @include media('>=tab') {
+            background-position: right 15px;
+            background-size: auto 45px;
+        }
+    }
+
+    + .ResultCard {
+        border-top: 2px solid $Colour-border;
+    }
+}
+
+.ResultCard-brand {
+    // padding: $Column-gutter;
+}
+
+.ResultCard-brandBody,
+.ResultCard-productBody {
+    @include media('>=tab') {
+        overflow: hidden;
+    	_overflow: visible;
+    	zoom: 1;
+    }
+}
+
+.ResultCard-brandImage {
+    margin-bottom: $Column-gutter;
+    max-width: 6rem;
+
+    @include media('<tab') {
+        float: right;
+        margin-left: $Column-gutter;
+    }
+
+    @include media('>=tab') {
+        max-width: 7rem;
+        float: left;
+        margin-right: double($Column-gutter);
+    }
+
+    .is-approvedVetted & {
+        @include media('<tab') {
+            padding-bottom: 62px;
+        }
+    }
+}
+
+
+.ResultCard-brandHeading {
+    @include font-size($FontSize-h2);
+}
+
+.ResultCard-brandHeadingMore {
+    @include hide();
+
+    @include pill($FontSize-c4, $Colour-primary, rgba($Colour-primary, .14), transparent);
+
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: halve($BSU);
+
+    &:after {
+        @include icon-font();
+        content: $icon-chevron-right;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: $BSU;
+    }
+}
+
+.ResultCard-brandCopy {
+    font-family: $FF-book;
+    margin-top: 10px;
+}
+
+.ResultCard-product {
+    overflow: auto;
+    padding-top: $Column-gutter;
+    padding-bottom: $Column-gutter;
+    margin-top: $Column-gutter;
+
+    @include media('<tab') {
+        padding-left: $Column-gutter;
+        padding-right: $Column-gutter;
+        background-color: $Colour-offWhite;
+        border-radius: 4px;
+    }
+
+    @include media('>=tab') {
+        border-top: 1px solid $Colour-border;
+    }
+}
+
+.ResultCard-productImage {
+    @include hide();
+
+    @include media('>=tab') {
+        max-width: 7rem;
+        float: left;
+        margin-right: double($Column-gutter);
+    }
+}
+
+.ResultCard-productBody {
+    @include media('>=tab') {
+        float: left;
+    }
+}
+
+.ResultCard-productHeading {
+    @include font-size($FontSize-c1);
+}
+
+.ResultCard-productHeadingMore {
+    @include hide();
+
+    @include pill($FontSize-c4, $Colour-primary, rgba($Colour-primary, .14), transparent);
+
+    display: inline-block;
+    vertical-align: top;
+    margin-left: halve($BSU);
+}
+
+.ResultCard-productBook {
+    text-align: center;
+
+    @include media('<tab') {
+        margin-top: $Column-gutter;
+        padding-top: halve($Column-gutter);
+        border-top: 1px solid $Colour-border;
+    }
+
+    @include media('>=tab') {
+        float: right;
+        margin-right: $Column-gutter;
+    }
+}
+
+.ResultCard-productPricing {
+    @include media('<tab') {
+        width: 46%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.ResultCard-productDiscount {
+    @include font-size(11px);
+    padding-top: halve($BSU);
+
+    border-top: 1px solid $Colour-border;
+}
+
+.ResultCard-productSaving {
+    @include font-size(12px);
+    font-family: $FF-heavy;
+    margin-top: halve($BSU);
+    padding-top: halve($BSU);
+
+    color: $Colour-gold;
+    border-top: 1px solid $Colour-border;
+}
+
+.ResultCard-productAction {
+    @include media('<tab') {
+        width: 50%;
+        padding-left: $BSU;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    @include media('>=tab') {
+        margin-top: double($BSU);
+    }
+}

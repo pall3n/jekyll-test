@@ -43,6 +43,7 @@ $Colour-bgDark: #333 !default;
 $Colour-inactive: #999 !default;
 $Colour-error: #EA4E35 !default;
 $Colour-success: #75A837 !default;
+$Colour-success--darken: darken($Colour-success, 5%) !default;
 
 $Colour-heroBgTabs: #b9b9b9;
 $Colour-searchBG: #dfdfdf;
@@ -55,6 +56,8 @@ $Colour-parking: #198dc0;
 $Colour-hotelParking: #face3f;
 $Colour-popular: #da5958;
 $Colour-recent: #76c6c1;
+
+$Colour-gold: #c19919;
 
 
 
@@ -161,6 +164,13 @@ $FontSize-c4: 12px !default;
 
 $Margin-heading: 0;
 $c-typeHeading-marginFirstChild: false;
+
+
+//
+// Icon Sizing
+//
+
+$FontSize-i1: 32px;
 
 
 
