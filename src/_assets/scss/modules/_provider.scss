@@ -1,0 +1,99 @@
+.m-Provider {
+
+}
+
+.m-Provider-heroBody {
+    position: relative;
+
+    @include media('<tab') {
+        text-align: center;
+    }
+}
+
+.m-Provider-brandWrap {
+    position: relative;
+
+    @include media('<tab') {
+        padding-bottom: 94px;
+    }
+}
+
+.m-Provider-brandImage {
+    @include media('<tab') {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.m-Provider-sticker {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-122px);
+
+    max-width: 4rem;
+}
+
+.m-Provider-search {
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+
+    background-color: $Colour-offWhite;
+
+    @include media('<tab') {
+        margin-top: double($BSU);
+    }
+
+    .Form-field {
+        display: inline-block;
+        letter-spacing: normal;
+    	word-spacing: normal;
+    	text-rendering: auto;
+
+        + .Form-field {
+            padding-left: $Column-gutter;
+        }
+    }
+
+    .Form-input {
+        background-color: $Colour-white;
+    }
+
+    .Form-submit {
+        @include button--paint();
+        @include font-size(21px);
+        width: 100%;
+
+        &:before {
+            @include icon-font();
+            content: $icon-search;
+            font-size: 120%;
+
+            display: inline-block;
+            vertical-align: -3px;
+            margin-right: double($BSU);
+
+            @include media('>=tab') {
+                margin-right: $BSU;
+            }
+        }
+
+        @include media('<tab') {
+            margin-top: $BSU;
+        }
+
+        @include media('>=tab') {
+            @include type(18px, 1);
+            height: double($BSU) + round(($FontSize-c2 * $LineHeight-base)); // to match base/_input
+            padding-left: $BSU;
+            padding-right: $BSU;
+        }
+
+        @include media('>=lap') {
+            @include font-size(16px);
+            // padding-top: 8px;
+        }
+    }
+}

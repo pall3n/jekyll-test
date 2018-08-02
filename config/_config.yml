@@ -29,6 +29,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 assetBaseUrl: "" # add in a base url for external assets i.e images running on s3
 
+collections:
+    providers:
+        output: true
+        permalink: /:collection/:name/
+
 # Build settings
 markdown: kramdown
 

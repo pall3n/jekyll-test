@@ -97,3 +97,20 @@ $Panel-gutter--lap: $BSU * 8 !default;
 .panel\+\+ {
 	@include panel(double($Panel-gutter), double($Panel-gutter--tab), double($Panel-gutter--lap));
 }
+
+
+.panelHero {
+	padding-top: $BSU * 2;
+
+    background-color: $Colour-primaryWash;
+
+	@include media('>=tab') {
+		padding-top: $Panel-gutter--tab;
+	    padding-bottom: $Panel-gutter--tab;
+	}
+
+	@include media('>=lap') {
+		padding-top: $Panel-gutter--lap;
+	    padding-bottom: $Panel-gutter--lap;
+	}
+}

@@ -95,10 +95,18 @@ $widths-columns: (
 }
 
 
+.mw-4 {
+    max-width: 4rem;
+}
+
 .mw-5 {
     max-width: 5rem;
 }
 
 .mw-10 {
     max-width: 10rem;
+}
+
+.s-85 {
+    width: 85%;
 }

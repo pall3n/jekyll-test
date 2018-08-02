@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// PAINT BASE
+// CARD COMPONENT
 // --------------------------------------------------------------------------
 //
-// Adds a background colour
+// Cards, cards, cards
 //
 
 /**
@@ -32,12 +32,6 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-.paint {
-	background-color: $Colour-offWhite;
-}
-
-.paintBody {
-	@include media('>=tab') {
-		background-color: $Colour-offWhite;
-	}
-}
+// .CardContent {
+//     background-color: $Colour-white;
+// }
