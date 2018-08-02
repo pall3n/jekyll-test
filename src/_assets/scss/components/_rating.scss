@@ -50,6 +50,11 @@
         padding-right: $BSU * 4;
     }
 
+    @include media('>=tab') {
+        padding-left: $BSU * 5;
+        padding-right: $BSU * 5;
+    }
+
     .icon {
         display: inline-block;
         vertical-align: middle;

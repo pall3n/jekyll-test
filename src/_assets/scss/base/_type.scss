@@ -90,7 +90,12 @@
 
 .typeHeading,
 .heading {
-	@include type($FontSize-h1, $LineHeight-h1, $FontWeight-bold);
+	@include type($FontSize-h1, $LineHeight-h1, $FF-heavy);
+}
+
+.typeHeading-4,
+.heading-4 {
+	@include type($FontSize-h4, $LineHeight-h4, $FF-heavy);
 }
 
 

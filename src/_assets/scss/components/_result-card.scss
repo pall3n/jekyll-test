@@ -40,6 +40,7 @@
 
     @include media('>=tab') {
         padding: $Column-gutter * 1.25;
+        margin-top: $Column-gutter;
 
         border: 1px solid $Colour-border;
         border-radius: 3px;
@@ -58,7 +59,9 @@
     }
 
     + .ResultCard {
-        border-top: 2px solid $Colour-border;
+        @include media('<tab') {
+            border-top: 2px solid $Colour-border;
+        }
     }
 }
 
@@ -198,10 +201,15 @@
 }
 
 .ResultCard-productDiscount {
-    @include font-size(11px);
+    @include type(11px, 1.2);
     padding-top: halve($BSU);
 
     border-top: 1px solid $Colour-border;
+    color: $Colour-text;
+
+    strong {
+        display: block;
+    }
 }
 
 .ResultCard-productSaving {

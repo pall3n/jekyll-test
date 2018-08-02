@@ -1,8 +1,8 @@
 // --------------------------------------------------------------------------
-// UTILS BASE
+// FILTERS COMPONENT
 // --------------------------------------------------------------------------
 //
-// Utility classes that help with tiny comon cases
+// Filters styling
 //
 
 /**
@@ -26,67 +26,44 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin hide($break: '<tab') {
-	@include media($break) {
-		display: none!important;
-	}
-}
-
 
 
 // --------------------------------------------------------------------------
 // STYLING
 // --------------------------------------------------------------------------
 
-.a-center {
-	text-align: center;
+.Filters {}
+
+.Filters-block {
+    &:first-of-type .Filters-head {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
 }
 
-.a-right {
-	text-align: right;
+.Filters-head {
+    padding: ($BSU * 1.5) double($BSU);
+
+    background-color: #dedede;
+    border-bottom: 1px solid #bebebe;
 }
 
-.block {
-	display: block;
+.Filters-body {
+    padding: double($BSU);
+
+    background-color: #eaeaea;
 }
 
-.v-middle {
-	display: inline-block;
-	vertical-align: middle;
+.Filters-list {
+    @include list-reset();
 }
 
-.a-h3 {
-	display: inline-block;
-	vertical-align: top;
-	line-height: $FontSize-h3 * $LineHeight-h3;
-}
+.Filters-listItem {
+    + .Filters-listItem {
+        margin-top: halve($BSU);
+    }
 
-.block-tab {
-	@include media('>=tab', '<lap') {
-		display: block;
-	}
-}
-
-.hide {
-	display: none!important;
-}
-
-.hide-mob {
-	@include hide('<tab');
-}
-
-.hide-tab {
-	@include hide('>=tab');
-}
-
-.hide-tabDown {
-	@include hide('<lap');
-}
-
-.hide-lap {
-	@include hide('>=lap');
-}
-
-.hide-lapDown {
-	@include hide('<lap');
+    &.is-disabled {
+        opacity: .5;
+    }
 }

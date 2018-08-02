@@ -103,21 +103,35 @@
     .Tabs-body {}
 
     .Rating {
+        margin-top: double($BSU);
+
         @include media('>=tab') {
-            text-align: center;
+            margin-top: triple($BSU);
         }
     }
 
 }
 
 .m-Results-filters {
-    @include hide();
+    @include media('<lap') {
+        &.is-active {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+
+            background-color: rgba($Colour-black, .7);
+        }
+    }
 
     @include media('>=lap') {
         display: inline-block;
         width: percentage(1/4);
     	padding-left: $Column-gutter;
     	padding-right: $Column-gutter;
+        margin-top: 104px;
     	vertical-align: top;
 
     	letter-spacing: normal;
@@ -126,7 +140,40 @@
     }
 }
 
+.m-Results-filtersWrap {
+    @include media('<lap') {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 20rem;
+
+        padding: $Column-gutter * 1.5;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: transform .3s ease-in-out, opacity .2s ease-in-out .1s;
+
+        background-color: $Colour-offWhite;
+
+        .m-Results-filters.is-active & {
+            transform: translateX(0);
+            opacity: 1;
+            transition: transform .3s ease-in-out, opacity .2s ease-in-out .1s;
+        }
+    }
+
+    @include media('<tab') {
+        width: 75%;
+        padding: $Column-gutter;
+    }
+}
+
 .m-Results-body {
+    @include media('>=tab') {
+        padding: halve($Column-gutter) ($Column-gutter * 1.5);
+    }
+
     @include media('>=lap') {
         display: inline-block;
         width: percentage(3/4);

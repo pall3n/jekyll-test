@@ -169,3 +169,15 @@
         outline: 0;
     }
 }
+
+.Form-select--s {
+    &:after {
+        right: $BSU;
+    }
+
+    select {
+        @include type($FontSize-c4);
+    	padding: halve($BSU) triple($BSU) halve($BSU) double($BSU);
+    	height: ($BSU) + round($FontSize-c4 * $LineHeight-base);
+    }
+}

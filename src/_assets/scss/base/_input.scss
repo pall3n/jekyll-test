@@ -107,7 +107,7 @@ $inputMulti-multiplier: 4 !default;
 	display: block;
 	width: 100%;
 	padding: ($BSU) double($BSU);
-	margin-top: halve($BSU);
+	// margin-top: halve($BSU);
 	height: double($BSU) + round($line-multiplier * ($FontSize-c2 * $LineHeight-base));
 
 	border: 1px solid $Colour-inputBorder;
