@@ -71,7 +71,7 @@ $c-input-fontSize: $FontSize-c2 !default;
 $c-input-fontSize--small: $FontSize-c4 !default;
 $c-input-lineHeight: ($c-input-fontSize / ($c-input-fontSize * 0 + 1)) / 17 !default;
 $c-input-lineHeight--small: ($c-input-fontSize--small / ($c-input-fontSize--small * 0 + 1)) / 15 !default;
-$c-input-borderRadius: 6px !default;
+
 // $input-border: 1px solid $Colour-border;
 $input-align: top !default;
 $input-outline: none !default;
@@ -111,7 +111,7 @@ $inputMulti-multiplier: 4 !default;
 	height: double($BSU) + round($line-multiplier * ($FontSize-c2 * $LineHeight-base));
 
 	border: 1px solid $Colour-inputBorder;
-	border-radius: 3px;
+	border-radius: $Border-radius;
 	background-color: $Colour-inputBG;
 	color: $Colour-text;
 	outline: none;

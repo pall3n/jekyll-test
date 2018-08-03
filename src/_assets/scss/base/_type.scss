@@ -50,7 +50,6 @@
 // Large regular style font styling
 //
 
-.typeDisplay,
 .display-1 {
 	@include type($FontSize-d1 - 16px, $LineHeight-d1);
 	color: $Colour-base;
@@ -88,14 +87,21 @@
 // Heading text styling
 //
 
-.typeHeading,
 .heading {
 	@include type($FontSize-h1, $LineHeight-h1, $FF-heavy);
 }
 
-.typeHeading-4,
+.heading-3 {
+	@include type($FontSize-h3, $LineHeight-h3, $FF-heavy);
+}
+
 .heading-4 {
 	@include type($FontSize-h4, $LineHeight-h4, $FF-heavy);
+}
+
+.heading-5 {
+	@include type($FontSize-h5, $LineHeight-h5, $FF-heavy);
+	text-transform: uppercase;
 }
 
 
@@ -104,23 +110,26 @@
 // Copy text styling
 //
 
-.typeCopy,
+.copy,
 .copy {
 	@include type($FontSize-c3);
 }
 
-.typeCopy-l,
 .copy-l {
 	@include type($FontSize-c1);
 }
 
-.typeCopy-s,
+.copy-m {
+	@include type($FontSize-c2);
+}
+
 .copy-s {
 	@include type($FontSize-c4);
 }
 
 .type-p {
 	@include type($FontSize-c3);
+	font-family: $FF-copy;
 	color: $Colour-text;
 }
 
@@ -148,7 +157,7 @@
 // Title
 //
 
-.typeTitle-xs {
+.title-xs {
 	@include type($FontSize-c4, 1.2, $FF-heavy);
 	color: $Colour-baseType;
 	// text-transform: uppercase;

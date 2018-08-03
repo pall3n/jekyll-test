@@ -12,7 +12,7 @@ layout: default
 
                     <div class="Media-body m-Provider-brandIntro">
                         <h1>{{ page.provider }}</h1>
-                        <div class="typeCopy-l type-text">from &pound;{{ page.fromPrice }}</div>
+                        <div class="copy-l type-text">from &pound;{{ page.fromPrice }}</div>
                     </div>
                 </div>
 
@@ -72,14 +72,14 @@ layout: default
         <div class="Grid">
             <div class="Grid-column s-3/4--lap">
                 <div class="">
-                    <div id="overview">
+                    <div id="overview" class="blockContent">
     					<p>Passengers flying out of Heathrow Airport who want to save themselves the time and trouble of locating a parking space can make use of the special Purple Parking Long Stay Plus service. This professionally operated service is available to all terminals at Heathrow Airport and has won several awards for excellence over the years.</p>
     					<p>People who book this service will be given details of where to meet a company chauffeur when they arrive at their required Heathrow Airport terminal. The chauffeur will be easy to recognise as they will be wearing a black cap and jacket as well at the distinctive Purple Parking logo and ID tag.</p>
     					<p>After you leave, your vehicle will be professionally parked by the chauffeur at Purple Parking’s secure compound. This car park has been given the Park Mark Award for safer parking. This prestigious award is only given to compounds that pass certain checks and regularly pass strict checks. The latest security technology is in place as checks are also conducted round the clock by a team of security staff to ensure that nothing happens to your vehicle while you are away.</p>
     					<p><a href="#" class="">Read More about Purple Parking</a></p>
     				</div>
 
-                    <div class="">
+                    <div class="blockContent">
     					<div id="Testimonial" class="Testimonial">
     						<div class="Testimonial-bg">
     							<svg id="cicle" viewBox="0 0 100 200" perserveaspectratio="xMinYMid">
@@ -90,7 +90,7 @@ layout: default
     						</div>
 
     						<blockquote class="Testimonial-block">
-    							<p>Lorem ipsum dolor sit amet!</p>
+    							<div class="Testimonial-copy">Lorem ipsum dolor sit amet!</div>
 
     							<footer>
     								Mr M Hamm rated Business Parking Terminals 1 and 3 - 5.0 out of 5
@@ -98,33 +98,89 @@ layout: default
     						</blockquote>
     					</div>
 
-    					<div class="reviewRating">
-    						<div class="columns">
-    							<span class="icon icon-recommend icon--xxl icon-primary"></span>
-    						</div>
-    						<div class="columns">
-    							<div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
-    							    <a class="numericReview numericReview--alt" href="" data-modal="ajax" data-modal-title="Meet and Greet Stansted Meet and Greet Reviews" data-modal-ajax="reviews/api/product?id=2827" data-modal-tabs="false"><em><sub>Avg.</sub><span itemprop="ratingValue">3.5</span><sup>/<span itemprop="bestRating">5</span></sup></em></a>
-    							</div>
-    						</div>
-    						<div class="columns">
-    							<div class="copy type-text">is the rating given based on recent feedback for this provider</div>
-    						</div>
-    					</div>
+                        <div class="Rating mt++">
+                            <div class="Rating-card">
+                                <span class="icon icon-recommend icon-xl type-primary"></span>
+
+                                <div class="Rating-content" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                    <span class="Rating-score">Avg. 4.6/5</span> <span class="Rating-copy"> <span class="hide-mob">is the rating given</span> based on recent feedback <span class="hide-mob">for this provider</span></span>
+                                </div>
+                            </div>
+                        </div>
     				</div>
 
-                    <div id="description" class="Card Card-body">
-    					<div class="parkingOptions-heading">Other parking options by Purple Parking</div>
-    					<ul>
-    						<li><a href="#">Purple Parking Long Stay</a></li>
-    						<li><a href="#">Purple Parking Meet and Greet</a></li>
-    						<li><a href="#">Purple Parking Business Parking</a></li>
-    						<li><a href="#">Purple Parking Business Parking Plus</a></li>
-    					</ul>
-    				</div>
+                    <div class="blockContent">
+                        <div id="description" class="Card Card-body">
+        					<div class="Card-heading">Other parking options by Purple Parking</div>
+
+        					<ul class="Nav Nav--list mt+">
+        						<li class="Nav-item"><a href="#">Purple Parking Long Stay</a></li>
+        						<li class="Nav-item"><a href="#">Purple Parking Meet and Greet</a></li>
+        						<li class="Nav-item"><a href="#">Purple Parking Business Parking</a></li>
+        						<li class="Nav-item"><a href="#">Purple Parking Business Parking Plus</a></li>
+        					</ul>
+        				</div>
+                    </div>
+
+                    <div class="blockContent">
+                        <div id="description" class="Card Card--primaryWash Card-body">
+        					<div class="Card-heading">Latest Prices</div>
+
+                            <div class="Grid mt+">
+								<div class="Grid-column s-1/3--tab">
+                                    <div class="Media">
+                                        <a href="#" class="">Purple Parking Meet and Greet</a>
+
+                                        <div class="Media mt">
+                                            <div class="Media-imageMiddle price">
+                                                <sup>£</sup>59<sub>.79</sub>
+                                            </div>
+                                            <div class="Media-bodyMiddle copy-s-">
+                                                <time datetime="2012-03-21">March 21-25 (4 days)</time>
+                                                <div class="type-text copy-s">£10.35 per day</div>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+
+								<div class="Grid-column s-1/3--tab">
+                                    <div class="Media">
+                                        <a href="#" class="">Purple Parking Meet and Greet</a>
+
+                                        <div class="Media mt">
+                                            <div class="Media-imageMiddle price">
+                                                <sup>£</sup>59<sub>.79</sub>
+                                            </div>
+                                            <div class="Media-bodyMiddle copy-s-">
+                                                <time datetime="2012-03-21">March 21-25 (4 days)</time>
+                                                <div class="type-text copy-s">£10.35 per day</div>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+
+								<div class="Grid-column s-1/3--tab">
+                                    <div class="Media">
+                                        <a href="#" class="">Purple Parking Meet and Greet</a>
+
+                                        <div class="Media mt">
+                                            <div class="Media-imageMiddle price">
+                                                <sup>£</sup>59<sub>.79</sub>
+                                            </div>
+                                            <div class="Media-bodyMiddle copy-s-">
+                                                <time datetime="2012-03-21">March 21-25 (4 days)</time>
+                                                <div class="type-text copy-s">£10.35 per day</div>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+        				</div>
+                    </div>
                 </div>
             </div>
-            <div class="Grid-column s-1/4--lap"></div>
+
+            <div class="Grid-column s-1/4--lap hide-mob"></div>
         </div>
     </div>
 

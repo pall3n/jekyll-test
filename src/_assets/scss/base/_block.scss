@@ -1,0 +1,13 @@
+.blockContent {
+    + .blockContent {
+        margin-top: $Column-gutter * 1.5;
+
+        @include media('>=tab') {
+            margin-top: double($Column-gutter); // not tested
+        }
+
+        @include media('>=lap') {
+            margin-top: $Column-gutter * 2.5; // not tested
+        }
+    }
+}

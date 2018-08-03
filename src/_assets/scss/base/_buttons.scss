@@ -36,7 +36,7 @@
 	text-decoration: none;
 	text-shadow: none;
 	border: 1px solid $Colour-border;
-	border-radius: 3px;
+	border-radius: $Border-radius;
 	transition: all .3s;
 
 	&:hover,

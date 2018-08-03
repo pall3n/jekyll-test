@@ -38,7 +38,7 @@
     display: inline-block;
     padding: $BSU ($BSU * 3);
     border: 1px solid $Colour-border;
-    border-radius: 3px;
+    border-radius: $Border-radius;
 
     @include media('<tab') {
         display: block;

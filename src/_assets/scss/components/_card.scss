@@ -35,3 +35,23 @@
 // .CardContent {
 //     background-color: $Colour-white;
 // }
+
+.Card {
+    background-color: $Colour-white;
+    border: 1px solid $Colour-border;
+    border-radius: $Border-radius-m;
+}
+
+.Card--primaryWash {
+    background-color: $Colour-primaryWash;
+    border-color: $Colour-borderPrimary;
+}
+
+.Card-body {
+    padding: $Column-gutter;
+}
+
+.Card-heading {
+    @include type($FontSize-h3, $LineHeight-h3, $FF-heavy);
+    margin-bottom: double($BSU);
+}

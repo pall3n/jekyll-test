@@ -37,6 +37,7 @@ $Colour-border: rgba($Colour-base, .14) !default;
 $Colour-borderSolid: #dedede;
 $Colour-border--contrast: $Colour-white !default;
 $Colour-border--alt: #c3c3c3;
+$Colour-borderPrimary: #91dbf7;
 
 $Colour-bg: #ececea !default;
 $Colour-bgDark: #333 !default;
@@ -212,3 +213,13 @@ $Grid-gutter--tab: $Layout-gutter * .5;
 $Grid-gutter--lap: $Layout-gutter * 2;
 
 $Column-gutter: $Layout-gutter;
+
+
+
+
+// --------------------------------------------------------------------------
+// Border Variables
+// --------------------------------------------------------------------------
+
+$Border-radius: 3px;
+$Border-radius-m: 5px;

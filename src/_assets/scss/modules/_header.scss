@@ -35,8 +35,8 @@
 .m-Header {
     position: relative;
     z-index: 999;
-    padding-top: $BSU * 1.5;
-    padding-bottom: $BSU * 1.5;
+    padding-top: double($BSU);
+    padding-bottom: double($BSU);
 
     background-color: $Colour-base;
     border-top: 5px solid $Colour-primary;
