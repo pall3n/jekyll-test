@@ -129,8 +129,8 @@
 .m-Hero-sticker {
     position: absolute;
     top: triple($BSU);
-    right: 50%;
-    margin-right: -25rem;
+    right: halve($Column-gutter);
+    // margin-right: -20rem;
 
     max-width: 5rem;
     height: auto;
@@ -138,6 +138,7 @@
     @include hide();
 
     @include media('>=lap') {
+        right: 50%;
         padding-top: $BSU * 3;
         margin-right: -28rem;
     }

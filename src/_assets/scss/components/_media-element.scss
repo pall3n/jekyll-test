@@ -60,14 +60,14 @@
 .Media-imageMiddle {
 	margin-right: $Layout-gutter;
 
-	@include media('>=tab') {
+	@include media('>=lap') {
 		margin-right: double($Layout-gutter);
 	}
 
 	.Media--s & {
 		margin-right: halve($Layout-gutter);
 
-		@include media('>=tab') {
+		@include media('>=lap') {
 			margin-right: $Layout-gutter;
 		}
 	}
@@ -81,14 +81,14 @@
 .Media-imageAltMiddle {
 	margin-left: $Layout-gutter;
 
-	@include media('>=tab') {
+	@include media('>=lap') {
 		margin-left: double($Layout-gutter);
 	}
 
 	.Media--s & {
 		margin-left: halve($Layout-gutter);
 
-		@include media('>=tab') {
+		@include media('>=lap') {
 			margin-left: $Layout-gutter;
 		}
 	}

@@ -32,9 +32,16 @@
 // STYLING
 // --------------------------------------------------------------------------
 
-// .CardContent {
+.CardContent {
 //     background-color: $Colour-white;
-// }
+    @include media('>=tab') {
+        padding: $Column-gutter * 1.25;
+
+        background-color: $Colour-white;
+        border: 1px solid $Colour-border;
+        border-radius: $Border-radius-m;
+    }
+}
 
 .Card {
     background-color: $Colour-white;

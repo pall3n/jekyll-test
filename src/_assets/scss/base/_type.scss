@@ -152,6 +152,15 @@
 	}
 }
 
+.link-proceed {
+	&:after {
+		content: '\2192';
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: halve($BSU);
+	}
+}
+
 
 //
 // Title
@@ -168,9 +177,9 @@
 // icons
 //
 
-.icon-xl {
-	@include font-size($FontSize-i1);
-}
+// .icon-xl {
+// 	@include font-size($FontSize-i1);
+// }
 
 
 

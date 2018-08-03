@@ -34,6 +34,10 @@
 
 .Rating {}
 
+.Rating--block {
+    text-align: center;
+}
+
 .Rating-card {
     display: inline-block;
     padding: $BSU ($BSU * 3);
@@ -50,14 +54,40 @@
         padding-right: $BSU * 4;
     }
 
-    @include media('>=tab') {
+    @include media('>=lap') {
         padding-left: $BSU * 5;
         padding-right: $BSU * 5;
     }
 
-    .icon {
+    &:before {
+        @include icon-font();
+        @include font-size($FontSize-i1);
+        content: $icon-recommend;
         display: inline-block;
         vertical-align: middle;
+        margin-right: double($BSU);
+
+        color: $Colour-primary;
+
+        @include media('>=tab') {
+            @include font-size($FontSize-i1 * 1.15);
+            margin-right: triple($BSU);
+        }
+
+        @include media('>=lap') {
+            @include font-size($FontSize-i1 * 1.25);
+        }
+    }
+
+    .Rating--block & {
+        @include media('>=tab') {
+            padding: double($BSU) $BSU * 5;
+        }
+
+        @include media('>=lap') {
+            padding-left: $BSU * 6;
+            padding-right: $BSU * 6;
+        }
     }
 }
 
@@ -65,7 +95,7 @@
     display: inline-block;
     vertical-align: middle;
     // min-height: $FontSize-i1;
-    margin-left: double($BSU);
+    // margin-left: double($BSU);
 }
 
 .Rating-score {
@@ -73,9 +103,14 @@
     font-family: $FF-heavy;
     display: inline-block;
     vertical-align: middle;
+    margin-right: halve($BSU);
 
     color: $Colour-gold;
 }
+
+// .Rating-icon {
+//
+// }
 
 .Rating-copy {
     @include font-size($FontSize-c4);

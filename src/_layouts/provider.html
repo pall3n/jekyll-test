@@ -4,13 +4,14 @@ layout: default
 
 <div class="paintBody">
 
-    <div class="panelHero">
-        <div class="Grid">
-            <div class="Grid-column s-3/4--lap m-Provider-heroBody">
+    <div class="panelHero m-Provider-hero">
+        <!-- <div class="Grid"> -->
+            <!-- <div class="Grid-column s-3/4--lap"> -->
+            <div class="m-Provider-heroBody">
                 <div class="Media m-Provider-brandWrap">
-                    <img src="http://placehold.it/176x80" alt="" class="Media-image m-Provider-brandImage">
+                    <img src="http://placehold.it/120x90" alt="" class="Media-imageMiddle m-Provider-brandImage">
 
-                    <div class="Media-body m-Provider-brandIntro">
+                    <div class="Media-bodyMiddle m-Provider-brandIntro">
                         <h1>{{ page.provider }}</h1>
                         <div class="copy-l type-text">from &pound;{{ page.fromPrice }}</div>
                     </div>
@@ -21,57 +22,58 @@ layout: default
 						<img src="../../../assets/image/hero/hp/best_price_sticker.png" class="aspectImg">
 					</div>
 					<div class="Media-bodyMiddle s-85">
-						<div class="copy-xl type-text mt-">Pre-book <span class="hide-mob">your Meet and Greet or Park and Ride service at Heathrow Airport</span> and save up to 60%</div>
+						<div class="m-Provider-byline">Pre-book <span class="hide-mob">your Meet and Greet or Park and Ride service at Heathrow Airport</span> and save up to 60%</div>
 					</div>
 				</div>
             </div>
+            <!-- </div> -->
 
-            <div class="Grid-column s-1/4--lap m-Provider-search">
-                <div class="m-Provider-searchBody">
-                    <div class="">
-                        <div class="Form-field s-1/2">
+            <div class="m-Provider-search">
+                <div class="heading-3 hide-tabDown icon icon-search icon--highlight">Search now to save</div>
+
+                <div class="m-SearchAside">
+                    <form action="">
+                        <div class="Form-field m-Search-fieldDropOff">
                             <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
                             <div class="Form-inputWrap icon-clock">
                                 <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
                             </div>
                         </div> <!-- End of .field -->
 
-                        <div class="Form-field s-1/2">
+                        <div class="Form-field m-Search-fieldDropOffTime">
                             <label class="Form-label" for="dropTime">Drop-off Time</label>
                             <div class="Form-inputWrap icon-calendar">
                                 <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
                             </div>
                         </div> <!-- End of .field -->
-                    </div>
 
-                    <div class="mt+">
-                        <div class="Form-field s-1/2">
+                        <div class="Form-field m-Search-fieldPickUp">
                             <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
                             <div class="Form-inputWrap icon-clock">
                                 <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
                             </div>
                         </div> <!-- End of .field -->
 
-                        <div class="Form-field s-1/2">
+                        <div class="Form-field m-Search-fieldPickUpTime">
                             <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
                             <div class="Form-inputWrap icon-calendar">
                                 <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
                             </div>
                         </div> <!-- End of .field -->
-                    </div>
 
-                    <div class="Form-fieldSubmit mt+">
-                        <button class="Form-submit" type="submit">Search</button>
-                    </div> <!-- End of .field -->
+                        <div class="Form-field m-Search-submit">
+                            <button class="Form-submit" type="submit">Search</button>
+                        </div> <!-- End of .field -->
+                    </form>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 
     <div class="panel">
         <div class="Grid">
             <div class="Grid-column s-3/4--lap">
-                <div class="">
+                <div class="CardContent">
                     <div id="overview" class="blockContent">
     					<p>Passengers flying out of Heathrow Airport who want to save themselves the time and trouble of locating a parking space can make use of the special Purple Parking Long Stay Plus service. This professionally operated service is available to all terminals at Heathrow Airport and has won several awards for excellence over the years.</p>
     					<p>People who book this service will be given details of where to meet a company chauffeur when they arrive at their required Heathrow Airport terminal. The chauffeur will be easy to recognise as they will be wearing a black cap and jacket as well at the distinctive Purple Parking logo and ID tag.</p>
@@ -98,9 +100,9 @@ layout: default
     						</blockquote>
     					</div>
 
-                        <div class="Rating mt++">
+                        <div class="Rating Rating--block mt++">
                             <div class="Rating-card">
-                                <span class="icon icon-recommend icon-xl type-primary"></span>
+                                <!-- <span class="icon icon-recommend icon-xl type-primary"></span> -->
 
                                 <div class="Rating-content" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
                                     <span class="Rating-score">Avg. 4.6/5</span> <span class="Rating-copy"> <span class="hide-mob">is the rating given</span> based on recent feedback <span class="hide-mob">for this provider</span></span>
@@ -180,7 +182,14 @@ layout: default
                 </div>
             </div>
 
-            <div class="Grid-column s-1/4--lap hide-mob"></div>
+            <div class="Grid-column s-1/4--lap hide-mob">
+                <div class="Card Card-body">
+                    <div class="Card-heading">Best Price Guarantee</div>
+
+                    <p>We offer a no quibble price match policy for all bookings made with us. Find it cheaper elsewhere and we'll match the rate.</p>
+                    <a href="#" class="link-proceed mt+">Find out more</a>
+                </div>
+            </div>
         </div>
     </div>
 

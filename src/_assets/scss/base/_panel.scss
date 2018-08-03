@@ -105,8 +105,8 @@ $Panel-gutter--lap: $BSU * 8 !default;
     background-color: $Colour-primaryWash;
 
 	@include media('>=tab') {
-		padding-top: $Panel-gutter--tab;
-	    padding-bottom: $Panel-gutter--tab;
+		padding-top: double($Panel-gutter--tab);
+	    // padding-bottom: $Panel-gutter--tab;
 	}
 
 	@include media('>=lap') {

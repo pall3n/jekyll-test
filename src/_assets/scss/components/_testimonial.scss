@@ -112,7 +112,9 @@
     }
 
     @include media('>=tab') {
-        margin-right: -30px;
+        .CardContent & {
+            margin-right: -($Column-gutter * 1.25);
+        }
     }
 }
 
