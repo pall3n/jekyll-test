@@ -101,12 +101,13 @@ $Panel-gutter--lap: $BSU * 8 !default;
 
 .panelHero {
 	padding-top: $BSU * 2;
+	padding-bottom: $BSU * 2;
 
     background-color: $Colour-primaryWash;
 
 	@include media('>=tab') {
 		padding-top: double($Panel-gutter--tab);
-	    // padding-bottom: $Panel-gutter--tab;
+	    padding-bottom: double($Panel-gutter--tab);
 	}
 
 	@include media('>=lap') {

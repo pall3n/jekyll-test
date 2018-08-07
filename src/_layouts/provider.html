@@ -4,9 +4,8 @@ layout: default
 
 <div class="paintBody">
 
-    <div class="panelHero m-Provider-hero">
-        <!-- <div class="Grid"> -->
-            <!-- <div class="Grid-column s-3/4--lap"> -->
+    <div class="panelHero">
+        <div class="m-Provider-hero">
             <div class="m-Provider-heroBody">
                 <div class="Media m-Provider-brandWrap">
                     <img src="http://placehold.it/120x90" alt="" class="Media-imageMiddle m-Provider-brandImage">
@@ -21,58 +20,59 @@ layout: default
 					<div class="Media-imageMiddle m-Provider-sticker">
 						<img src="../../../assets/image/hero/hp/best_price_sticker.png" class="aspectImg">
 					</div>
-					<div class="Media-bodyMiddle s-85">
+					<div class="Media-bodyMiddle s-80">
 						<div class="m-Provider-byline">Pre-book <span class="hide-mob">your Meet and Greet or Park and Ride service at Heathrow Airport</span> and save up to 60%</div>
 					</div>
 				</div>
             </div>
-            <!-- </div> -->
+        </div>
+    </div>
 
-            <div class="m-Provider-search">
-                <div class="heading-3 hide-tabDown icon icon-search icon--highlight">Search now to save</div>
+    <div class="m-Search paint">
+        <form action="">
+            <div class="m-Search-container">
+                <div class="m-Search-row">
+                    <div class="Form-field m-Search-fieldDropOff">
+                        <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
+                        <div class="Form-inputWrap icon-clock">
+                            <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
+                        </div>
+                    </div> <!-- End of .field -->
 
-                <div class="m-SearchAside">
-                    <form action="">
-                        <div class="Form-field m-Search-fieldDropOff">
-                            <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
-                            <div class="Form-inputWrap icon-clock">
-                                <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field m-Search-fieldDropOffTime">
-                            <label class="Form-label" for="dropTime">Drop-off Time</label>
-                            <div class="Form-inputWrap icon-calendar">
-                                <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field m-Search-fieldPickUp">
-                            <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
-                            <div class="Form-inputWrap icon-clock">
-                                <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field m-Search-fieldPickUpTime">
-                            <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
-                            <div class="Form-inputWrap icon-calendar">
-                                <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field m-Search-submit">
-                            <button class="Form-submit" type="submit">Search</button>
-                        </div> <!-- End of .field -->
-                    </form>
+                    <div class="Form-field m-Search-fieldDropOffTime">
+                        <label class="Form-label" for="dropTime">Drop-off Time</label>
+                        <div class="Form-inputWrap icon-calendar">
+                            <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
+                        </div>
+                    </div> <!-- End of .field -->
                 </div>
+
+                <div class="m-Search-row">
+                    <div class="Form-field m-Search-fieldPickUp">
+                        <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
+                        <div class="Form-inputWrap icon-clock">
+                            <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
+                        </div>
+                    </div> <!-- End of .field -->
+
+                    <div class="Form-field m-Search-fieldPickUpTime">
+                        <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
+                        <div class="Form-inputWrap icon-calendar">
+                            <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
+                        </div>
+                    </div> <!-- End of .field -->
+                </div>
+
+                <div class="Form-field m-Search-submit">
+                    <button class="Form-submit" type="submit">Search</button>
+                </div> <!-- End of .field -->
             </div>
-        <!-- </div> -->
+        </form>
     </div>
 
     <div class="panel">
         <div class="Grid">
-            <div class="Grid-column s-3/4--lap">
+            <div class="Grid-row s-3/4--lap">
                 <div class="CardContent">
                     <div id="overview" class="blockContent">
     					<p>Passengers flying out of Heathrow Airport who want to save themselves the time and trouble of locating a parking space can make use of the special Purple Parking Long Stay Plus service. This professionally operated service is available to all terminals at Heathrow Airport and has won several awards for excellence over the years.</p>
@@ -84,11 +84,15 @@ layout: default
                     <div class="blockContent">
     					<div id="Testimonial" class="Testimonial">
     						<div class="Testimonial-bg">
-    							<svg id="cicle" viewBox="0 0 100 200" perserveaspectratio="xMinYMid">
-    								<path d="M100 200 V0 C50 0 0 50 0 100 C0 150 50 200 100 200Z" fill="#e9f9fe"></path>
-    							</svg>
+                                <div class="Testimonial-semi">
+                                    <canvas class="Testimonial-semiCanvas" height="2" width="1"></canvas>
+        							<svg id="cicle" viewBox="0 0 100 200" perserveaspectratio="xMinYMid">
+        								<path d="M100 200 V0 C50 0 0 50 0 100 C0 150 50 200 100 200Z" fill="#e9f9fe"></path>
+        							</svg>
 
-    							<div class="Testimonial-bgRec"></div>
+        							<div class="Testimonial-bgRec"></div>
+                                </div>
+                                <div class="Testimonial-bgRec"></div>
     						</div>
 
     						<blockquote class="Testimonial-block">
@@ -182,14 +186,14 @@ layout: default
                 </div>
             </div>
 
-            <div class="Grid-column s-1/4--lap hide-mob">
+            <!-- <div class="Grid-column s-1/4--lap hide-mob">
                 <div class="Card Card-body">
                     <div class="Card-heading">Best Price Guarantee</div>
 
                     <p>We offer a no quibble price match policy for all bookings made with us. Find it cheaper elsewhere and we'll match the rate.</p>
                     <a href="#" class="link-proceed mt+">Find out more</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

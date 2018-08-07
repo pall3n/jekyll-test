@@ -103,9 +103,9 @@
 	word-spacing: normal;
 	text-rendering: auto;
 
-	@include media('>=tab') {
-		padding-top: ($Layout-gutter);
-		padding-bottom: ($Layout-gutter);
+	@include media('<tab') {
+		padding-top: $Layout-gutter;
+		padding-bottom: $Layout-gutter;
 	}
 
 	// @include media('>=lap') {

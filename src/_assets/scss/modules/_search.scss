@@ -42,31 +42,28 @@
         padding-right: $Column-gutter;
     }
 
-    .Tabs-body {
-        padding-top: $Column-gutter;
-        padding-bottom: $Column-gutter;
-    }
+    // .Tabs-body {
+    //     padding-top: $Column-gutter;
+    //     padding-bottom: $Column-gutter;
+    // }
 
-    form {
-        @include media('>=tab') {
-            letter-spacing: -0.31em;
-            text-rendering: optimizespeed;
+    // form {
+        // @include media('>=tab') {
+            // letter-spacing: -0.31em;
+            // text-rendering: optimizespeed;
 
             // margin-left: - halve($BSU);
             // margin-right: - halve($BSU);
-        }
-    }
+        // }
+    // }
 
     .Form-field {
+        padding-left: $BSU;
+        padding-right: $BSU;
+
         @include media('>=tab') {
-            display: inline-block;
         	padding-left: halve($BSU);
         	padding-right: halve($BSU);
-        	vertical-align: bottom;
-
-        	letter-spacing: normal;
-        	word-spacing: normal;
-        	text-rendering: auto;
         }
     }
 
@@ -113,44 +110,94 @@
 }
 
 .m-SearchAside {
-    padding: $Column-gutter ($Column-gutter - halve($BSU));
+    padding: (halve($Column-gutter) - halve($BSU)) (halve($Column-gutter) - halve($BSU)) halve($Column-gutter) (halve($Column-gutter) - halve($BSU));
 
     background-color: $Colour-offWhite;
+    border-radius: $Border-radius-m;
 
     @include media('>=tab') {
-        padding-left: ($Column-gutter * 1.5) - halve($BSU);
-        padding-right: ($Column-gutter * 1.5) - halve($BSU);
+        // padding-left: ($Column-gutter * 1.5) - halve($BSU);
+        // padding-right: ($Column-gutter * 1.5) - halve($BSU);
+    }
+
+    .Form-label {
+        @include font-size(10px);
+    }
+}
+
+.m-Search-container {
+    @include contain();
+    padding: $Layout-gutter ($Layout-gutter - $BSU); //should match the grid
+    // padding-right: $Layout-gutter - $BSU; //should match the grid
+
+    @include media('>=tab') {
+        display: flex;
+        align-items: flex-end;
+
+        padding-left: $Column-gutter + $Grid-gutter--tab - halve($BSU);
+        padding-right: $Column-gutter + $Grid-gutter--tab - halve($BSU);
+    }
+
+    @include media('>=lap') {
+        padding-left: $Column-gutter + $Grid-gutter--lap - halve($BSU);
+        padding-right: $Column-gutter + $Grid-gutter--lap - halve($BSU);
+    }
+}
+
+.m-Search-row {
+    display: flex;
+
+    @include media('<tab') {
+        + .m-Search-row {
+            margin-top: double($BSU);
+        }
+    }
+
+    .m-Search & {
+        // display: flex;
+
+        @include media('>=tab') {
+            width: 26.5% + 16%;
+        }
+    }
+
+    .m-SearchAside & {
+        + .m-Search-row {
+            margin-top: halve($BSU);
+        }
     }
 }
 
 .m-Search-fieldAirport {}
 
 .m-Search-fieldDropOff {
-    @include media('>=tab') {
-        width: 26.5%;
-    }
+    width: percentage(3/5);
 }
 
 .m-Search-fieldDropOffTime {
-    @include media('>=tab') {
-        width: 16%;
-    }
+    width: percentage(2/5);
 }
 
 .m-Search-fieldPickUp {
-    @include media('>=tab') {
-        width: 26.5%;
-    }
+    width: percentage(3/5);
 }
 
 .m-Search-fieldPickUpTime {
-    @include media('>=tab') {
-        width: 16%;
-    }
+    width: percentage(2/5);
 }
 
 .m-Search-submit {
-    @include media('>=tab') {
-        width: 15%;
+    @include media('<tab') {
+        margin-top: double($BSU);
+    }
+
+    .m-Search & {
+        @include media('>=tab') {
+            width: 15%;
+        }
+    }
+
+    .m-SearchAside & {
+        margin-top: ($BSU * 1.5);
     }
 }
