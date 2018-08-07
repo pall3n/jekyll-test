@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="paintBody m-Provider">
+<div class="paintBody m-Provider m-Provider--product">
 
     <div class="panelHero">
         <div class="container">
@@ -10,22 +10,26 @@ layout: default
                 <div class="m-Provider-brandWrap">
                     <div class="m-Provider-brandImageWrap">
                         <img src="http://placehold.it/128x96" alt="" class="m-Provider-brandImage aspectImg">
+
+                        <div class="m-Provider-brandType">
+                            <img src="https://s3.amazonaws.com/neon-media/Logos/Products/meet-and-greet.png" class="aspectImg a-middle" alt="Meet and Greet Logo">
+                        </div>
                     </div>
 
                     <div class="m-Provider-brandIntro">
-                        <h1>{{ page.provider }}</h1>
+                        <div class="copy-m type-text mb" itemprop="name">{{ page.provider }}</div>
+                        <h1 class="mt">{{ page.product }}</h1>
                         <div class="copy-l type-text">from &pound;{{ page.fromPrice }}</div>
+
+                        <ul class="list-tick copy-m">
+							<li>Legal meet and greet</li>
+							<li>Meet and greet</li>
+							<li>No shuttle bus required</li>
+							<li>Approved parking operator</li>
+							<li>Price includes Airport Access fee</li>
+						</ul>
                     </div>
                 </div>
-
-                <div class="">
-					<div class="m-Provider-sticker">
-						<img src="../../../assets/image/hero/hp/best_price_sticker.png" class="aspectImg">
-					</div>
-					<div class="m-Provider-bylineWrap">
-						<div class="m-Provider-byline">Pre-book <span class="hide-mob">your Meet and Greet or Park and Ride service at Heathrow Airport</span> and save up to 60%</div>
-					</div>
-				</div>
             </div>
         </div>
     </div>

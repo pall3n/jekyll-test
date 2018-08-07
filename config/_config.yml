@@ -30,9 +30,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 assetBaseUrl: "" # add in a base url for external assets i.e images running on s3
 
 collections:
-    providers:
+    parking:
         output: true
-        permalink: /:collection/:name/
+        permalink: :collection/:path/
 
 # Build settings
 markdown: kramdown

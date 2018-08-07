@@ -1,29 +1,11 @@
 .m-Provider {
+    .list-tick {
+        margin-top: double($BSU);
 
-}
-
-.m-Provider-hero {
-    @include media('>=lap') {
-        max-width: $Layout-maxWidth;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: $Grid-gutter--lap;
-        padding-right: $Grid-gutter--lap;
-        // letter-spacing: -0.31em;
-        // text-rendering: optimizespeed;
+        @include media('>=tab') {
+            margin-top: triple($BSU);
+        }
     }
-}
-
-.m-Provider-heroBody {
-    @include media('>=lap') {
-        // display: inline-block;
-        // letter-spacing: normal;
-        // word-spacing: normal;
-        // text-rendering: auto;
-        padding-left: $Column-gutter;
-        padding-right: $Column-gutter;
-    }
-
 }
 
 .m-Provider-heroBody {
@@ -41,35 +23,87 @@
     }
 }
 
-// .m-Provider-heroBodyPanel {
-//     @include media('>=tab') {
-//         max-width: 40rem;
-//         margin-left: auto;
-//         margin-right: auto;
-//         padding-bottom: $BSU * 8;
-//     }
-// }
-
 .m-Provider-brandWrap {
     position: relative;
-    padding-bottom: 94px;
+
+    @include media('<tab') {
+        padding-bottom: 94px + 24px;
+    }
 
     @include media('>=tab') {
-        padding-bottom: $Column-gutter;
+        width: 80%;
+    }
+
+
+    + * {
+        margin-top: $BSU;
+
+        @include media('>=tab') {
+           margin-top: $Column-gutter;
+       }
+    }
+}
+
+.m-Provider-brandImageWrap {
+    @include media('<tab') {
+        position: absolute;
+        bottom: 0;
+        // left: 50%;
+        left: 0;
+        right: 0;
+        // transform: translateX(-50%);
+        text-align: center;
+    }
+
+    @include media('>=tab') {
+        // padding-bottom: $Column-gutter;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $Layout-gutter;
+
+        .m-Provider--product & {
+            vertical-align: top;
+        }
+    }
+
+    @include media('>=lap') {
+        margin-right: double($Layout-gutter);
     }
 }
 
 .m-Provider-brandImage {
     @include media('<tab') {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.m-Provider-brandType {
+    @include media('<tab') {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: $Column-gutter;
+    }
+
+    @include media('>=tab') {
+        margin-top: double($BSU);
     }
 }
 
 .m-Provider-brandIntro {
-    width: 73%;
+    @include media('>=tab') {
+        display: inline-block;
+        vertical-align: middle;
+        width: 71%;
+
+        .m-Provider--product & {
+            vertical-align: top;
+        }
+    }
+
+    @include media('>=lap') {
+        width: 66%;
+    }
 
     h1 {
         @include media('>=tab') {
@@ -85,17 +119,32 @@
 }
 
 .m-Provider-sticker {
-    max-width: 4.5rem;
+    max-width: 3.5rem;
 
     @include media('<tab') {
         position: absolute;
-        bottom: 90px;
+        bottom: 98px;
         left: 50%;
-        transform: translateX(-122px);
+        transform: translateX(-96px);
+    }
+
+    @include media('>=tab') {
+        max-width: 4.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $Layout-gutter;
     }
 
     @include media('>=lap') {
         margin-right: $Layout-gutter * 1.5;
+    }
+}
+
+.m-Provider-bylineWrap {
+    @include media('>=tab') {
+        display: inline-block;
+        vertical-align: middle;
+        width: 82%;
     }
 }
 
