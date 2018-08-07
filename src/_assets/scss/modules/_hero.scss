@@ -105,7 +105,8 @@
     z-index: 1;
 
     @include media('<tab') {
-        background-color: $Colour-heroBgTabs;
+        // background-color: $Colour-heroBgTabs;
+        background-color: $Colour-primaryWash;
     }
 }
 

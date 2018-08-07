@@ -1,0 +1,95 @@
+// --------------------------------------------------------------------------
+// TCONTENT NAV COMPONENT
+// --------------------------------------------------------------------------
+//
+// Content nav
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLES
+// --------------------------------------------------------------------------
+
+.ContentNav {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transform: translateY(-100%);
+    transition: transform .3s,opacity .2s ease-in-out .1s;
+
+    background-color: $Colour-white;
+    border-bottom: 1px solid $Colour-border;
+
+    &.is-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform .3s,opacity .2s ease-in-out .1s;
+    }
+
+    &.has-search {
+        padding-right: 75px;
+    }
+}
+
+.ContentNav-list {
+    @include list-reset();
+    @include list-inline();
+
+	white-space: nowrap;
+	overflow-x: scroll;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+    @include container();
+    max-width: $Layout-maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+
+    li + li {
+        margin-left: $Column-gutter;
+    }
+}
+
+.ContentNav-listLink {
+    padding-top: double($BSU);
+    padding-bottom: double($BSU);
+}
+
+.ContentNav-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: double($BSU);
+
+    background-color: $Colour-primary;
+    color: $Colour-white;
+    box-shadow: -10px 0 20px #fff;
+}
