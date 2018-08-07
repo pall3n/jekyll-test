@@ -70,6 +70,18 @@
 
 .m-Provider-brandIntro {
     width: 73%;
+
+    h1 {
+        @include media('>=tab') {
+            @include font-size(30px);
+        }
+    }
+
+    .copy-l {
+        @include media('>=tab') {
+            padding-top: halve($BSU);
+        }
+    }
 }
 
 .m-Provider-sticker {
