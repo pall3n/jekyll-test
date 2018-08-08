@@ -1,0 +1,111 @@
+// --------------------------------------------------------------------------
+// STEPS COMPONENTS
+// --------------------------------------------------------------------------
+//
+// Step mcSteps
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.Steps {
+	@include list-reset();
+	@include list-inline();
+	@include font-size($FontSize-c4);
+
+	// display: flex;
+}
+
+.Steps-item {
+	position: relative;
+	padding: ($Base-spacing-unit * 4.5) $Column-gutter $Base-spacing-unit;
+
+	// letter-spacing: normal;
+	// word-spacing: normal;
+	// text-rendering: auto;
+
+	+ .Steps-item {
+		margin-left: -4px;
+	}
+
+	&:before {
+		content: '';
+
+		display: block;
+		position: absolute;
+		top: double($Base-spacing-unit);
+		left: 50%;
+
+		width: 50%;
+		height: 1px;
+
+		background-color: $Colour-borderSolid;
+	}
+
+	&:after {
+		content: '';
+
+		display: block;
+		position: absolute;
+		top: $Base-spacing-unit;
+		left: 50%;
+		transform: translateX(-50%);
+
+		width: double($Base-spacing-unit);
+		height: double($Base-spacing-unit);
+
+		background-color: $Colour-white;
+		border: 1px solid $Colour-borderSolid;
+		border-radius: 50%;
+	}
+
+	&.is-complete {
+		&:after {
+			background-color: $Colour-primary;
+			border-color: transparent;
+		}
+	}
+
+	+ .Steps-item {
+		&:before {
+			left: 0;
+			width: 100%;
+		}
+
+		&:last-of-type:before {
+			width: 50%;
+		}
+	}
+}
+
+.Steps-link {
+	color: $Colour-text;
+
+	.is-complete & {
+		color: $Colour-base;
+	}
+}

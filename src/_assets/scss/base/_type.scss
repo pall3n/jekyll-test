@@ -67,6 +67,10 @@
 	@include type($FontSize-d2, $LineHeight-d2, $FF-book);
 }
 
+.display-3 {
+	@include type($FontSize-d3, $LineHeight-d3);
+}
+
 .displaySub-1 {
 	@include type($FontSize-ds1 - 8px, 1.3, $FF-book);
 
@@ -166,6 +170,12 @@
 // Title
 //
 
+.title-s {
+	@include type($FontSize-c2, 1.2, $FF-heavy);
+	color: $Colour-baseType;
+	// text-transform: uppercase;
+}
+
 .title-xs {
 	@include type($FontSize-c4, 1.2, $FF-heavy);
 	color: $Colour-baseType;
@@ -180,6 +190,10 @@
 // .icon-xl {
 // 	@include font-size($FontSize-i1);
 // }
+
+.icon-m {
+	@include type($FontSize-i3);
+}
 
 
 
@@ -205,4 +219,8 @@
 
 .type--accent {
 	color: $Colour-accent;
+}
+
+.type-required {
+	color: $Colour-error;
 }

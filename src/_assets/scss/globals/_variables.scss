@@ -118,6 +118,9 @@ $LineHeight-d1: 1.15 !default;
 $FontSize-d2: 25px !default;
 $LineHeight-d2: 1.15 !default;
 
+$FontSize-d3: 20px !default;
+$LineHeight-d3: 1.4 !default;
+
 // $FontSize-d3: 40px !default;
 // $LineHeight-d3: 1.4 !default;
 //
@@ -173,6 +176,7 @@ $c-typeHeading-marginFirstChild: false;
 //
 
 $FontSize-i1: 32px;
+$FontSize-i3: 20px;
 
 
 
@@ -210,7 +214,7 @@ $Layout-maxWidth: 1040px + (4 * $Layout-gutter);
 // --------------------------------------------------------------------------
 
 $Grid-gutter--tab: $Layout-gutter * .5;
-$Grid-gutter--lap: $Layout-gutter * 2;
+$Grid-gutter--lap: $Layout-gutter * 1;
 
 $Column-gutter: $Layout-gutter;
 

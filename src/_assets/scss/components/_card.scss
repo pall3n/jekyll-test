@@ -33,13 +33,61 @@
 // --------------------------------------------------------------------------
 
 .CardContent {
-//     background-color: $Colour-white;
     @include media('>=tab') {
         padding: $Column-gutter * 1.25;
 
         background-color: $Colour-white;
         border: 1px solid $Colour-border;
         border-radius: $Border-radius-m;
+    }
+
+    @include media('>=lap') {
+        padding: $Column-gutter * 1.5;
+    }
+}
+
+.CardActions {
+    @include media('>=tab') {
+        background-color: $Colour-white;
+        border: 1px solid $Colour-border;
+        border-radius: $Border-radius-m;
+    }
+
+    .Card-head {
+        @include media('>=tab') {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .Card-steps {
+        @include media('>=tab') {
+            flex-grow: 1;
+            text-align: right;
+        }
+    }
+
+    .Card-body {
+        @include media('>=tab') {
+            padding: $Column-gutter * 1.25;
+        }
+
+        @include media('>=lap') {
+            padding: $Column-gutter * 1.5;
+        }
+    }
+
+    .Card-footer {
+        border-top: 1px solid $Colour-border;
+
+        @include media('>=tab') {
+            display: flex;
+            padding: $Column-gutter * 1.25;
+        }
+
+        @include media('>=lap') {
+            padding: $Column-gutter * 1.5;
+        }
     }
 }
 
@@ -61,4 +109,37 @@
 .Card-heading {
     @include type($FontSize-h3, $LineHeight-h3, $FF-heavy);
     margin-bottom: double($BSU);
+}
+
+.Card-section {
+    padding-top: $Column-gutter;
+    margin-top: $Column-gutter;
+
+    border-top: 1px solid $Colour-border;
+
+    .Card--primaryWash & {
+        border-top-color: $Colour-borderPrimary;
+    }
+}
+
+.Card-actionsProceed {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.Card-steps {
+    @include media('>=tab') {
+
+    }
+
+    @include hide();
+}
+
+.Card-priceWrap {
+    display: flex;
+
+    .price {
+        flex-grow: 1;
+        margin-top: -5px;
+    }
 }

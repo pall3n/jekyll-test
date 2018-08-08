@@ -33,6 +33,7 @@
 	display: inline-block;
 	padding: $padding;
 
+	color: $Colour-primary;
 	text-decoration: none;
 	text-shadow: none;
 	border: 1px solid $Colour-border;
@@ -42,6 +43,7 @@
 	&:hover,
 	&:focus {
 		cursor: pointer;
+		color: $Colour-action--dark;
 		transition: all .3s;
 	}
 }
@@ -79,6 +81,26 @@
 // 	color: $Colour-white;
 // }
 
+.button--proceedNext {
+	@include button--paint($Colour-success, $Colour-success--darken);
+
+	&:after {
+		@include icon-font();
+		@include icon-inlineAlt();
+		content: $icon-chevron-right;
+
+	}
+}
+
 .button--proceed {
 	@include button--paint($Colour-success, $Colour-success--darken);
+}
+
+.button--back {
+	&:before {
+		@include icon-font();
+		@include icon-inline();
+		content: $icon-chevron-left;
+
+	}
 }

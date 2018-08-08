@@ -66,6 +66,10 @@
 	line-height: $FontSize-h3 * $LineHeight-h3;
 }
 
+.right {
+	float: right;
+}
+
 .block-tab {
 	@include media('>=tab', '<lap') {
 		display: block;

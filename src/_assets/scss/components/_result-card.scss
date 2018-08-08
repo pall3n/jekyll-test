@@ -66,23 +66,31 @@
 }
 
 .ResultCard-brand {
-    // padding: $Column-gutter;
+    @include media('<tab') {
+        overflow: hidden;
+        _overflow: visible;
+        zoom: 1;
+    }
+
+    @include media('>=tab') {
+        display: flex;
+    }
 }
 
 // .ResultCard-brandBody,
-.ResultCard-productBody {
-    @include media('>=tab') {
+// .ResultCard-productBody {
+    // @include media('>=tab') {
         // overflow: hidden;
     	// _overflow: visible;
     	// zoom: 1;
 
         // display: flex;
-    }
-}
+    // }
+// }
 
 .ResultCard-brandImage {
     margin-bottom: $Column-gutter;
-    max-width: 6rem;
+    width: 6rem;
 
     @include media('<tab') {
         float: right;
@@ -90,8 +98,9 @@
     }
 
     @include media('>=tab') {
-        max-width: 7rem;
-        float: left;
+        min-width: 7.5rem;
+        width: 7.5rem;
+        // float: left;
         margin-right: double($Column-gutter);
     }
 
@@ -111,7 +120,7 @@
 .ResultCard-brandHeadingMore {
     @include hide();
 
-    @include pill($FontSize-c4, $Colour-primary, rgba($Colour-primary, .14), transparent);
+    @include pill($FontSize-c4, inherit, rgba($Colour-primary, .14), transparent);
 
     display: inline-block;
     vertical-align: top;

@@ -116,9 +116,8 @@ $inputMulti-multiplier: 4 !default;
 	color: $Colour-text;
 	outline: none;
 
-	&:hover,
+	// &:hover,
 	&:focus {
-		// background-color: $Colour-border--contrast;
         border-color: $Colour-action;
 		transition: background .2s;
 	}
