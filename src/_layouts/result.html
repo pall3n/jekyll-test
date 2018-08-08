@@ -61,7 +61,7 @@ layout: default
         </div>
 
         <div class="m-Results-body">
-            <div class="Tabs">
+            <!-- <div class="Tabs">
                 <ul class="Tabs-nav">
                     <li class="Tabs-navItem">
                         <a href="#" class="Tabs-navLink is-active"><span class="">Parking</span> from &pound;27.99</a>
@@ -73,9 +73,9 @@ layout: default
                         <a href="#" class="Tabs-navLink"><span class="">Hotel &amp; Parking</span> from &pound;51.00</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
 
-            <div class="m-Results-sortGroup">
+            <!-- <div class="m-Results-sortGroup">
                 <div class="m-Results-sortCount">
                     <div class="hide-tabDown">Search results: 18 matching results found</div>
                     <a href="#" class="hide-lap iconInline icon-filter">Refine search - 18 results</a>
@@ -115,64 +115,53 @@ layout: default
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
 
             <div class="Tabs-body is-active">
-                <div class="ResultCard is-approvedVetted">
+
+                <div class="ResultCard">
                     <div class="ResultCard-brand">
-                        <a href="#" class="ResultCard-brandImage">
-                            <img src="http://placehold.it/120x90" alt="" class="aspectImg">
-                        </a>
-
                         <div class="ResultCard-brandBody">
-                            <a class="ResultCard-brandHeading" href="#">Purple Parking <span class="ResultCard-brandHeadingMore">Find out more</span></a>
-                            <div class="ResultCard-brandCopy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi cum fugiat alias officia aperiam, et dolorum, odit quidem assumenda sit, laborum voluptatem! Libero atque ipsam fugit quo aliquam enim dolorum?</div>
+                            <div class="ResultCard-brandHeading" href="#">Purple Parking</div>
 
-                            <ul class="list-tick">
-    							<li>Park Mark Accredited</li>
-    							<li>Fully insured drivers</li>
-    							<li>Established in 1988</li>
-    							<li>CCTV and Security fencing at compound</li>
-    							<li>9000 spaces at Heathrow Airport </li>
-    							<li>Friendly and professional service</li>
-    						</ul>
+                            {%- include result-card-product.html -%}
 
-                            <div class="copy-s iconInline icon-calendar">Drop-off: 30 March 2012 at 13:30 Pick-up: 5 April 2012 at 19:30</div>
+                            <div class="ResultCard-section">
+                                <div class="blockContent">
+                                    <div class="heading-3">Reasons to book</div>
 
-                            {%- include rating-card-small.html -%}
+                                    <ul class="ListFeatures ListFeatures--tick">
+                                        <li class="ListFeatures-item">Park Mark, police approved compounds</li>
+                                        <li class="ListFeatures-item">Approved to operate by Heathrow Airport</li>
+                                        <li class="ListFeatures-item">Open from 04:00 AM 7 days a week</li>
+                                        <li class="ListFeatures-item">Heathrow Airport approved operator</li>
+                                    </ul>
+
+                                    <p><strong>Purple parking</strong> is exclusive to {{ site.website }} and fulfilled by a long established airport approved meet and greet operator with Park Marked, police approved compounds all within the perimeter of Heathrow Airport.</p>
+                                    <p>You will be met at your departure terminal at the time you specify - the specific area will be stated on your booking confirmation. On your return, your vehicle will be brought back to your return terminal.</p>
+                                    <p>For your added peace of mind and your vehicle's safety, all of the drivers are fully insured and the car parks are <a href="#">Park Mark approved</a>.</p>
+                                    <p><strong>Please note</strong><br>The car park where you will be meeting your driver has a height limit of 2.2 meters in T2, T3 and T5. If you are dropping off or picking up your vehicle at T4, there is a height restriction of 2.0 meters. If your vehicle exceeds this, you will be unable to use this parking product.</p>
+                                </div>
+
+                                <div class="blockContent">
+                                    {%- include testimonial.html -%}
+                                </div>
+
+                                <div class="blockContent">
+                                    <div class="heading-3">Features</div>
+
+                                    <ul class="ListFeatures">
+                                        <li class="ListFeatures-item" style="background-image: url(https://s3.amazonaws.com/neon-media/Icons/site-facilities/fac_park_mark.png);">Park Mark accredited</li>
+                                        <li class="ListFeatures-item" style="background-image: url(https://s3.amazonaws.com/neon-media/Icons/site-facilities/fac_security_fences.png);">Security lighting / fencing</li>
+                                        <li class="ListFeatures-item" style="background-image: url(https://s3.amazonaws.com/neon-media/Icons/site-facilities/fac_cctv.png);">CCTV</li>
+                                        <li class="ListFeatures-item" style="background-image: url(https://s3.amazonaws.com/neon-media/Icons/site-facilities/fac_generic_facilities.png);">24-hour patrols</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div> <!-- end resultCard -->
 
-                    {%- include result-card-product.html -%}
-                </div>
-
-                <div class="ResultCard is-approvedVetted">
-                    <div class="ResultCard-brand">
-                        <a href="#" class="ResultCard-brandImage">
-                            <img src="http://placehold.it/120x90" alt="" class="aspectImg">
-                        </a>
-
-                        <div class="ResultCard-brandBody">
-                            <a class="ResultCard-brandHeading" href="#">Purple Parking <span class="ResultCard-brandHeadingMore">Find out more</span></a>
-                            <div class="ResultCard-brandCopy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi cum fugiat alias officia aperiam, et dolorum, odit quidem assumenda sit, laborum voluptatem! Libero atque ipsam fugit quo aliquam enim dolorum?</div>
-
-                            <ul class="list-tick">
-    							<li>Park Mark Accredited</li>
-    							<li>Fully insured drivers</li>
-    							<li>Established in 1988</li>
-    							<li>CCTV and Security fencing at compound</li>
-    							<li>9000 spaces at Heathrow Airport </li>
-    							<li>Friendly and professional service</li>
-    						</ul>
-
-                            <div class="copy-s iconInline icon-calendar">Drop-off: 30 March 2012 at 13:30 Pick-up: 5 April 2012 at 19:30</div>
-
-                            {%- include rating-card-small.html -%}
-                        </div>
-                    </div>
-
-                    {%- include result-card-product.html -%}
-                </div>
             </div> <!-- .end Parking tab body -->
         </div>
     </div>

@@ -69,12 +69,14 @@
     // padding: $Column-gutter;
 }
 
-.ResultCard-brandBody,
+// .ResultCard-brandBody,
 .ResultCard-productBody {
     @include media('>=tab') {
-        overflow: hidden;
-    	_overflow: visible;
-    	zoom: 1;
+        // overflow: hidden;
+    	// _overflow: visible;
+    	// zoom: 1;
+
+        // display: flex;
     }
 }
 
@@ -103,6 +105,7 @@
 
 .ResultCard-brandHeading {
     @include font-size($FontSize-h2);
+    font-family: $FF-heavy;
 }
 
 .ResultCard-brandHeadingMore {
@@ -129,8 +132,19 @@
     margin-top: 10px;
 }
 
+.ResultCard-section {
+    padding-top: $Column-gutter;
+    padding-bottom: $Column-gutter;
+    margin-top: $Column-gutter;
+
+    @include media('>=tab') {
+        border-top: 1px solid $Colour-border;
+    }
+}
+
 .ResultCard-product {
-    overflow: auto;
+    // @include clearfix();
+
     padding-top: $Column-gutter;
     padding-bottom: $Column-gutter;
     margin-top: $Column-gutter;
@@ -143,6 +157,8 @@
     }
 
     @include media('>=tab') {
+        display: flex;
+
         border-top: 1px solid $Colour-border;
     }
 }
@@ -151,15 +167,17 @@
     @include hide();
 
     @include media('>=tab') {
-        max-width: 7rem;
-        float: left;
+        min-width: 7.5rem;
+        width: 7.5rem;
+        // float: left;
         margin-right: double($Column-gutter);
     }
 }
 
 .ResultCard-productBody {
     @include media('>=tab') {
-        float: left;
+        // float: left;
+        flex-grow: 1;
     }
 }
 
@@ -170,7 +188,7 @@
 .ResultCard-productHeadingMore {
     @include hide();
 
-    @include pill($FontSize-c4, $Colour-primary, rgba($Colour-primary, .14), transparent);
+    @include pill($FontSize-c4, inherit, rgba($Colour-primary, .14), transparent);
 
     display: inline-block;
     vertical-align: top;
@@ -179,6 +197,8 @@
 
 .ResultCard-productBook {
     text-align: center;
+    // min-width: 160px;
+    white-space: nowrap;
 
     @include media('<tab') {
         margin-top: $Column-gutter;
@@ -187,8 +207,9 @@
     }
 
     @include media('>=tab') {
-        float: right;
-        margin-right: $Column-gutter;
+        // float: right;
+        padding-left: $Column-gutter;
+        padding-right: $Column-gutter;
     }
 }
 

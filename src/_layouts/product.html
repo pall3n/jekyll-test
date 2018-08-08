@@ -36,43 +36,7 @@ layout: default
 
     <div class="m-Search paint">
         <form action="">
-            <div class="m-Search-container">
-                <div class="m-Search-row">
-                    <div class="Form-field m-Search-fieldDropOff">
-                        <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
-                        <div class="Form-inputWrap icon-clock">
-                            <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
-                        </div>
-                    </div> <!-- End of .field -->
-
-                    <div class="Form-field m-Search-fieldDropOffTime">
-                        <label class="Form-label" for="dropTime">Drop-off Time</label>
-                        <div class="Form-inputWrap icon-calendar">
-                            <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
-                        </div>
-                    </div> <!-- End of .field -->
-                </div>
-
-                <div class="m-Search-row">
-                    <div class="Form-field m-Search-fieldPickUp">
-                        <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
-                        <div class="Form-inputWrap icon-clock">
-                            <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
-                        </div>
-                    </div> <!-- End of .field -->
-
-                    <div class="Form-field m-Search-fieldPickUpTime">
-                        <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
-                        <div class="Form-inputWrap icon-calendar">
-                            <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
-                        </div>
-                    </div> <!-- End of .field -->
-                </div>
-
-                <div class="Form-field m-Search-submit">
-                    <button class="Form-submit" type="submit">Search</button>
-                </div> <!-- End of .field -->
-            </div>
+            {%- include search/parking-form.html -%}
         </form>
     </div>
 
@@ -88,32 +52,10 @@ layout: default
     				</div>
 
                     <div class="blockContent">
-    					<div id="Testimonial" class="Testimonial">
-    						<div class="Testimonial-bg">
-                                <div class="Testimonial-semi">
-                                    <canvas class="Testimonial-semiCanvas" height="2" width="1"></canvas>
-        							<svg id="cicle" viewBox="0 0 100 200" perserveaspectratio="xMinYMid">
-        								<path d="M100 200 V0 C50 0 0 50 0 100 C0 150 50 200 100 200Z" fill="#e9f9fe"></path>
-        							</svg>
-
-        							<div class="Testimonial-bgRec"></div>
-                                </div>
-                                <div class="Testimonial-bgRec"></div>
-    						</div>
-
-    						<blockquote class="Testimonial-block">
-    							<div class="Testimonial-copy">Lorem ipsum dolor sit amet!</div>
-
-    							<footer>
-    								Mr M Hamm rated Business Parking Terminals 1 and 3 - 5.0 out of 5
-    							</footer>
-    						</blockquote>
-    					</div>
+    					{%- include testimonial.html -%}
 
                         <div class="Rating Rating--block mt++">
                             <div class="Rating-card">
-                                <!-- <span class="icon icon-recommend icon-xl type-primary"></span> -->
-
                                 <div class="Rating-content" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
                                     <span class="Rating-score">Avg. 4.6/5</span> <span class="Rating-copy"> <span class="hide-mob">is the rating given</span> based on recent feedback <span class="hide-mob">for this provider</span></span>
                                 </div>

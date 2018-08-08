@@ -1,22 +1,8 @@
 <div class="m-Hero">
-    <!-- <div class="windows hide-mob"> -->
-
-        <!-- <img src="../assets/img/hero/hp/hero_cars_alt_wall.png" class="cars"> -->
-        <!-- <img src="../assets/img/hero/hp/hero_chairs.png" class="chairs"> -->
-        <!-- <img src="../assets/img/hero/hp/hero_luggage.png" class="luggage"> -->
-
-        <!-- <div class="container">
-            <h1>Search, Compare &amp; Book Heathrow Airport Parking</h1>
-            <p>Helps you find, compare &amp; book car parking at London Heathrow Airport, simply and easily.</p>
-            <img src="../assets/img/hero/hp/best_price_sticker.png" class="sticker">
-        </div> -->
-
-    <!-- </div> -->
-
     <div class="m-Hero-body">
         <div class="m-Hero-copy">
-            <h1 class="display-1">Search, Compare &amp; Book Heathrow Airport Parking</h1>
-            <p class="displaySub-1 mt+ hide-mob">Helps you find, compare &amp; book car parking at London Heathrow Airport, simply and easily.</p>
+            <h1 class="display-1">Search, Compare &amp; Book {{ site.airport }} Airport Parking</h1>
+            <p class="displaySub-1 mt+ hide-mob">Helps you find, compare &amp; book car parking at London {{ site.airport }} Airport, simply and easily.</p>
             <img src="../assets/image/hero/hp/best_price_sticker.png" class="m-Hero-sticker">
         </div>
 
@@ -31,192 +17,13 @@
                 <input type="hidden" name="site" value="">
 
                 <div id="search-parking" class="Tabs-body is-active">
-                    <div class="m-Search-container">
-                        <div class="Form-field m-Search-fieldAirport hide">
-                            <label class="Form-label" for="airport">Select Airport</label>
-                            <div class="Form-inputWrap Form-select icon-plane">
-                                <select id="airport" name="airport" class="">
-                                    <option selected="">London Heathrow</option>
-                                    <option>London Gatwick</option>
-                                    <option>London Luton</option>
-                                    <option>London Stansted</option>
-                                    <option>Birmingham</option>
-                                    <option>Edinburgh</option>
-                                </select>
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="m-Search-row">
-                            <div class="Form-field m-Search-fieldDropOff">
-                                <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
-                                <div class="Form-inputWrap icon-clock">
-                                    <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
-                                </div>
-                            </div> <!-- End of .field -->
-
-                            <div class="Form-field m-Search-fieldDropOffTime">
-                                <label class="Form-label" for="dropTime">Drop-off Time</label>
-                                <div class="Form-inputWrap icon-calendar">
-                                    <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
-                                </div>
-                            </div> <!-- End of .field -->
-                        </div>
-
-                        <div class="m-Search-row">
-                            <div class="Form-field m-Search-fieldPickUp">
-                                <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
-                                <div class="Form-inputWrap icon-clock">
-                                    <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
-                                </div>
-                            </div> <!-- End of .field -->
-
-                            <div class="Form-field m-Search-fieldPickUpTime">
-                                <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
-                                <div class="Form-inputWrap icon-calendar">
-                                    <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
-                                </div>
-                            </div> <!-- End of .field -->
-                        </div>
-
-                        <div class="Form-field m-Search-submit">
-                            <button class="Form-submit" type="submit">Search</button>
-                        </div> <!-- End of .field -->
-                    </div>
+                    {%- include search/parking-form.html -%}
                 </div>
 
                 <div id="search-park-fly" class="Tabs-body is-active-">
-                    <div class="container">
-                        <div class="Form-field hide">
-                            <label class="Form-label" for="airport">Select Airport</label>
-                            <div class="Form-inputWrap Form-select icon-plane">
-                                <select id="airport" name="airport" class="">
-                                    <option selected="">London Heathrow</option>
-                                    <option>London Gatwick</option>
-                                    <option>London Luton</option>
-                                    <option>London Stansted</option>
-                                    <option>Birmingham</option>
-                                    <option>Edinburgh</option>
-                                </select>
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field">
-                            <label class="Form-label" for="checkin">Hotel Check-In</label>
-                            <div class="Form-inputWrap icon-calendar">
-                                <input type="date" class="Form-input date start hasDatepicker" id="checkin" name="checkInDate" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field">
-                            <label class="Form-label" for="checkout">Hotel Check-Out</label>
-                            <div class="Form-inputWrap icon-calendar">
-                                <input type="date" class="Form-input date end hasDatepicker" id="checkout" name="checkOutDate" value="">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-field" id="collectDropCar">
-                            <label class="Form-label" for="collectCar">Parking Until (pick-up)</label>
-                            <div class="Form-inputWrap icon-calendar">
-                                <input type="date" class="Form-input date end hasDatepicker" id="collectCar" name="collectCar" value="" data-collect-name="collectCar" data-collect-label="Parking Until (pick-up)" data-drop-name="dropOffCar" data-drop-label="Parking From (drop-off)">
-                            </div>
-                        </div> <!-- End of .field -->
-
-                        <div class="Form-row">
-                            <div class="Form-field s-1/2">
-                                <label class="Form-label" for="numAdults">Adults</label>
-                                <div class="Form-select">
-                                    <select id="numAdults" name="numberAdults">
-                                        <option>1</option>
-                                        <option selected="">2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="Form-field s-1/2">
-                                <label class="Form-label" for="numChildren">Children</label>
-                                <div class="Form-select">
-                                    <select id="numChildren" name="numberChildren">
-                                        <option selected="">0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="Form-row">
-                            <div class="Form-field s-1/2">
-                                <label class="Form-label">Childs Age</label>
-                                <div class="Form-select">
-                                    <select name="childAge[]">
-                                        <option value="1">&lt; 2</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>17</option>
-                                        <option>18</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="Form-field s-1/2">
-                                <label class="Form-label">Childs Age</label>
-                                <div class="Form-select">
-                                    <select name="childAge[]">
-                                        <option value="1">&lt; 2</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                        <option>16</option>
-                                        <option>17</option>
-                                        <option>18</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="Form-field">
-                            <input type="checkbox" id="overnightReturn">
-                            <label class="Form-label" for="overnightReturn">I need need need need to park first and stay overnight on my return</label>
-                        </div>
-
-                        <div class="Form-field submit">
-                            <button class="Form-submit" type="submit">Search</button>
-                        </div> <!-- End of .field -->
-                    </div>
+                    {%- include search/hotel-parking-form.html -%}
                 </div>
             </form>
-
-            <!-- <img id="stand" src="../assets/img/hero/hp/sign_stand.png" width="286" height="76" alt="Stand" class="hide-mob"> -->
         </div>
     </div>
 </div>

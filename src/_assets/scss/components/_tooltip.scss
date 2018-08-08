@@ -32,6 +32,7 @@
 
 .Tooltip {
     position: relative;
+    white-space: normal;
 
     &:after {
         @include font-size(10px);
@@ -52,7 +53,8 @@
 
     &:hover,
     &:focus {
-        .Tooltip-popover {
+        .Tooltip-popover,
+        .Tooltip-popoverRight {
             display: block;
         }
     }
@@ -63,4 +65,12 @@
     @include popover-top($BSU * 1.5);
     @include type($FontSize-c4, 1.3);
 
+    color: $Colour-text;
+}
+
+.Tooltip-popoverRight {
+    @include popover-topRight($BSU * 1.5);
+    @include type($FontSize-c4, 1.3);
+
+    color: $Colour-text;
 }

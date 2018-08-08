@@ -3,8 +3,6 @@
     font-family: $FF-medium;
 
     padding: ($Column-gutter * 1.25) 0 ($Column-gutter * 1.25) $Column-gutter;
-    // margin-top: $Column-gutter;
-    // margin-bottom: $Column-gutter;
 
     &:before {
         content: open-quote;
@@ -32,8 +30,6 @@
 
     @include media('>=tab') {
         padding: 45px 45px 45px 120px;
-        // margin-top: 30px;
-        // margin-bottom: 30px;
 
         &:before {
             @include font-size(90px);
@@ -112,7 +108,8 @@
     }
 
     @include media('>=tab') {
-        .CardContent & {
+        .CardContent &,
+        .ResultCard & {
             margin-right: -($Column-gutter * 1.25);
         }
     }

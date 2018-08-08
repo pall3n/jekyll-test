@@ -76,8 +76,6 @@ A simple body for displaying hidden items such as dropdowns, extra information, 
     }
 }
 
-
-
 @mixin popover-top($padding: $Base-spacing-unit * 4) {
 	@include popover-base($padding);
     bottom: 120%;
@@ -87,6 +85,20 @@ A simple body for displaying hidden items such as dropdowns, extra information, 
 	&:before {
         bottom: -5px;
         left: 12px;
+
+		transform: rotate(135deg);
+    }
+}
+
+@mixin popover-topRight($padding: $Base-spacing-unit * 4) {
+	@include popover-base($padding);
+    bottom: 120%;
+	bottom: calc(100% + 6px);
+	right: -11px;
+
+	&:before {
+        bottom: -5px;
+        right: 12px;
 
 		transform: rotate(135deg);
     }

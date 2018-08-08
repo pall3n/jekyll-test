@@ -42,6 +42,29 @@
 	color: $Colour-text;
 }
 
+.ListFeatures--tick .ListFeatures-item {
+    position: relative;
+    color: $Colour-success;
+
+    &:before {
+        @include icon-font();
+        content: $icon-tick;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        display: block;
+        // font-size: 14px;
+
+        color: $Colour-white;
+        background-color: $Colour-success;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 50%;
+    }
+}
+
 .ListFeatures-item {
     margin-bottom: $BSU;
     padding: halve($BSU) 0 halve($BSU) 40px;
