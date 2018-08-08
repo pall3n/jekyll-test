@@ -13,18 +13,30 @@
         </div>
     </div> <!-- End of .field -->
 
+    {% if include.inline == "true" %}
+        <div class="Form-field m-Search-type">
+            <label class="Form-label" for="airport">Search for</label>
+            <div class="Form-select">
+                <select id="airport" name="airport" class="">
+                    <option selected="">Parking only</option>
+                    <option>Hotel Park &amp; Fly</option>
+                </select>
+            </div>
+        </div>
+    {% endif %}
+
     <div class="m-Search-row">
         <div class="Form-field m-Search-fieldDropOff">
             <label class="Form-label" for="dropDate">Parking From (drop-off)</label>
             <div class="Form-inputWrap icon-clock">
-                <input type="date" class="Form-input date start hasDatepicker" id="dropDate" name="dropOffDate" value="">
+                <input type="date" class="Form-input" id="dropDate" name="dropOffDate" value="">
             </div>
         </div> <!-- End of .field -->
 
         <div class="Form-field m-Search-fieldDropOffTime">
             <label class="Form-label" for="dropTime">Drop-off Time</label>
             <div class="Form-inputWrap icon-calendar">
-                <input type="time" class="Form-input time hasTimepicker" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
+                <input type="time" class="Form-input" id="dropTime" name="dropOffTime" placeholder="07:00" value="">
             </div>
         </div> <!-- End of .field -->
     </div>
@@ -33,14 +45,14 @@
         <div class="Form-field m-Search-fieldPickUp">
             <label class="Form-label" for="pickDate">Parking Until (pick-up)</label>
             <div class="Form-inputWrap icon-clock">
-                <input type="date" class="Form-input date end hasDatepicker" id="pickDate" name="pickUpDate" value="">
+                <input type="date" class="Form-input" id="pickDate" name="pickUpDate" value="">
             </div>
         </div> <!-- End of .field -->
 
         <div class="Form-field m-Search-fieldPickUpTime">
             <label class="Form-label" for="pickTime">Pick-up Time <span class="Tooltip" title=""><span class="Tooltip-popover">We suggest using the time your return flight lands</span></span></label>
             <div class="Form-inputWrap icon-calendar">
-                <input type="time" class="Form-input time hasTimepicker" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
+                <input type="time" class="Form-input" id="pickTime" name="pickUpTime" placeholder="20:30" value="">
             </div>
         </div> <!-- End of .field -->
     </div>
