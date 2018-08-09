@@ -152,6 +152,10 @@ $icon-recommend: "\e909";
 	display: block;
 }
 
+.icon-m {
+	@include type($FontSize-i3);
+}
+
 .iconInline {
 	&:before {
 		@include icon-inline();
@@ -160,6 +164,11 @@ $icon-recommend: "\e909";
 	&.icon-calendar:before {
 		vertical-align: -1px;
 	}
+}
+
+.iconInline-m:before {
+	@include type($FontSize-i3);
+	vertical-align: -4px;
 }
 
 .icon--promo {

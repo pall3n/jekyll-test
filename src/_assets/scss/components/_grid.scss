@@ -26,7 +26,27 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin grid() {
+@mixin nested-grid() {
+	margin-left: -($Layout-gutter);
+	margin-right: -($Layout-gutter);
+
+	@include media('<tab') {
+		margin-top: -($Layout-gutter);
+		margin-bottom: -($Layout-gutter);
+	}
+
+	@include media('>=tab') {
+		margin-left: - ($Column-gutter + $Grid-gutter--tab);
+		margin-right: - ($Column-gutter + $Grid-gutter--tab);
+	}
+
+	@include media('>=lap') {
+		margin-left: -($Column-gutter + $Grid-gutter--lap);
+		margin-right: -($Column-gutter + $Grid-gutter--lap);
+	}
+}
+
+@mixin grid-base() {
 	max-width: $Layout-maxWidth;
     margin-left: auto;
     margin-right: auto;
@@ -43,37 +63,19 @@
         padding-left: $Grid-gutter--lap;
         padding-right: $Grid-gutter--lap;
     }
+}
+
+@mixin grid() {
+	@include grid-base();
 
 	.Grid {
-		margin-left: -($Layout-gutter);
-		margin-right: -($Layout-gutter);
-
-		@include media('<tab') {
-			margin-top: -($Layout-gutter);
-			margin-bottom: -($Layout-gutter);
-		}
-
-		@include media('>=tab') {
-			margin-left: - ($Column-gutter + $Grid-gutter--tab);
-			margin-right: - ($Column-gutter + $Grid-gutter--tab);
-		}
-
-		@include media('>=lap') {
-	    	margin-left: -($Column-gutter + $Grid-gutter--lap);
-			margin-right: -($Column-gutter + $Grid-gutter--lap);
-	    }
-
-		// @include media('>=lap') {
-		// 	margin-left: -($Layout-gutter--lap + ($Layout-gutter--lap * 2));
-		// 	margin-right: -($Layout-gutter--lap + ($Layout-gutter--lap * 2));
-		// }
+		@include nested-grid();
 	}
 }
 
-@mixin grid-column() {
+@mixin grid-column-base($width: 100%) {
 	display: inline-block;
-	// box-sizing: border-box;
-	width: 100%;
+	width: $width;
 	padding-left: $Column-gutter;
 	padding-right: $Column-gutter;
 	vertical-align: top;
@@ -81,16 +83,15 @@
 	letter-spacing: normal;
 	word-spacing: normal;
 	text-rendering: auto;
+}
+
+@mixin grid-column() {
+	@include grid-column-base();
 
 	@include media('<tab') {
 		padding-top: $Column-gutter;
 		padding-bottom: $Column-gutter;
 	}
-
-	// @include media('>=lap') {
-	// 	padding-left: $Layout-gutter;
-	// 	padding-right: $Layout-gutter;
-	// }
 }
 
 @mixin grid-row() {
@@ -164,6 +165,14 @@
 		@include media('>=lap') {
 			padding-left: ($Panel-gutter--tab * 4);
 			padding-right: ($Panel-gutter--tab * 4);
+		}
+	}
+}
+
+.Grid--stackTabDown {
+	.Grid-column + .Grid-column {
+		@include media('>=tab', '<lap') {
+			margin-top: $Column-gutter;
 		}
 	}
 }

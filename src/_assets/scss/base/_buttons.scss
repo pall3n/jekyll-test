@@ -26,7 +26,7 @@
 // MIXINS
 // --------------------------------------------------------------------------
 
-@mixin button($padding: ($Base-spacing-unit * 1) ($Base-spacing-unit * 4), $font-size: 15px, $line-height: 24px) {
+@mixin button($padding: ($Base-spacing-unit * 1) ($Base-spacing-unit * 3), $font-size: 15px, $line-height: 24px) {
 	@include font-size($font-size);
 	line-height: $line-height;
 	font-family: $FF-heavy;

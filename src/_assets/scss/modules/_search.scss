@@ -67,7 +67,8 @@
         }
     }
 
-    .Form-input {
+    .Form-input,
+    .Form-select select {
         background-color: $Colour-white;
         border-color: $Colour-borderSolid;
     }

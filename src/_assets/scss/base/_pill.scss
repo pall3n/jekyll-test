@@ -47,3 +47,7 @@
     background-color: $Colour-primary;
     color: $Colour-white;
 }
+
+.pillNote {
+    @include pill($FontSize-c4, $Colour-baseType--lighten, $Colour-noteWash, $Colour-noteBorder);
+}

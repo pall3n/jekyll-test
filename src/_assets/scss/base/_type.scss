@@ -183,16 +183,13 @@
 }
 
 
-//
-// icons
-//
 
 // .icon-xl {
 // 	@include font-size($FontSize-i1);
 // }
 
-.icon-m {
-	@include type($FontSize-i3);
+.type-strong {
+	font-family: $FF-heavy;
 }
 
 

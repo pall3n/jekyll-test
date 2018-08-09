@@ -2,120 +2,124 @@
 layout: default
 ---
 
-<div class="paintBody panel m-Booking">
-    <div class="Grid">
-        <div class="Grid-column s-3/4--lap">
-            <div class="a-center">
-                <div class="display-3">Lets get that booked for you</div>
-                <p class="mt">We need to get some information to confirm the booking and then take payment. <br> <strong>This should take approximately <span class="iconInline icon-clock"></span>3 minutes in total.</strong></p>
-            </div>
+<div class="m-Booking">
+    <div class="m-Booking-notice">
+        <span class="pillNote iconInline icon-clock iconInline-m">Complete &amp; pay in less than 2 minutes</span>
+    </div>
 
-            <div class="CardActions mt++">
-                <form action="" class="FormStack-l">
-                    <div class="Card-body">
-                        <div class="Card-head">
-                            <h1>Vehicle Details</h1>
+    <div class="m-Booking-body Grid-column-- s-3/4--lap--">
+        <div class="CardActions">
+            <form action="" class="FormStack-l">
+                <div class="Card-head">
+                    <div class="m-Booking-heading">Vehicle Details</div>
 
-                            <ul class="Card-steps Steps">
-                                <li class="Steps-item is-complete">
-    								<a href="/site/booking/vehicle-details/" class="Steps-link">Vehicle Details</a>
-    							</li>
-    							<li class="Steps-item is-complete-">
-    								<a href="/site/booking/guest-details/" class="Steps-link">Guest Details</a>
-    							</li>
-    							<li class="Steps-item is-complete-">
-    								<a href="/site/booking/contact-details/" class="Steps-link">Contact Details</a>
-    							</li>
-    						</ul>
-                        </div>
+                    <ul class="Card-steps Steps">
+                        <li class="Steps-item is-complete">
+                            <a href="/site/booking/vehicle-details/" class="Steps-link">Vehicle Details</a>
+                        </li>
+                        <li class="Steps-item is-complete-">
+                            <a href="/site/booking/guest-details/" class="Steps-link">Guest Details</a>
+                        </li>
+                        <li class="Steps-item is-complete-">
+                            <a href="/site/booking/contact-details/" class="Steps-link">Contact Details</a>
+                        </li>
+                    </ul>
+                </div>
 
-                        <div class="Card-section">
-                            <p>These details can be updated and amended for free. Please complete all fields marked <span class="type-required">*</span></p>
+                <div class="Card-body">
+                    <div class="Card-section-">
+                        <p>These details can be updated and amended for free. Please complete all fields marked <span class="type-required">*</span></p>
 
-                            <div class="Form-row mt+">
-                                <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
-        							<label class="Form-label" for="v_reg">Vehicle registration</label>
-        							<input class="Form-input" type="text" id="v_reg" name="vehicleRegistration" value="">
-                                </div>
-
-                                <div class="Form-field Form-field--bottom s-1/2--tab s-1/3--lap">
-                                    <button class="button--primary">Find my vehicle</button>
-                                </div>
+                        <div class="Form-row mt++">
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+    							<label class="Form-label" for="v_reg">Vehicle registration</label>
+    							<input class="Form-input" type="text" id="v_reg" name="vehicleRegistration" value="">
                             </div>
 
-                            <div class="Form-row">
-                                <div class="Form-field Media Media--s type-text">
-    								<div class="Media-image">
-    									<span class="icon icon-car icon-m"></span>
-    								</div>
-    								<div class="Media-body">
-    									<div class="Form-label">GJ64RXY, VOLKSWAGEN GOLF SV S TDI <br> GREY, Hatchback <a href="#" class="">Edit</a></div>
-    								</div>
-    							</div>
-                            </div>
-
-                            <div class="Form-row">
-                                <div class="Form-field s-1/2--tab s-1/3--lap">
-        							<label class="Form-label" for="v_reg">Passengers (inc. driver)</label>
-
-                                    <div class="Form-select">
-                                        <select name="v_passengers" id="v_passengers">
-    										<option>Option 1</option>
-    										<option>Option 2</option>
-    										<option>Option 3</option>
-    										<option>Option 4</option>
-    										<option>Option 5</option>
-    									</select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="Form-row Form-row--section">
-                                <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
-                                    <label for="" class="Form-label">Departure meeting point</label>
-                                    <input type="text" class="Form-input">
-                                </div>
-                                <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
-                                    <label for="" class="Form-label">Arrival meeting point</label>
-                                    <input type="text" class="Form-input">
-                                </div>
-                            </div>
-
-                            <div class="Form-row">
-                                <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
-                                    <label for="" class="Form-label">Pick-up time</label>
-                                    <input type="text" class="Form-input">
-                                </div>
-                                <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
-                                    <label for="" class="Form-label">Arrival flight number</label>
-                                    <input type="text" class="Form-input">
-                                </div>
-                                <div class="Form-field s-1/2--tab s-1/3--lap">
-                                    <label for="" class="Form-label">Destination (optional)</label>
-                                    <input type="text" class="Form-input">
-                                </div>
+                            <div class="Form-field Form-field--bottom s-1/2--tab s-1/3--lap">
+                                <button class="button--primary">Find my vehicle</button>
                             </div>
                         </div>
-                    </div> <!-- End .Card-body -->
 
-                    <div class="Card-footer">
-                        <a href="#" class="button secondary button--back">Back</a>
+                        <div class="Form-row">
+                            <div class="Form-field Media Media--s type-text">
+								<div class="Media-image">
+									<span class="icon icon-car icon-m"></span>
+								</div>
+								<div class="Media-body">
+									<div class="Form-label">GJ64RXY, VOLKSWAGEN GOLF SV S TDI <br> GREY, Hatchback <a href="#" class="">Edit</a></div>
+								</div>
+							</div>
+                        </div>
 
-                        <div class="ButtonGroup Card-actionsProceed">
-                            <button type="reset" class="ButtonGroup-item">Cancel</button>
-                            <button type="submit" class="ButtonGroup-item button--proceedNext">Add guest details</button>
+                        <div class="Form-row">
+                            <!-- Can we drop if no shuttle needed? -->
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+    							<label class="Form-label" for="v_reg">Passengers (inc. driver)</label>
+
+                                <div class="Form-select">
+                                    <select name="v_passengers" id="v_passengers">
+										<option>Option 1</option>
+										<option>Option 2</option>
+										<option>Option 3</option>
+										<option>Option 4</option>
+										<option>Option 5</option>
+									</select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                </form>
-            </div>
+                    <div class="Card-section">
+                        <div class="heading-3">Drop off &amp; Pick Up Details</div>
+
+                        <div class="Form-row Form-row--section-- mt+">
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+                                <label for="" class="Form-label">Departure meeting point</label>
+                                <input type="text" class="Form-input">
+                            </div>
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+                                <label for="" class="Form-label">Arrival meeting point</label>
+                                <input type="text" class="Form-input">
+                            </div>
+                        </div>
+
+                        <div class="Form-row">
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+                                <label for="" class="Form-label">Pick-up time</label>
+                                <input type="text" class="Form-input">
+                            </div>
+                            <div class="Form-field Form-field--required s-1/2--tab s-1/3--lap">
+                                <label for="" class="Form-label">Arrival flight number</label>
+                                <input type="text" class="Form-input">
+                            </div>
+                            <div class="Form-field s-1/2--tab s-1/3--lap">
+                                <label for="" class="Form-label">Destination (optional)</label>
+                                <input type="text" class="Form-input">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End .Card-body -->
+
+                <div class="Card-footer">
+                    <div class="ButtonGroup Card-actionsProceed">
+                        <button type="reset" class="ButtonGroup-item hide-mob">Cancel</button>
+                        <button type="submit" class="ButtonGroup-item button--proceedNext">Add guest details</button>
+                    </div>
+                </div>
+
+            </form>
         </div>
+    </div>
 
-        <div class="Grid-column s-1/4--lap">
-            <div class="Card Card-body Card--primaryWash">
+    <aside class="m-Booking-aside Grid-column-- s-1/4--lap--">
+        <div class="Card Card--primaryWash">
+            <div class="Card-head">
                 <div class="Card-heading">This Booking</div>
+            </div>
 
-                <div class="Card-section">
+            <div class="Card-body">
+                <div class="">
                     <div class="">
                         <div class="title-s">Renaissance Hotel</div>
                     </div>
@@ -158,16 +162,16 @@ layout: default
                     <div class="copy-s mt">All vehicles must be under 2m high.</div>
                     <div class="copy-s">No long wheel base vehicles will be accepted.</div>
                 </div>
+            </div>
 
-                <div class="Card-section a-right">
-                    <div class="Card-priceWrap">
-                        <div class="title-s">Total</div>
+            <div class="Card-footer a-right">
+                <div class="Card-priceWrap">
+                    <div class="title-s">Total</div>
 
-                        <div class="price"><sup>£</sup>340<sub>85</sub></div>
-                    </div>
-                    <a href="#" class="copy-s">Terms &amp; Conditions</a>
+                    <div class="price"><sup>£</sup>340<sub>85</sub></div>
                 </div>
+                <a href="#" class="copy-s">Terms &amp; Conditions</a>
             </div>
         </div>
-    </div>
+    </aside>
 </div>

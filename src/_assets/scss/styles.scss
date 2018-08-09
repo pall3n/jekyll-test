@@ -57,6 +57,7 @@
 // --------------------------------------------------------------------------
 
 @import "components/_popover";
+@import "components/_grid";
 
 @import "components/_awards";
 @import "components/_basket";
@@ -68,7 +69,6 @@
 @import "components/_dropdown";
 @import "components/_filters";
 @import "components/_form";
-@import "components/_grid";
 @import "components/_iconNav";
 @import "components/_link-group";
 @import "components/_list";
@@ -89,6 +89,7 @@
 // MODULES
 // --------------------------------------------------------------------------
 
+@import "modules/_booking";
 @import "modules/_footer";
 @import "modules/_header";
 @import "modules/_hero";

@@ -44,12 +44,7 @@
 	}
 
 	@include media('>=lap') {
-        max-width: $Layout-maxWidth;
-        margin-left: auto;
-        margin-right: auto;
-
-    	letter-spacing: -0.31em;
-        text-rendering: optimizespeed;
+    	@include grid-base();
 
         padding: $Grid-gutter--lap;
 	}
@@ -127,16 +122,8 @@
     }
 
     @include media('>=lap') {
-        display: inline-block;
-        width: percentage(1/4);
-    	padding-left: $Column-gutter;
-    	padding-right: $Column-gutter;
+        @include grid-column-base(percentage(1/4));
         margin-top: 104px;
-    	vertical-align: top;
-
-    	letter-spacing: normal;
-    	word-spacing: normal;
-    	text-rendering: auto;
     }
 }
 
@@ -175,15 +162,7 @@
     }
 
     @include media('>=lap') {
-        display: inline-block;
-        width: percentage(3/4);
-    	padding-left: $Column-gutter;
-    	padding-right: $Column-gutter;
-    	vertical-align: top;
-
-    	letter-spacing: normal;
-    	word-spacing: normal;
-    	text-rendering: auto;
+        @include grid-column-base(percentage(3/4));
     }
 
     .Tabs-nav {

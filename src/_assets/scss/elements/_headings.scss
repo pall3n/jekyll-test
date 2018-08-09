@@ -73,6 +73,10 @@ h3 {
 
 h4 {
 	@include type($FontSize-h4, $LineHeight-h4, $FF-heavy);
+
+	p +& {
+		margin-top: $FontSize-h4 * 1.5;
+	}
 }
 
 h5 {

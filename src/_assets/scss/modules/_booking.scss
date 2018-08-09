@@ -1,0 +1,112 @@
+// --------------------------------------------------------------------------
+// BOOKING MODULE
+// --------------------------------------------------------------------------
+//
+// Module for Booking styling
+//
+
+/**
+ * DEPENDENCIES
+ * - none
+ */
+
+
+// --------------------------------------------------------------------------
+// VARIABLES
+// --------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------
+// FUNCTIONS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// MIXINS
+// --------------------------------------------------------------------------
+
+
+
+// --------------------------------------------------------------------------
+// STYLING
+// --------------------------------------------------------------------------
+
+.m-Booking {
+    padding-top: $Panel-gutter;
+
+    @include media('>=tab') {
+    	@include grid-base();
+
+		padding-top: ($Layout-gutter * 1.5);
+		padding-bottom: $Panel-gutter--tab;
+	}
+
+    @include media('>=lap') {
+		// padding-top: $Panel-gutter--lap;
+		padding-bottom: $Panel-gutter--lap;
+	}
+
+    .Card {
+        @include media('<tab') {
+            border-radius: 0;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+    }
+
+    .CardActions {
+        @include media('<tab') {
+            border-radius: 0;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+    }
+}
+
+.m-Booking-notice {
+    margin-bottom: $Panel-gutter;
+    text-align: center;
+
+    letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+
+    @include media('>=tab') {
+        margin-bottom: ($Layout-gutter * 1.5);
+    }
+}
+
+.m-Booking-body {
+    @include media('>=tab') {
+        @include grid-column-base();
+    }
+
+    @include media('>=lap') {
+        width: percentage(2/3);
+    }
+}
+
+.m-Booking-aside {
+    @include media('>=tab') {
+        @include grid-column-base();
+    }
+
+    @include media('>=tab', '<lap') {
+        margin-top: $Layout-gutter;
+    }
+
+    @include media('>=lap') {
+        width: percentage(1/3);
+    }
+}
+
+.m-Booking-heading {
+    @include font-size($FontSize-h2);
+    font-family: $FF-heavy;
+
+    @include media('>=tab') {
+        @include font-size($FontSize-h1);
+    }
+}

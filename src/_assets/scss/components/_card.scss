@@ -44,21 +44,31 @@
     @include media('>=lap') {
         padding: $Column-gutter * 1.5;
     }
+
+    .Grid {
+        @include nested-grid();
+    }
 }
 
 .CardActions {
-    @include media('>=tab') {
-        background-color: $Colour-white;
-        border: 1px solid $Colour-border;
-        border-radius: $Border-radius-m;
-    }
+    background-color: $Colour-white;
+    border: 1px solid $Colour-border;
+    border-radius: $Border-radius-m;
 
-    .Card-head {
-        @include media('>=tab') {
-            display: flex;
-            align-items: center;
-        }
-    }
+    // .Card-head {
+    //     padding: double($BSU) $Column-gutter;
+    //     border-bottom: 1px solid $Colour-border;
+    //
+    //     @include media('>=tab') {
+    //         display: flex;
+    //         align-items: center;
+    //         padding: $Column-gutter ($Column-gutter * 1.25);
+    //     }
+    //
+    //     @include media('>=lap') {
+    //         padding: ($Column-gutter * 1.25) ($Column-gutter * 1.5);
+    //     }
+    // }
 
     .Card-steps {
         @include media('>=tab') {
@@ -75,18 +85,26 @@
         @include media('>=lap') {
             padding: $Column-gutter * 1.5;
         }
+
+        .Card-head +& {
+            @include media('<tab') {
+                padding-top: ($BSU);
+            }
+        }
     }
 
     .Card-footer {
+        display: flex;
+
+        padding: $Layout-gutter;
         border-top: 1px solid $Colour-border;
 
         @include media('>=tab') {
-            display: flex;
-            padding: $Column-gutter * 1.25;
+            padding: $Column-gutter ($Column-gutter * 1.25);
         }
 
         @include media('>=lap') {
-            padding: $Column-gutter * 1.5;
+            padding: ($Column-gutter * 1.25) ($Column-gutter * 1.5);
         }
     }
 }
@@ -95,15 +113,63 @@
     background-color: $Colour-white;
     border: 1px solid $Colour-border;
     border-radius: $Border-radius-m;
+
+    .Card-head {
+        border-bottom: 1px solid $Colour-border;
+    }
+
+    .Card-footer {
+        padding: $Column-gutter;
+
+        border-top: 1px solid $Colour-border;
+    }
 }
 
 .Card--primaryWash {
     background-color: $Colour-primaryWash;
     border-color: $Colour-borderPrimary;
+
+    .Card-head {
+        border-color: $Colour-borderPrimary;
+    }
+
+    .Card-footer {
+        border-color: $Colour-borderPrimary;
+    }
+}
+
+.Card--paint {
+    background-color: $Colour-offWhite;
+}
+
+.Card-head {
+    padding-top: double($BSU);
+    padding-left: $Column-gutter;
+    padding-right: $Column-gutter;
+
+    @include media('>=tab') {
+        display: flex;
+        align-items: center;
+        padding: $Column-gutter ($Column-gutter * 1.25);
+
+        border-bottom: 1px solid $Colour-border;
+    }
+
+    @include media('>=lap') {
+        padding: ($Column-gutter * 1.25) ($Column-gutter * 1.5);
+    }
+
+    .Card-heading {
+        margin-bottom: 0;
+    }
 }
 
 .Card-body {
     padding: $Column-gutter;
+
+    .Grid {
+        @include nested-grid();
+    }
 }
 
 .Card-heading {
@@ -116,6 +182,10 @@
     margin-top: $Column-gutter;
 
     border-top: 1px solid $Colour-border;
+
+    @include media('>=tab') {
+        margin-top: $Column-gutter * 1.5;
+    }
 
     .Card--primaryWash & {
         border-top-color: $Colour-borderPrimary;

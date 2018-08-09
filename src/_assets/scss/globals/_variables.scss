@@ -14,6 +14,7 @@ $Colour-offWhite: #F2F2F2;
 
 $Colour-base: #333 !default;
 $Colour-baseType: $Colour-base !default;
+$Colour-baseType--lighten: rgba($Colour-base, .84) !default;
 $Colour-baseType--contrast: $Colour-white;
 
 $Colour-text: #666 !default;
@@ -60,6 +61,10 @@ $Colour-popular: #da5958;
 $Colour-recent: #76c6c1;
 
 $Colour-gold: #c19919;
+
+// $Colour-note: $Colour-gold;
+$Colour-noteWash: #FAF1D5;
+$Colour-noteBorder: #E3CF8E;
 
 
 
